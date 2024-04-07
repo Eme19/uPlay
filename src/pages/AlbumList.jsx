@@ -17,7 +17,7 @@ function AlbumList() {
   const [albums, setAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { storedToken, isLoggedIn } = useContext(AuthContext);
-
+  
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
