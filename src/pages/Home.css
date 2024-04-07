@@ -1,0 +1,144 @@
+@media only screen and (max-width: 767px) {
+h2 {
+  padding-left: 0.9rem;
+  font-size: 1.2rem;
+}
+
+.home-style-position {
+  display: flex;
+  justify-content: center;
+  padding-top: 12rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+li {
+  font-size: 4rem;
+  list-style-type: none;
+}
+
+.home-button-style {
+  display: flex;
+  justify-content: center;
+}
+
+.gap{
+ gap: 26px;
+}
+
+.home-features li {
+  font-size: 30px;
+  padding: 13px;
+  color: rgb(28, 75, 76);
+  font-family: "Times New Roman", Times, serif;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.home-features li {
+  animation: breathe 3s infinite;
+  font-size: 20px;
+  color: rgb(114, 117, 119);
+  margin-inline-end: 8px;
+  text-transform: capitalize;
+}
+
+.home-features li:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.home-features li:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.icon-hm-sty-play {
+  font-size: 70px;
+  color: rgb(114, 117, 119);
+  margin-inline-end: 8px;
+}
+
+.icon-hm-sty-play:hover {
+  color: rgb(140, 137, 137);
+}
+
+.icon-hm-sty-build {
+  font-size: 70px;
+  color: rgb(114, 117, 119);
+  margin-inline-end: 8px;
+}
+
+.lnk-hm-sty {
+  text-decoration: none;
+  color: rgb(114, 117, 119);
+}
+
+.icon-hm-sty-share {
+  font-size: 70px;
+  color: rgb(162, 166, 169);
+  margin-inline-end: 8px;
+}
+
+Link {
+  text-transform: capitalize;
+}
+
+.image-style {
+  text-align: center;
+}
+
+/* .icon-hm-sty-play{
+    font-size: 80px;
+    color: rgb(114, 117, 119);
+    margin-inline-end: 8px;
+}
+
+
+
+.icon-hm-sty-build{
+    font-size: 80px;
+    color: rgb(114, 117, 119);
+    margin-inline-end: 8px;
+}
+
+
+
+
+
+.icon-hm-sty-share{
+    font-size: 80px;
+    color: rgb(114, 117, 119);
+    margin-inline-end: 8px;
+} */
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* CSS styles for tablet devices */
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+  /* CSS styles for desktop devices */
+}
+  

@@ -1,0 +1,26 @@
+.artist-style{
+    display: flex;
+    justify-content: center;
+}
+
+.genre-style{
+    padding-top: 0.8rem;
+   
+}
+
+#btn-artist{
+    padding-top: 1rem;
+    float: right;
+}
+
+label{
+    text-align: start;
+}
+
+#image-text-p{
+    margin-right: 2rem;
+}
+
+.addartist-lab{
+    padding-inline-end: 1rem;
+}

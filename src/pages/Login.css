@@ -1,0 +1,70 @@
+form {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-left: 20px;
+}
+
+.log-container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  
+}
+
+#logo-img-login {
+  width: 200px;
+  height: 200px; 
+}
+
+
+.input-container {
+  margin-bottom: 20px;
+  
+}
+
+.text-color-lgn {
+  color: rgb(255, 255, 255) !important;
+}
+
+.input-lg {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.input-lg.error {
+  border-color: red; /* Border color when there's an error */
+}
+
+.btn-container {
+  padding-top: 10px;
+}
+
+.button-lg {
+  width: calc(100% - 20px);
+  padding: 13px;
+  border-top: 1px solid  #615f5f;
+  border-left: 1px solid #615f5f;
+  border-right: 1px solid  #615f5f;
+  border-bottom: 1px solid #615f5f;
+  background-color:black !important;
+  color: #928b8b;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
+
+
+.button-lg:hover {
+  background-color: black;
+  border-top: 1px solid #787575;
+  border-left: 1px solid#787575;
+  border-right: 1px solid #787575;
+  border-bottom: 1px solid #787575;
+  color: white;
+  font-weight: bold;
+}

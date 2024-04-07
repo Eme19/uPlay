@@ -1,0 +1,342 @@
+/* h1 {
+  text-align: start;
+  font-size: 2rem;
+  padding-left: 3.9rem;
+  padding-top: 3rem;
+  font-family: sans-serif;
+  color: rgb(104, 131, 104);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 60%;
+}
+
+label {
+  float: left;
+  padding-bottom: 0.2rem;
+  padding-top: 1rem;
+  padding-left: 0.5rem;
+  font-weight: lighter;
+  font-size: 0.93rem;
+  font-family: sans-serif;
+}
+
+.btn-form {
+  border-collapse: collapse;
+  border: transparent;
+  color: black;
+  background-color: rgb(235, 239, 240);
+  cursor: pointer;
+  font-weight: bolder;
+  padding: 0.6rem 3.5rem 0.6rem 3.5rem;
+  border-radius: 0.3rem;
+}
+
+.input-formstyle {
+  background-color: rgb(220, 215, 215);
+} */
+
+.signup-container {
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+  text-align: center;
+}
+
+.signup-form {
+  text-align: center;
+}
+
+.inputstyle {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+  color: white;
+}
+
+.inputstyle .ant-select-selector {
+  padding: 4.5px !important ;
+  border: 2px solid #ccc;
+  font-size: 16px !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.inputstyle .ant-select-dropdown {
+  font-size: 16px;
+}
+
+/* .inputstyle .ant-select-item {
+  font-size: 16px; 
+} */
+
+.input-formstyle {
+  width: 100%;
+  padding: 10px;
+}
+
+.password-error-title {
+  color: red !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+
+.err-modal-container{
+margin-top: 5.3rem;
+width: 80%!important;
+}
+
+
+.success-title {
+  color: green !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+.ant-modal-content {
+  background-color:black!important; /* Set your desired background color */
+  color: #864646 !important;
+}
+
+.ant-modal {
+  /* min-width: 300px !important;
+  min-height: 200px !important; */
+  color: #928b8b !important;
+  border-top: 1px solid #615f5f !important ;
+  border-left: 1px solid #615f5f!important ;
+  border-right: 1px solid  #615f5f!important ;
+  border-bottom: 1px solid  #615f5f !important ;
+  /* border-radius: 20px !important; */
+  background-color:black !important;
+}
+
+
+
+
+.login-modal{
+width: 80%!important;
+height: 60%!important;
+margin-top: 5.3rem;
+}
+
+
+.ant-modal-header {
+  background-color:rgb(39, 37, 37) !important; /* Set your desired background color */
+  color: #951212 !important;
+}
+
+.btn-form {
+  width: 100%;
+  background-color: rgb(28, 75, 76);
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.clos-modal {
+  color: rgb(175, 79, 79) !important;
+  border-top: 1px solid #696666 !important ;
+  border-left: 1px solid #696666 !important ;
+  border-right: 1px solid #696666 !important ;
+  border-bottom: 1px solid #696666 !important ;
+  border-radius: 10px !important;
+  background-color: black !important;
+  color: #928b8b;
+}
+
+.success-modl-container {
+  margin-top: 170px;
+}
+
+.clos-modal:hover {
+  border-color: rgb(206, 185, 185) !important;
+  box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1) !important;
+  color: red !important;
+}
+
+.success-text {
+  color: rgb(210, 209, 209) !important;
+  font-size: 16px !important;
+}
+
+.modal-btn-cancl {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.modal-btn-cancl:hover {
+  border-color: rgb(206, 185, 185);
+  box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1);
+}
+
+.modal-btn {
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.modal-btn:hover {
+  border-color: rgb(206, 185, 185);
+  box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1);
+}
+
+.ok-btn {
+  color: #928b8b;
+  border-top:1px solid #696666;
+  border-left: 1px solid #696666;
+  border-right: 1px solid #696666;
+  border-bottom: 1px solid #696666;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.custom-select .ant-select-selector {
+  color: #928b8b;
+}
+
+.cancel-btn {
+  color: #928b8b;
+  border-top:1px solid #696666;
+  border-left: 1px solid #696666;
+  border-right: 1px solid #696666;
+  border-bottom: 1px solid #696666;
+
+  border-radius: 10px;
+}
+
+.lab-sigup {
+  text-align: start;
+  font-weight: bold;
+}
+
+.inputstyle .ant-input-password-icon {
+  font-size: 20px;
+}
+
+.inputstyle .ant-select-selector .ant-select-arrow {
+  font-size: 30px !important;
+}
+
+/* Style the checkbox */
+.chek-bx .ant-checkbox {
+  background-color: rgb(43, 114, 114) !important;
+  border: none;
+}
+
+/* Style the checked state of the checkbox */
+.chek-bx .ant-checkbox-checked .ant-checkbox-inner {
+  background-color: black !important;
+  border-top: 1px solid #696666;
+  border-left: 1px solid #696666;
+  border-right: 1px solid #696666;
+  border-bottom: 1px solid #696666 !important ;
+}
+
+.inputstyle-chk .ant-checkbox-wrapper:hover .ant-checkbox-checked {
+  background-color: black !important;
+  border-top: 1px solid #b7b6b6;
+  border-left: 1px solid #b7b6b6;
+  border-right: 1px solid #b7b6b6;
+  border-bottom: 1px solid #b7b6b6 !important;
+}
+
+/* 
+.lnk-btn-lgn{
+  text-decoration: none;
+  
+} */
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.breathing-effect {
+  margin-bottom: 25px;
+  animation: breathe 4s infinite alternate;
+
+}
+
+.lnk-btn-lgn {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+  color: rgb(159, 47, 159);
+}
+
+.chek-bx {
+  margin-top: 10px;
+  color: #928b8b;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.btn-form {
+  border-top: 1px solid  #615f5f;
+  border-left: 1px solid #615f5f;
+  border-right: 1px solid  #615f5f;
+  border-bottom: 1px solid #615f5f;
+  background-color: rgb(39, 37, 37) !important;
+  color: #928b8b;
+  border-radius: 5px;
+  padding: 10px 15px 36px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease; /* Transition for smooth effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  transition: background-color 0.3s ease, border-color 0.3s ease,
+    box-shadow 0.3s ease; /* Transition for smooth effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-form:hover {
+  animation: colorChange 1s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: rgb(215, 228, 228);
+    border-top: 1px solid #847f7f;
+    border-left: 1px solid#847f7f;
+    border-right: 1px solid#847f7f;
+    border-bottom: 1px solid #847f7f;
+  }
+  100% {
+    background-color: rgb(194, 205, 206);
+  }
+}
+
+.btn-div {
+  margin-top: 5px;
+}
+
+.custom-select .ant-select-dropdown-menu-item {
+  background-color: black !important;
+}
+
+/* Target the selected item in the dropdown menu */
+.custom-select .ant-select-item-option-selected {
+  background-color: black !important;
+}
+
+.modal-error {
+  font-size: 16px !important;
+}
+
+.modal-error:hover {
+  color: rgb(230, 126, 126);
+}

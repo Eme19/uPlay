@@ -1,0 +1,63 @@
+.Nav-flex{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+}
+
+.profile-page{
+    padding-left: 0.7rem;
+    padding-top: 0.3rem;
+
+}
+
+
+/* .navbar {
+    background-color: black;
+    color: rgb(160, 60, 150);
+    font-weight: 600;
+    border-bottom: 0.1px solid #393333!important;
+    position: sticky;
+    top: 0px!important;
+    z-index: 100;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-top: 0.1px solid #393333;
+    border-left: 0.1px solid #393333;
+    border-right: 0.1px solid  #393333;
+  }
+   */
+
+
+
+
+
+
+   .navbar {
+    background-color: rgb(12, 12, 12) !important;
+  
+    font-weight: 600;
+    border-bottom: 0.1px solid #393333!important;
+    position: sticky;
+    top: 0px!important;
+    z-index: 100;
+    padding: 10px;
+    margin: 20px; /* Shortened margin shorthand */
+    border-top: 0.1px solid #565555;
+    border-left: 0.1px solid #393333;
+    border-right: 0.1px solid  #393333;
+
+  }
+  
+  
+    .navbar a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: rgb(160, 60, 150);
+    }
+  
+    .navbar :hover {
+      color: rgb(250, 70, 232);
+    }
+  

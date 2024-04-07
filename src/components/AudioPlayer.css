@@ -1,0 +1,47 @@
+.audio-player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 200px;
+}
+
+.col-card {
+  background-color: rgb(28, 28, 28);
+  padding:30px 10px 20px 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+}
+
+.album-image-child {
+  width: 70px;
+  height: 70px;
+}
+
+.track-info {
+  text-align: center;
+  color: white;
+}
+
+.contain-imag-trac-inf{
+  display: flex;
+  justify-content: space-around;
+
+}
+
+
+.btn-no-background  {
+  fill: white ;
+  font-size: 28px;
+  background-color: transparent!important;
+}
+
+
+
+.btn-audio {
+background-color: none!important ;
+margin-right: 30px;
+}

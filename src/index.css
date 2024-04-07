@@ -1,0 +1,128 @@
+
+@media only screen and (max-width: 767px) {
+  
+body {
+  margin: 0;
+  padding: 0;
+  /* background-color: rgb(39, 37, 37) ; */
+	background-color: rgb(20, 19, 19);
+
+}
+
+.light .home {
+  background-color: #efeded;
+}
+
+.dark .home {
+  background-color: #18191a;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+  margin-top: 20px;
+}
+
+.bg-light {
+  background-color: white !important;
+}
+
+.bg-dark {
+  background-color: #18191a !important;
+}
+
+.logo-img {
+  width: 25px;
+  height: 25px;
+}
+
+.logo-img-deflt {
+  width: 65px;
+  height: 65px;
+}
+
+.home-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+}
+
+.theme-btn {
+  height: 35px;
+  width: 35px;
+  border-radius: 20%;
+}
+
+.light a,
+.light p,
+.light h1,
+.light h3,
+.light label {
+  color: #000000;
+}
+
+.dark a,
+.dark p,
+.dark h1,
+.dark h3,
+.dark label {
+  color: #ffffff;
+}
+
+.audio-player {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.display-track {
+  display: flex;
+  align-items: center;
+}
+
+.audio-info {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.audio-image img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.audio-icon {
+  font-size: 48px;
+  color: #888;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+
+/* index.css */
+
+/* Existing styles... */
+
+:root {
+  /* Default light mode colors */
+  --color-background: #ffffff;
+  --color-text: #000000;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  --color-background: #14181F;
+  --color-text: #ffffff;
+}
+}

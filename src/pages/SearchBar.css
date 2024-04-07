@@ -1,0 +1,39 @@
+@media only screen and (max-width: 767px) {
+.search-input{
+
+  border-collapse: collapse ;
+  border: transparent;
+}
+
+
+input-custom{
+height: 20%;
+border: none;
+
+}
+
+custon-sty {
+  padding-inline-end: rem;
+}
+
+custom-inp-sty{
+  padding-inline-end: rem!important;
+}
+
+input::placeholder {
+  color: #999; /* Placeholder text color */
+}
+
+.ml-log-custm {
+  margin-inline-end: 3rem;
+}
+
+
+.ml-cutom{
+  margin-inline-start: 8rem;
+}
+
+.pt-custome{
+  padding-top: 40px;
+}
+}

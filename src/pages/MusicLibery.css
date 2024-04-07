@@ -1,0 +1,26 @@
+@media only screen and (max-width: 767px) {
+  .menu-style {
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .custom-menu .ant-menu-item {
+    border-bottom: 0.2px solid #ccc;
+    padding-bottom: 4px;
+  }
+  .custom-menu-item {
+    border-bottom: 0.1px solid #696464;
+    padding-bottom: 4px;
+
+  }
+
+  .custom-menu-item:hover {
+    border-bottom: 1px solid #ebe4e4;
+    box-shadow: 0 2px 4px rgba(230, 221, 221, 0.1); /* Add box shadow */
+    transition: border-bottom 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Specify both transitions */
+  }
+
+  .green {
+    background-color: black !important;
+  }
+}

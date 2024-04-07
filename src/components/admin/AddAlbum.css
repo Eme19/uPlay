@@ -1,0 +1,19 @@
+.add-album-styling{
+    display: flex;
+    justify-content: center;
+}
+
+.select-style{
+    padding-top: 0.8rem;
+
+}
+
+#label-style{
+    padding-inline-end: 1rem;
+}
+
+.btn-addalbum{
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    float: right;
+}

@@ -1,0 +1,48 @@
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.album-image {
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.album-image:hover {
+  animation: breathing 4s infinite;
+  transform: scale(1.1);
+}
+
+.album-cover-song {
+  border-radius: 4%;
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+
+}
+
+
+.album-son{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.album-mp3{
+  border-radius: 4%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.track-name,
+.track-artist {
+}

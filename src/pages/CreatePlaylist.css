@@ -1,0 +1,24 @@
+.create-playlist{
+    display: flex;
+    justify-content: center;
+}
+
+.playlist-trackse{
+    padding-top: 0.8rem;
+}
+
+.lab-playlist{
+    padding-inline-end: 1rem;
+}
+
+.btn-playlist{
+    padding-top: 1.5rem;
+    float: right;
+}
+
+.hello-e{
+margin-inline-end: 670rem!important;
+}
+.hover-g:hover{
+background-color: transparent;
+}

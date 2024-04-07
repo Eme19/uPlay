@@ -1,0 +1,58 @@
+
+@media only screen and (max-width: 767px) {
+    .centered-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
+      }
+
+      .Artist-cover{
+     height: 200px;
+      width: 250px;
+     margin-top: 100px;
+margin-left: 1rem;
+
+    overflow: hidden;
+    }
+    
+    
+    .art-img{
+        width: 50%;
+        height: 60%;
+        object-fit:cover;
+        border-radius: 100%;
+
+    }
+    
+
+.pt-ar {
+
+
+ 
+}
+
+
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  /* Tablet */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* CSS styles for tablet devices */
+  }
+  
+  /* Desktop */
+  @media only screen and (min-width: 1024px) {
+    /* CSS styles for desktop devices */
+  }
+    

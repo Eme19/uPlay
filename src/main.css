@@ -1,0 +1,10 @@
+/* main.css */
+
+/* Import Tailwind CSS base styles */
+@import 'tailwindcss/base';
+
+/* Import Tailwind CSS component styles */
+@import 'tailwindcss/components';
+
+/* Import Tailwind CSS utility classes */
+@import 'tailwindcss/utilities';
