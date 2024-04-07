@@ -245,7 +245,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               required
               
             >
-              {countries.map((country) => (
+              {countries?.map((country) => (
                 <Option key={country} value={country}>
                   {country}
                 </Option>
@@ -263,7 +263,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               onChange={(value) => handleFormChange("state", value)}  staterror
               required
             >
-              {states.map((state) => (
+              {states?.map((state) => (
                 <Option key={state} value={state}>
                   {state}
                 </Option>
