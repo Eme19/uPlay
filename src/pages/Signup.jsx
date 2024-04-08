@@ -18,8 +18,8 @@ function Signup() {
     email: "",
     password: "",
     username: "",
-    country: "",
-    state: "",
+    country: "COUNTRY",
+    state: "STATE",
     consent: false,
   });
   const [countries, setCountries] = useState([]);
@@ -245,11 +245,18 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               required
               
             >
-              {countries?.map((country) => (
+              {/* {countries?.map((country) => (
                 <Option key={country} value={country}>
                   {country}
                 </Option>
-              ))}
+              ))} */}
+
+{Array.isArray(countries) && countries.map((country) => (
+  <Option key={country} value={country}>
+    {country}
+  </Option>
+))}
+
             </Select>
             {countrierror && <p style={{ color: "red" }}>{countrierror}</p>}
           </div>
