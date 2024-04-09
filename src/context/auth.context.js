@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL =  process.env.REACT_APP_API_URL;
 
+
+const API_URL =  process.env.REACT_APP_API_URL;
 const AuthContext = React.createContext();
+
+
 
 function AuthProviderWrapper({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,6 +17,7 @@ function AuthProviderWrapper({ children }) {
     console.log("===token", token);
     localStorage.setItem("authToken", token);
   };
+
 
   const authenticateUser = () => {
     const storedToken = localStorage.getItem("authToken");
@@ -74,5 +78,6 @@ function AuthProviderWrapper({ children }) {
     </AuthContext.Provider>
   );
 }
+
 
 export { AuthProviderWrapper, AuthContext };
