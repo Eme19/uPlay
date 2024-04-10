@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Input, Button } from "antd";
 import { toast } from "react-toastify";
 
-const API_URL =  process.env.REACT_APP_API_URL || "https://uplay-git-main-eme19s-projects.vercel.app/";
+const API_URL =  process.env.REACT_APP_API_URL || "https://uplay-git-main-eme19s-projects.vercel.app";
 
 function AddTrack() {
   const [selectedFile, setSelectedFile] = useState(null);

@@ -13,7 +13,7 @@ const { Option } = Select;
 
 // const API_URL = process.env.REACT_APP_API_URL;
 
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || "https://uplay-git-main-eme19s-projects.vercel.app";
 console.log("API URL:", API_URL); 
 
 function Signup() {
