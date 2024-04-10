@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import React, { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { ThemeContext } from "../context/theme.context";

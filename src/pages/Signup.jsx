@@ -20,8 +20,8 @@ function Signup() {
     email: "",
     password: "",
     username: "",
-    country: "",
-    state: "",
+    country: "COUNTRY",
+    state: "STATE",
     consent: false,
   });
   const [countries, setCountries] = useState([]);
@@ -78,6 +78,12 @@ const [showLoginModal, setShowLoginModal] = useState(false);
       case "password":
         setPasswordError(false);
         break;
+        case "country":
+          setCountrierror(false);
+          break;
+          case "state":
+            setStaterror(false);
+          break;
       case "consent":
         setConsentError(false);
         break;
@@ -91,45 +97,54 @@ const [showLoginModal, setShowLoginModal] = useState(false);
     fetchStates(value);
   };
 
+
+
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
-
-
+  
     if (!form.email.includes("@")) {
       setEmailError(true);
       return;
     }
-
+  
     const passwordStrengthRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
     if (!passwordStrengthRegex.test(form.password)) {
-      setIsModalOpen(true)
-      console.log("isModalOpen",isModalOpen);
+      setIsModalOpen(true);
       return;
     }
-
-
+  
     if (!form.consent) {
       setConsentError(true);
       return;
     }
+  
+    // Check if country and state are selected
+    if (form.country === "COUNTRY") {
+      setCountrierror("Please select a country and state.");
+      return;
+    }
 
 
+    if (form.state === "STATE") {
+      setStaterror("Please select a state.");
+      return;
+    }
+
+    
+  
     try {
       const user = form;
       const responses = await authMethods.signUp(user);
       setSuccessModalVisible(true);
-
-      
+  
       setForm({
         email: "",
         password: "",
         username: "",
         country: "",
         state: "",
-        consent: false, 
+        consent: false,
       });
-
-
     } catch (error) {
       message.error("Signup failed. Please check your credentials.");
       setCountrierror(error.response.data.errorCountry || "");
@@ -138,7 +153,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
       console.error("error.response.data.errorCountry", error.response.data.errorCountry);
     }
   };
-
+  
 
   const closeModal = () => {
     setIsModalOpen(false);
