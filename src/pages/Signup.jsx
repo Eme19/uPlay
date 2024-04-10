@@ -203,6 +203,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               onChange={(e) => handleFormChange(e.target.name, e.target.value)}
               required
               placeholder="Username"
+              autocomplete="username"
             />
             {usernameError && <p style={{ color: "red" }}>{usernameError}</p>}
           </div>
@@ -217,6 +218,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               onChange={(e) => handleFormChange(e.target.name, e.target.value)}
               required
               placeholder="Email"
+              autocomplete="Email"
             />
             {emailError && <span className="error-message">Please enter a valid email.</span>}
           </div>
@@ -230,6 +232,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               onChange={(e) => handleFormChange(e.target.name, e.target.value)}
               required
               placeholder="Password"
+              autocomplete="Password"
             />
           {passwordError && (
     <span className="error-message">
