@@ -20,8 +20,8 @@ function Signup() {
     email: "",
     password: "",
     username: "",
-    country: "COUNTRY",
-    state: "STATE",
+    country: "",
+    state: "",
     consent: false,
   });
   const [countries, setCountries] = useState([]);
