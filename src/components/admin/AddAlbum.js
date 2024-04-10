@@ -26,7 +26,7 @@ const enumValues = {
     "Blue",
   ],
 };
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = process.env.REACT_APP_API_URL || "https://uplay-server.onrender.com";
 
 function Album() {
 
