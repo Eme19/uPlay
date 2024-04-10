@@ -11,10 +11,9 @@ import Login from "./Login";
 
 const { Option } = Select;
 
-// const API_URL = process.env.REACT_APP_API_URL;
-
 const API_URL = process.env.REACT_APP_API_URL;
-console.log("API URL:", API_URL); 
+
+
 
 function Signup() {
   const [form, setForm] = useState({
@@ -248,17 +247,17 @@ const [showLoginModal, setShowLoginModal] = useState(false);
               required
               
             >
-              {/* {countries?.map((country) => (
+              {countries?.map((country) => (
                 <Option key={country} value={country}>
                   {country}
                 </Option>
-              ))} */}
+              ))}
 
-{Array.isArray(countries) && countries.map((country) => (
+{/* {Array.isArray(countries) && countries.map((country) => (
   <Option key={country} value={country}>
     {country}
   </Option>
-))}
+))} */}
 
             </Select>
             {countrierror && <p style={{ color: "red" }}>{countrierror}</p>}
