@@ -4,8 +4,8 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
 
-const signUp = async ({ name, email, password }) => {
-  const response = await api.post('/auth/signup', { name, email, password });
+const signUp = async ({ username, email, password, state, country, consent, }) => {
+  const response = await api.post('/auth/signup', { username, email, password, state, country, consent,});
   return response.data;
 };
 
