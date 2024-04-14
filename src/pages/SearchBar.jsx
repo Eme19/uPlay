@@ -13,7 +13,7 @@ import {
 import axios from "axios";
 import AlbumList from "./AlbumList";
 import "./SearchBar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchIcon, MicrophoneIcon } from "@heroicons/react/outline";
 import logoImage from "../assets/logo3.png";
 
@@ -94,8 +94,10 @@ function SearchBar({
   //   setShowAlbums(false)
   // };
 
+
+
   return (
-    <div className="mt- ">
+    <div className="mt-10 ml-5">
       <div className="flex justify-center ">
         <div className="ml-log-custm ">
           <Link to="/">
@@ -111,17 +113,18 @@ function SearchBar({
               <div>
                 <input
                   type="text"
-                  className="bg-gray-800 px-20 pl-10 text-white py-2 border custom-inp-sty rounded-md text-sm focus:outline-none focus:border-blue-400"
+                  className="bg-stone-200 cursor-pointer text-base  pl-10 text-pink-700 py-custom border-none  rounded-3xl text-sm focus:outline-none focus:border-blue-400"
                   placeholder="Search For Albums"
                   onChange={(event) => setSearchInput(event.target.value)}
                   onKeyDown={handleKeyDown}
                 />
-                 <Link to="/songs">
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                  
-                  <MicrophoneIcon className="h-6 w-6 text-gray-400 ml-cutom" />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <Link to="/songs" >
+                  <MicrophoneIcon  className="h-6 w-6 text-gray-400 cursor-pointer ml-cutom text-pink-700" />
+                  </Link>
                 </div>
-                    </Link>
+                   
               </div>
             </InputGroup>
           </div>

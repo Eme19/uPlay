@@ -39,9 +39,24 @@ justify-content: space-around;
 
   .album-cover-track{
     border-radius: 4%;
-    width: 250px;
-    height: 280px;
+    width: 280px;
+    height: 300px;
     overflow: hidden;
+  }
+
+  .mt-custome-traklst{
+  margin-top: -1rem!important;
+
+  text-align: center;
+  }
+
+
+  .mt-custm-trk-lst{
+    padding-top: 25px;
+  }
+
+  .mt-indctor{
+    padding-top: 13px;
   }
 
   .album-cover-track img{
@@ -55,26 +70,27 @@ padding-top: 80px;
   }
 
   #li-styl-h-trk{
-    padding-top: 5px;
-   margin-bottom: -4px;
-    font-size: 16px;
+    padding-top: 10px;
+   margin-bottom: -3px;
+    font-size: 18px;
     font-weight: 600;
-    color: #ffff;
+    color: #b9afaf;
     text-align: center;
     text-transform: capitalize;
   }
 
   #li-styl-art-trk{
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 400;
   text-align: center;
   color:  #be185d;
   }
 
   .li-style-dte-gnr-trk{
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 400;
   text-align: center;
+  color: #a8a29e;
   }
 
   #spn-gnr{
@@ -92,15 +108,16 @@ padding-top: 80px;
     display: flex;
     justify-content: center; 
     align-items: center;
-    gap: 15px;
-    padding-top: 10px;
+    gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
   }
 
 
 
 .btn-wrapper button {
   padding: 10px 40px 10px 40px;
-  background-color: #334155;
+
 }
 
 .cutom-track{
@@ -119,4 +136,16 @@ padding-top: 80px;
   vertical-align: middle; 
   font-weight: 600;
   color:   #be185d;
+}
+
+
+
+.custm-mu-item-track{
+  border: 0.1px solid #323030;
+  padding: px;
+}
+
+.custm-mu-item-track:hover {
+  box-shadow: 0 2px 4px rgba(230, 221, 221, 0.1); 
+  transition: border-bottom 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }

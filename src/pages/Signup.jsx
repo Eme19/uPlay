@@ -287,7 +287,7 @@ const [showLoginModal, setShowLoginModal] = useState(false);
             
              
               value={form.state}
-              onChange={(value) => handleFormChange("state", value)}  staterror
+              onChange={(value) => handleFormChange("state", value)} 
               required
             >
               {states?.map((state) => (

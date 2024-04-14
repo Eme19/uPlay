@@ -16,9 +16,7 @@ function TrackNavProps({artistName}) {
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   const getAlbums = async () => {
@@ -29,7 +27,7 @@ function TrackNavProps({artistName}) {
       }
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching albums:", error);
+      console.error("Error fetching albums", error);
       setIsLoading(false);
     }
   };

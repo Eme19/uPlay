@@ -10,13 +10,11 @@ function TrackNavbar({ artistName, album, onAddToLibrary }) {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [isAddingToLibrary, setIsAddingToLibrary] = useState(false);
 
-  const storedToken = localStorage.getItem("authToken");
+ 
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   console.log("artistName nmmm", artistName)
@@ -29,11 +27,11 @@ function TrackNavbar({ artistName, album, onAddToLibrary }) {
 
       const userResponse = await api.get(`/library/username/${username}`);
       const userId = userResponse.data.user._id;
-      console.log("userId", userId);
       const userLibrary = userResponse.data.user.library;
-      const isAlbumAlreadyInLibrary = userLibrary.some(
-        (item) => item.album === albumId
-      );
+      const filteredLibrary = userLibrary.filter(item => item.album === albumId);
+
+const isAlbumAlreadyInLibrary = filteredLibrary.length > 0;
+
 
       console.log("isAlbumAlreadyInLibrary", isAlbumAlreadyInLibrary);
 

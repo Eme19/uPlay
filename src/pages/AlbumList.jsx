@@ -20,9 +20,7 @@ function AlbumList() {
   
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   const getAlbums = async () => {
@@ -131,7 +129,7 @@ function AlbumList() {
 
 
   return (
-    <div>
+    <div c>
       <div className="albumdetail-wrapper-list">
         {isLoading ? (
           <Loading />
@@ -163,8 +161,9 @@ function AlbumList() {
     </div>
             
               </div>
+<div className="mt-10">
 
-              {showAlbums && (
+{showAlbums && (
                 <Row gutter={16}>
                   {albums.map((album) => (
                     <AlbumDetail
@@ -189,6 +188,8 @@ function AlbumList() {
                   ))}
                 </Row>
               )}
+</div>
+            
             </>
           )
         )}

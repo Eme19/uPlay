@@ -30,9 +30,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   const deleteAlbum = async (albumId) => {
@@ -50,7 +48,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
 
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 ">
       {isLoggedIn ? (
         <div className="flex ml-6  ">
           <div className="albm-detal-hd-contnern ">
@@ -80,7 +78,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
                   footer={null}
                 >
                   <p className="mt-0 pt-3 text-sm text-center hover:text-left leading-relaxed text-stone-300 normal-case ">
-                    Under Production 🚧 keep in mind{" "}
+                    Under Production 🚧 keep in mind
                     <strong>add to liberay</strong> button is functional
                   </p>
                 </Modal>

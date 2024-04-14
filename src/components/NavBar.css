@@ -1,14 +1,9 @@
 .Nav-flex{
     display: flex;
     justify-content: space-between;
-    padding-left: 1rem;
+    padding-left: em;
 }
 
-.profile-page{
-    padding-left: 0.7rem;
-    padding-top: 0.3rem;
-
-}
 
 
 /* .navbar {
@@ -30,12 +25,13 @@
    */
 
 
+.py-cutm{
+  padding: 10px 10px 50px 10px;
+}
 
 
 
-
-   .navbar {
-    background-color: rgb(12, 12, 12) !important;
+   navbar {
   
     font-weight: 600;
     border-bottom: 0.1px solid #393333!important;

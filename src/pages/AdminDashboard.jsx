@@ -19,9 +19,7 @@ const AdminDashboard = () => {
   
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   useEffect(() => {

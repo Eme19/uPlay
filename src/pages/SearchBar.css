@@ -21,16 +21,21 @@ custom-inp-sty{
 }
 
 input::placeholder {
-  color: #999; /* Placeholder text color */
+  color: #999;
 }
 
 .ml-log-custm {
-  margin-inline-end: 3rem;
+  margin-top: 0.4rem;
+  margin-inline-end: rem;
+}
+
+.py-custom{
+  padding: 11px 110px 11px 30px ;
 }
 
 
 .ml-cutom{
-  margin-inline-start: 8rem;
+  margin-inline-start: 10rem;
 }
 
 .pt-custome{

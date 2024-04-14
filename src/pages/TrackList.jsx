@@ -300,13 +300,12 @@ function TrackList() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isAddingTrackToLibrary, setIsAddingTrackToLibrary] = useState(false);
   const [showMode, setShowMode] = useState(false);
+  const [addTracktoLibrary, setAddTracktoLibrary] = useState(false);
+  const [AllTracks, setAllTracks] = useState([]);
 
-  const storedToken = localStorage.getItem("authToken");
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   useEffect(() => {
@@ -370,45 +369,47 @@ function TrackList() {
     const randomIndex = Math.floor(Math.random() * tracks.length);
     setSelectedTrack(tracks[randomIndex]);
   };
-  const addTrackToLibrary = async (trackId) => {
-    setIsAddingTrackToLibrary(true);
-    try {
-      const userId = user._id;
 
-      const userLibrary = user.library || [];
+  // const handleAddToLibrary = async (trackId) => {
+  //   setAddTracktoLibrary(true);
 
-      const isTrackAlreadyInLibrary = userLibrary.some(
-        (item) => item.track === trackId
-      );
-      if (isTrackAlreadyInLibrary) {
-        message.warning("Track is already in your library");
-        return;
-      }
-      const response = await api.post(`${API_URL}/library/add/track`, {
-        userId,
-        trackId,
-      });
-      console.log("Added to library", response);
-      message.success("Added to library");
-    } catch (error) {
-      console.error("Error adding track to library:", error);
-      message.info("Track is already in your library");
-    } finally {
-      setIsAddingTrackToLibrary(false);
-    }
-  };
+  //   try {
+  //     const username = user.username;
+  //     const userResponse = await api.get(`/library/username/${username}`);
+  //     const userId = userResponse.data.user._id;
+  //     const userLibrary = userResponse.data.user.library;
 
-  const menuTrack = (track) => (
+  //     const isTrackAlreadyInLibrary = userLibrary.some(item => item.track === trackId);
+
+  //     if (isTrackAlreadyInLibrary) {
+  //       message.warning("Track is already in your library.");
+  //       return;
+  //     }
+
+  //     const response = await axios.post("/library/add/track", { userId, trackId });
+  //     if (response.status === 200) {
+  //       message.success("Added to library");
+  //     }
+
+  //   } catch (error) {
+  //     console.error("Error adding to library", error);
+  //     message.error("An error occurred while adding the track to your library.");
+  //   } finally {
+  //     setAddTracktoLibrary(false);
+  //   }
+  // };
+
+  const menu = (
     <Menu className="bg-custom leading-normal">
-      <Menu.Item key={`addToLibrary-${track._id}`} className="hover-custm">
+      <Menu.Item key="addToPlaylist" className="hover-custm">
         <Button
-          className="text-stone-300 text-sm hover-custm text-left"
           type="link"
-          loading={isAddingTrackToLibrary}
-          onClick={() => addTrackToLibrary(track._id)}
+          className="text-stone-300 text-sm hover-custm text-left "
+          onClick={() => setShowMode(true)}
         >
-          {isAddingTrackToLibrary ? "Adding..." : "Add to Library"}
+          Add to playlist
         </Button>
+        <MenuUnfoldOutlined className="text-xl mt-custm hover:red pl-1  text-stone-300 float-right" />
       </Menu.Item>
 
       <Menu.Item key="removeFromLibrary" className="hover-custm">
@@ -418,7 +419,7 @@ function TrackList() {
           className="text-stone-300 text-sm hover-custm text-left"
         >
           remove
-        </Button>{" "}
+        </Button>
         <CloseCircleOutlined className="text-xl mt-custm text-stone-300 float-right " />
       </Menu.Item>
 
@@ -429,7 +430,7 @@ function TrackList() {
           onClick={() => setShowMode(true)}
         >
           play next
-        </Button>{" "}
+        </Button>
         <RightSquareOutlined className="text-xl mt-custm text-stone-300 float-right" />
       </Menu.Item>
 
@@ -463,17 +464,6 @@ function TrackList() {
           favorite
         </Button>
       </Menu.Item>
-
-      <Menu.Item key="addToPlaylist" className="hover-custm">
-        <Button
-          type="link"
-          className="text-stone-300 text-sm hover-custm text-left "
-          onClick={() => setShowMode(true)}
-        >
-          Add to playlist
-        </Button>
-        <MenuUnfoldOutlined className="text-xl mt-custm hover:red pl-1  text-stone-300 float-right" />
-      </Menu.Item>
     </Menu>
   );
 
@@ -485,7 +475,7 @@ function TrackList() {
           <div>
             {isScrollingUp && (
               <Navbartrack artistName={artistName} showMode={showMode} />
-            )}{" "}
+            )}
           </div>
           <div>
             {album && (
@@ -513,52 +503,59 @@ function TrackList() {
 
             <div className="btn-wrapper">
               <div>
-                <button onClick={handlePlayButtonClick} className="rounded-lg">
+                <button
+                  onClick={handlePlayButtonClick}
+                  className="rounded-xl  hover:text-stone-300 bg-stone-400 shadow-xl shadow-neutral-300/20  hover:bg-stone-400 hover:shadow-lg transition-all duration-300 ease-in-out"
+                >
                   <PlayCircleOutlined className="alm-ply-icn" />
                   <span className="ply-icn ">Play</span>
                 </button>
               </div>
-              <div>
+              <div className="">
                 <button
                   onClick={handleShuffleButtonClick}
-                  className="rounded-lg"
+                  className="rounded-xl  hover:text-stone-300 bg-stone-400 shadow-xl shadow-neutral-300/20  hover:bg-stone-400 hover:shadow-lg transition-all duration-300 ease-in-out"
                 >
-                  <span className="ply-icn">Shuffle</span>
+                  <span className=" ply-icn ">Shuffle</span>
                 </button>
               </div>
             </div>
 
-            <ul className="track-list mt-3 cursor-pointer hover:text-stone-300">
-              {tracks.map((track, index) => (
-                <li
-                  key={track._id}
-                  onClick={() => handleTrackClick(track)}
-                  className="hover:text-stone-300"
-                >
-                  <div className="grid grid-flow-col justify-stretch cutom-track inline-block align-text-bottom  space-y--10">
-                    <div class="flex justify-normal hover:text-stone-300">
-                      <span className="track-number text-7xl pl-5 inline-block align-bottom text-stone-600 hover:text-stone-300">
-                        .
+            <div className="track-list mt-10 cursor-pointer hover:text-stone-300">
+           {tracks.map((track, index) => (
+                <div key={track._id} className="hover:text-stone-300  custm-mu-item-track ">
+                  <div className="grid grid-flow-col  mt-custome-traklst  cutom-track  ">
+                    <div class="flex justify-normal hover:text-stone-300 ">
+                      <span className="track-number text-5xl pl-5 mt-indctor  inline-block align-bottom text-stone-600 hover:text-stone-300">
+                        ·
                       </span>
-                      <div className="text-2xl tracking-tight hover:tracking-wide  pl-10 mt-10 hover:text-stone-300 text-stone-500 align-bottom capitalize">
-                
+                      <div
+                        onClick={() => handleTrackClick(track)}
+                        className="text-2xl tracking-tight  hover:tracking-wide  pl-5 mt-custm-trk-lst hover:text-stone-300 text-stone-500 align-bottom capitalize"
+                      >
                         {track.name}
                       </div>
-                      <div className="text-base tracking-tight hover:tracking-wide  pl-2 mt-10 pt-custm text-stone-300 inline-block align-bottom capitalize">
+                      <div className=" tracking-tight hover:tracking-wide  pl-2 mt-10 pt-custm text-stone-300 inline-block align-bottom capitalize">
                         {album.album_type}
                       </div>
                     </div>
 
-                    <div className=" justify-self-end mr-5 hover:text-pink-700">
-                      <Dropdown overlay={menuTrack(track)}>
-                        <Link to="" className="text-5xl text-stone-300 hover:text-pink-700">
+                    <div className="pt-1 justify-self-end mr-2  hover:text-pink-700">
+                      <Dropdown overlay={menu}>
+                        <Link
+                          to=""
+                          className="text-5xl float-end   hover:text-pink-700  text-stone-300  mr-3"
+                        >
                           ...
                         </Link>
                       </Dropdown>
                     </div>
                   </div>
-                </li>
-              ))}
+                </div>
+              ))} 
+
+
+
 
               {showMode && (
                 <Modal
@@ -573,7 +570,7 @@ function TrackList() {
                   </p>
                 </Modal>
               )}
-            </ul>
+            </div>
 
             {selectedTrack && (
               <AudioPlayer

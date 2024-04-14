@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import React, { useContext } from "react";
 import axios from "axios";
-import { Input, Avatar } from "antd"; // Import Avatar from antd
+import { Input, Avatar } from "antd"; 
 import { Link } from "react-router-dom";
 import avatarImage from "../assets/avatar.png";
 import "./ProfileImage.css";
@@ -48,17 +48,17 @@ function ProfileImage() {
       <div>
         {isLoggedIn && (
           <>
-            <div>
+            <div className="mr-3">
               {user && user.image ? (
-                <Link to={`/edit/profile`}>
+                <Link to={`/edit/profile`} >
                   <Avatar
-                    className="image-style"
+                    className="w-custm"
                     src={user.image}
                     alt={"profile_image"}
                     style={{
                       cursor: "pointer",
-                      width: "40px",
-                      height: "40px",
+                      width: "30px",
+                      height: "30px",
                     }}
                   />
                 </Link>
@@ -69,8 +69,8 @@ function ProfileImage() {
                     alt={"profile_image"}
                     style={{
                       cursor: "pointer",
-                      width: "45px",
-                      height: "45px",
+                      width: "35px",
+                      height: "35px",
                     }}
                   />
                 </Link>

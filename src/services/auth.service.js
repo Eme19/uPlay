@@ -4,19 +4,14 @@ const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
 
-const signUp = async ({ username, email, password, state, country, consent, }) => {
-  const response = await api.post('/auth/signup', { username, email, password, state, country, consent,});
+const signUp = async ({ username, email, password,  }) => {
+  const response = await api.post('/auth/signup', { username, email, password });
   return response.data;
 };
 
-const logIn = async ({ email, password }) => {
-  const response = await api.post('/auth/login', { email, password });
-  return response.data;
-};
 
-const logOut = () => {
-  
-};
+
+
 
 const getCurrentUser = async () => {
   const storedToken = localStorage.getItem('authToken');
@@ -36,8 +31,6 @@ const getCurrentUser = async () => {
 
 const authService = {
   signUp,
-  logIn,
-  logOut,
   getCurrentUser,
 };
 
