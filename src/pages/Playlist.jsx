@@ -1,14 +1,13 @@
-
-
-
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
-import { Card, Col, Avatar, Modal } from "antd";
+import { Card, Col, Avatar, Button } from "antd"; 
 import { PlusCircleOutlined } from "@ant-design/icons";
 import CreatePlaylist from "./CreatePlaylist";
 import "./Playlist.css";
+import "./AlbumDetails.css";
+
 
 function Playlist() {
   const [playlists, setPlaylists] = useState([]);
@@ -17,11 +16,14 @@ function Playlist() {
   );
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
 
+  const handleCloseModal = () => {
+    setShowPlaylistModal(false);
+  };
+
+
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   const { playlistId } = useParams();
@@ -39,8 +41,7 @@ function Playlist() {
   }, []);
 
   const handleCreatePlaylistSuccess = () => {
-    setShowPlaylistModal(false); // Close modal
-    // Optionally, you can fetch the updated playlist list here
+    setShowPlaylistModal(false);
     api
       .get("/api/playlist/all")
       .then((response) => {
@@ -60,53 +61,63 @@ function Playlist() {
       {isLoggedIn && (
         <div>
           <div>
-            <div className="edi-playlist-style ">
+            <div className="edi-playlist-style hover:rose-400 ">
               <Avatar
                 icon={<PlusCircleOutlined style={{ fontSize: "50px" }} />}
                 size={100}
                 style={{
-                  backgroundColor: "",
+                  backgroundColor: "transparent",
                   marginRight: "8px",
                   borderRadius: "8px",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
-                onClick={() => setShowPlaylistModal(true)} 
+                onClick={() => setShowPlaylistModal(true)}
               />
             </div>
 
-            <Modal
-              className="login-modal"
-              visible={showPlaylistModal}
-              onCancel={() => setShowPlaylistModal(false)}
-              footer={null}
-              bodyStyle={{
-                overflowY: 'auto',
-                maxHeight: 'calc(100vh - 200px)', 
-                scrollbarWidth: 'none',
-                '-ms-overflow-style': 'none', 
-              }}
-            >
-              <CreatePlaylist onSuccess={handleCreatePlaylistSuccess} /> 
-            </Modal>
+ 
+            <div className="modal mod-backgnd-bg  " style={{ display: showPlaylistModal ? "block" : "none", backgroundColor: "black !important"}}>
+              <div className="modal-dialog modal-dialog-centered text-start">
+                <div className="modal-content  text-xl  mod-backgnd text-start">
+                  <div className="modal-header text-pink-400 text-start">
+                    <h5 className="modal-title text-pink-400 text-start text-xl cursor-pointer transition duration-300 ease-in-out font-medium hover:text-pink-600" > Playlist</h5>
+             
+                  </div>
+                  <div className="modal-body text-pink-400 hover:stone-200">
+                    <CreatePlaylist onSuccess={handleCreatePlaylistSuccess} handleCloseModal={handleCloseModal} />
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div className="flex flex-wrap ml-7 ">
+      
+            <div className="flex flex-wrap gap-cusm-plylt cursor-pointer">
             {playlists.map((playlist) => (
-              <Col span={6} key={playlist._id}>
+              <div  key={playlist._id}>
                 <Link to={`/playlist/${playlist._id}`}>
-                  <Card
-                    hoverable
-                    title={playlist.name}
-                    style={{ margin: 10 }}
-                    cover={<img src={playlist.image} alt="" />}
-                  >
-                    <p>Description: {playlist.description}</p>
-                  </Card>
+                <div className="album-cover cursor-pointer">
+                <img src={playlist.image} alt="" />
+                  </div>
+                  <div className="album-info">
+                  <div className="album-title">
+                  <div id="li-styl-h" className=""> {playlist.name}</div>
+                    <div id="li-styl" className="text-slate-600 ">
+                    {playlist.description}
+                    </div>
+                  </div>
+                  </div>
                 </Link>
-              </Col>
+              </div>
+               
             ))}
           </div>
+          </div>
         </div>
+        </div>
+      
       )}
     </div>
   );

@@ -370,34 +370,6 @@ function TrackList() {
     setSelectedTrack(tracks[randomIndex]);
   };
 
-  // const handleAddToLibrary = async (trackId) => {
-  //   setAddTracktoLibrary(true);
-
-  //   try {
-  //     const username = user.username;
-  //     const userResponse = await api.get(`/library/username/${username}`);
-  //     const userId = userResponse.data.user._id;
-  //     const userLibrary = userResponse.data.user.library;
-
-  //     const isTrackAlreadyInLibrary = userLibrary.some(item => item.track === trackId);
-
-  //     if (isTrackAlreadyInLibrary) {
-  //       message.warning("Track is already in your library.");
-  //       return;
-  //     }
-
-  //     const response = await axios.post("/library/add/track", { userId, trackId });
-  //     if (response.status === 200) {
-  //       message.success("Added to library");
-  //     }
-
-  //   } catch (error) {
-  //     console.error("Error adding to library", error);
-  //     message.error("An error occurred while adding the track to your library.");
-  //   } finally {
-  //     setAddTracktoLibrary(false);
-  //   }
-  // };
 
   const menu = (
     <Menu className="bg-custom leading-normal">
@@ -481,12 +453,13 @@ function TrackList() {
             {album && (
               <div className="albm-wrapper-trk">
                 <div className="album-detail-continer-track">
-                  <div className="album-cover-track">
+                  <div className="album-cover-track ">
                     <img
                       src={album.image}
                       alt={album.name}
                       className="album-image"
                     />
+
                   </div>
 
                   <ul className="album-info">
@@ -505,7 +478,7 @@ function TrackList() {
               <div>
                 <button
                   onClick={handlePlayButtonClick}
-                  className="rounded-xl  hover:text-stone-300 bg-stone-400 shadow-xl shadow-neutral-300/20  hover:bg-stone-400 hover:shadow-lg transition-all duration-300 ease-in-out"
+                  className="rounded-xl bg-stone-200 shadow-xl shadow-neutral-300/20  hover:bg-stone-200 hover:shadow-xl transition-all duration-300 ease-in-out"
                 >
                   <PlayCircleOutlined className="alm-ply-icn" />
                   <span className="ply-icn ">Play</span>
@@ -514,7 +487,7 @@ function TrackList() {
               <div className="">
                 <button
                   onClick={handleShuffleButtonClick}
-                  className="rounded-xl  hover:text-stone-300 bg-stone-400 shadow-xl shadow-neutral-300/20  hover:bg-stone-400 hover:shadow-lg transition-all duration-300 ease-in-out"
+                  className="rounded-xl  bg-stone-200 shadow-xl shadow-neutral-300/20  hover:bg-stone-200 hover:shadow-lg transition-all duration-300 ease-in-out"
                 >
                   <span className=" ply-icn ">Shuffle</span>
                 </button>

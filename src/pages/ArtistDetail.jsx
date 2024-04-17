@@ -91,9 +91,6 @@ function ArtistDetail() {
     </div>
   ))}
 </div>
-
-      {/* <Link to={`/artist/${artistId}/tracks`}>View All Tracks</Link> */}
-   
     </div>
   );
 }

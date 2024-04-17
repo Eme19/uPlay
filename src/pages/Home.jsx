@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../context/theme.context";
 import { Link } from "react-router-dom";
-import { Button } from "antd";
+import { Button, Divider } from "antd";
 import {
   PlayCircleOutlined,
   BuildOutlined,
@@ -17,7 +17,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import "../main.css";
 import "./AlbumDetails.css";
-import { message } from "antd";
+
 
 
 
@@ -64,31 +64,23 @@ function Home() {
 
 
 
-  const handleRemoveItem = async (albumItemId) => {
-    try {
-      const itemType = "album"; 
-      const response = await api.delete(`/library/remove/${albumItemId}`);
-      if (response.status === 200) {
-        const updatedRecentlyAddedAlbums = recentlyAddedAlbums.filter(album => album._id !== albumItemId);
-        setRecentlyAddedAlbums(updatedRecentlyAddedAlbums);
-        message.success(`${itemType} removed successfully!`);
-      }
-    } catch (error) {
-      setError(error.response.data.error || "An error occurred");
-    } finally {
-      setLoading(false);
-    }
-  };
+
   
+
   return (
-    <>
+    <div className="">
       {isLoggedIn && (
-        <>
+        <div>
           <Navbar />
-          <div className="mt-20 pt-3">
+          <div className="pt-20">
        
           <MusicHome />
-          <div className="text-white text-xl  pt-3 pb-3 pl-3 transition duration-300  ease-in-out ">Recently Added</div>
+          <Divider style={{ borderColor: '#a8a29e' }} className="px-3  pt-3 opacity-70">
+  <div className="transition duration-300 animate-bounce ease-in-out text-pink-400  pt-3 pb-1 text-xl " style={{ paddingInlineEnd: '' }}>
+    Recently Added
+  
+  </div>
+</Divider>
           <div className="flex flex-wrap gap ml-6">
             {recentlyAddedAlbums.map((album) => (
               <div key={album._id} className="albm-detal-hd-contner">
@@ -101,7 +93,6 @@ function Home() {
                       <ul className="album-title">
                         <li id="li-styl-h" className="text-zinc-300 align-baseline text-left">{album.title} </li>
                         <li id="li-styl" className="text-zinc-300 align-baseline text-left" >
-                          {/* Render artist names here */}
                           {album.artist && album.artist.map((artist) => (
                             <span key={artist._id}>{artist.name}</span>
                           ))}
@@ -110,7 +101,6 @@ function Home() {
                       </ul>
                     </div>
                   </Link>
-                  <button className="mt-5 border-none rounded-md px-2 py-2 text-white"   onClick={() => handleRemoveItem(album._id)}>remove</button>
                 </div>
               </div>
               
@@ -119,7 +109,7 @@ function Home() {
           </div>
           </div>
          
-        </>
+        </div>
       )}
       {!isLoggedIn && (
         <div
@@ -166,7 +156,7 @@ function Home() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
 

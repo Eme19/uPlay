@@ -1,15 +1,18 @@
 
 
 
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Input, Button } from "antd";
+import { Input, Button, Menu } from "antd";
 import { CameraOutlined } from "@ant-design/icons";
 import { AuthContext } from "../context/auth.context";
+import "./CreatePlaylist.css"
+import Playlist from "./Playlist";
 
-const CreatePlaylist = ({ onSuccess, playlistId }) => {
+
+const CreatePlaylist = ({ onSuccess, playlistId, handleCloseModal }) => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [name, setName] = useState("");
@@ -17,13 +20,10 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
   const [tracks, setTracks] = useState([]);
   const { isLoggedIn } = useContext(AuthContext);
 
-  const storedToken = localStorage.getItem("authToken");
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   const navigate = useNavigate();
@@ -67,11 +67,13 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
           "Content-Type": "multipart/form-data",
         },
       });
-
       if (response.status === 201) {
         toast.success("Playlist created successfully.");
         navigate("/playlist");
         onSuccess();
+     setDescription("");
+   setImage(null);
+  setName("");
       } else {
         toast.error("Error creating playlist. Please try again.");
       }
@@ -81,14 +83,56 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
     }
   };
 
+
+
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
+
+
+ 
+
   return (
-    <div className="">
+    <div >
       {isLoggedIn && (
         <>
-          <h2>Create Playlist</h2>
-          <div className="ml-40 border-none mr-10 hello-e" style={{  backgroundColor: 'transparent' }}>
+
+
+<div className=" dropstart float-right" ref={dropdownRef} >
+      <button className="btn btn-dark dropdown-toggle" type="button" onClick={toggleDropdown}>
+        Create
+      </button>
+      <ul className={` dropdown-menu ${isOpen ? 'show' : ''} dropdown-menu-end`}>
+        <li><a href="#"   onClick={handleSubmit} className="dropdown-item  text-base text-center">Add To Playlist</a></li>
+        <li><a href="#" onClick={handleCloseModal}  className="dropdown-item text-base text-center">cancel</a></li>
+        <li><hr className="dropdown-divider"></hr></li>
+        <li><a href="/" className="dropdown-item text-base text-center">uPlay</a></li>
+      </ul>
+    </div>
+
+
+
+
+          <div className="pl-custm-plylst  border-none hello-e" style={{  backgroundColor: 'transparent' }}>
   <div style={{ display: 'flex', alignItems: 'center' }}   onClick={() => document.querySelector('input[name="image"]').click()}>
-    <div className="rounded-md " style={{ border: "1px solid #ccc",  padding: "70px", marginRight: "8px", display: 'flex', alignItems: 'center' }}>
+    <div className="rounded-md " style={{ border: "1px solid #ccc",  padding: "90px", marginRight: "10px", display: 'flex', alignItems: 'center' }}>
       <input
         className="px-10"
         type="file"
@@ -98,8 +142,7 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
         style={{ display: "none" }}
       />
       <CameraOutlined
-        style={{ fontSize: "30px", marginRight: '8px' }}
-      
+        style={{ fontSize: "30px", marginRight: '8px',  }}
       />
     </div>
  
@@ -108,16 +151,16 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
           <div>
 
               <div
-                className=""
+            
                 style={{
                   borderBottom: "1px solid #ccc",
                   backgroundColor: "transparent",
                 }}
               >
-                <div classNames="text-white">
+                <div className="text-stone-200">
             
                   <Input 
-                     className="text-white"
+                     className="text-stone-200"
                     type="text"
                     name="description"
                     value={description}
@@ -135,18 +178,19 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
               className=""
           
             >
-              <div   className=""
+              <div   className="mt-3 mb-3"
                 style={{
                   borderBottom: "1px solid #ccc",
                   backgroundColor: "transparent",
                 }}>
                 <Input
-                 className="text-white"
                   type="text"
                   name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   bordered={false}
+
+                style={{color: "#d4d4d4"}}
                 />
                
                
@@ -155,9 +199,9 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
 
             <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
   <div className="">
-    <label>Select Tracks</label>
+
     {tracks.map((track) => (
-      <div key={track._id} style={{ marginBottom: "8px" }}>
+      <div key={track._id} style={{ marginBottom: "8px", color: "#d4d4d4"}}>
         <span>
           {track.name} by {track.artist}
         </span>
@@ -168,24 +212,29 @@ const CreatePlaylist = ({ onSuccess, playlistId }) => {
   <div>
     {tracks.map((track) => (
       <div key={track._id} style={{ marginBottom: "8px" }}>
-        <Button
+        <button
+        className="text-3xl"
           type="primary"
           onClick={() => handleAddTrack(track._id)}
           disabled={selectedTracks.includes(track._id)}
+          style={{ border: "none !important", backgroundColor: "transparent !important"}}
         >
-          {selectedTracks.includes(track._id) ? "Added" : "Add"}
-        </Button>
+          {selectedTracks.includes(track._id) ? "√" : "+"}
+        </button>
       </div>
     ))}
   </div>
 </div>
 
-            <Button type="primary" onClick={handleSubmit}>
-              Create Playlist
-            </Button>
-   
+
+
+    
         </>
+
+
       )}
+
+
     </div>
   );
 };

@@ -35,7 +35,7 @@ form {
 }
 
 .input-lg.error {
-  border-color: red; /* Border color when there's an error */
+  border-color: red; 
 }
 
 .btn-container {

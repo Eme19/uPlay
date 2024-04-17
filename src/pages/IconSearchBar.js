@@ -40,9 +40,9 @@ function IconSearchBar() {
        throw new Error(`Request failed with status: ${response.status}`);
      }
      const data = response.data;
-     console.log("API response:", data); // Log API response
+     console.log("API response:", data); 
      setAlbums(data.data.albums.filter(item => item.type === 'album'));
-     setTracks(data.data.tracks); // Assuming there's a 'tracks' array in the response data
+     setTracks(data.data.tracks); 
      console.log("response.data.tracks",response.data.tracks); 
      setArtists(data.data.artists);
      setError(null);
@@ -137,11 +137,11 @@ function IconSearchBar() {
 
       {selectedTrack && (
         <AudioPlayer
-          key={selectedTrack._id} // Add a unique key to AudioPlayer
+          key={selectedTrack._id} 
           trackId={selectedTrack._id}
           trackName={selectedTrack.name}
           trackImage={selectedTrack.image ? selectedTrack.image : mp33}
-          autoPlay={true} // Start playing the selected track immediately
+          autoPlay={true}
         />
       )}
 

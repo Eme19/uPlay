@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -32,9 +32,39 @@ import IsAdminRoute from "./components/IsAdminRoute";
 import IconSearchBar from "./pages/IconSearchBar"
 import TrackPlayer from "./pages/TrackPlayer"
 import AdminDashboard from "./pages/AdminDashboard"
-// import Layout from './components/Layout';
+import index from './index';
 
 function App() {
+
+  useEffect(() => {
+    const currentTime = new Date();
+    const hours = currentTime.getHours();
+
+
+    const nightThresholdStart = 20; 
+    const nightThresholdEnd = 6;
+
+
+    const isNight = hours >= nightThresholdStart || hours < nightThresholdEnd;
+
+    const body = document.getElementById('appBody');
+    if (!body) {
+      console.error("Element with ID 'appBody' not found.");
+      return;
+    }
+
+    if (isNight) {
+      body.classList.add('dark');
+    } else {
+      body.classList.remove('dark');
+    }
+
+    return () => {
+     
+    };
+  }, []);
+
+
   return (
     <div className="App">
       {/* <Navbar /> */}

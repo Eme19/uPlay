@@ -6,7 +6,7 @@ import { LeftOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Menu, message } from "antd";
 import axios from "axios";
 
-function TrackNavbar({ artistName, album, onAddToLibrary }) {
+function TrackNavbar({ artistName, album, onAddToLibrary ,recently, handleRemoveItem}) {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [isAddingToLibrary, setIsAddingToLibrary] = useState(false);
 
@@ -62,6 +62,8 @@ const isAlbumAlreadyInLibrary = filteredLibrary.length > 0;
 
 
 
+   
+  
   const menu = (
     <Menu className="bg-custom leading-normal">
      <Menu.Item key="addToLibrary" className="hover-custm">
@@ -72,6 +74,16 @@ const isAlbumAlreadyInLibrary = filteredLibrary.length > 0;
           onClick={() => handleAddToLibrary(album._id)}
         >
           {isAddingToLibrary ? "Adding..." : "Add to Library"}
+        </Button>
+      </Menu.Item>
+
+      <Menu.Item key="removefromLibrary" className="hover-custm">
+        <Button
+          className="text-stone-300 text-sm hover-custm text-left "
+          type="link"
+          onClick={() => handleRemoveItem(recently._id)}
+        >
+        Delete from Library
         </Button>
       </Menu.Item>
     </Menu>
@@ -98,7 +110,7 @@ const isAlbumAlreadyInLibrary = filteredLibrary.length > 0;
           </div>
 
           <div className="mt-4">
-            <Link to="" className="mr-5 text-stone-300  hover:text-pink-700">
+            <Link to="" className="mr-5 text-lg text-stone-300  hover:text-pink-700">
               {artistName}
             </Link>
           </div>

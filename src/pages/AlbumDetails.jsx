@@ -53,7 +53,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
         <div className="flex ml-6  ">
           <div className="albm-detal-hd-contnern ">
           
-            <div className="album-detail-continer b  cursor-pointer">
+            <div className="album-detail-continer  cursor-pointer">
               <Link id="Link-style" to={`/album/${album._id}`}>
                 <div className="album-cover cursor-pointer">
                   <img alt="album cover" src={album.image} />

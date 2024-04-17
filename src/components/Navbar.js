@@ -58,7 +58,7 @@ function Navbar() {
             right: 0,
             zIndex: 50,
           }}
-          className="bg-transparent affix-album flex cursor-pointer justify-between py-cutm "
+          className="bg-gray-900  affix-album flex cursor-pointer justify-between py-cutm "
         >
           {isLoggedIn && (
             <>

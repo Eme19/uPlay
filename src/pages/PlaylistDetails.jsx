@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import AudioPlayer from "../components/AudioPlayer";
+import "./PlaylistDetails.css"
+
 
 const PlaylistDetails = () => {
   const { playlistId } = useParams();
@@ -16,9 +18,7 @@ const PlaylistDetails = () => {
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
-    headers: {
-      Authorization: `Bearer ${storedToken}`,
-    },
+    withCredentials: true,
   });
 
   useEffect(() => {
@@ -49,10 +49,17 @@ const PlaylistDetails = () => {
   };
 
   return (
-    <div>
-      <h2>Playlist Details</h2>
-      <p>Name: {playlist.name}</p>
-      <p>Description: {playlist.description}</p>
+    <div className="justify-center items-center">
+
+<div className=" hover-cust-play ">
+  <img src={playlist.image} alt="" class="hover-cust-play-img cursor-pointer object-cover object-center transition duration-500 ease-in-out transform  album-image" />
+  </div>
+
+  <div className="text-center pt-2">
+  <div className="text-2xl capitalize text-stone-200"> {playlist.name}</div>
+      <div className="text-lg capitalize text-pink-400"> {playlist.description}</div>
+  </div>
+     
 
       <h3>Tracks</h3>
       <div>

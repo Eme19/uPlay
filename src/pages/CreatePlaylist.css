@@ -11,9 +11,19 @@
     padding-inline-end: 1rem;
 }
 
+.cust-btn-crtply{
+
+}
+
 .btn-playlist{
     padding-top: 1.5rem;
     float: right;
+}
+
+.pl-custm-plylst{
+   padding-left: 108px;
+   padding-bottom: 30px;
+padding-top: 70px;
 }
 
 .hello-e{
@@ -22,3 +32,55 @@ margin-inline-end: 670rem!important;
 .hover-g:hover{
 background-color: transparent;
 }
+
+
+.dropdown-menu {
+    position: absolute;
+    background-color: #212529;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: .5rem 0;
+    transition: opacity .15s;
+  }
+  
+  .dropdown-menu-dark {
+    color: #d4d4d4;
+  }
+  
+  .dropdown-item {
+    color: #d4d4d4;
+    background-color: transparent;
+    padding: .25rem 1rem;
+    clear: both;
+    font-weight: 400;
+    text-align: inherit;
+    white-space: nowrap;
+    border: 0;
+    display: block;
+    width: 100%;
+    line-height: 1.5;
+  }
+  
+show{
+float: left;
+}
+
+  .dropdown-item.active, .dropdown-item:active {
+    color: #d4d4d4;
+    text-decoration: none;
+    background-color: rgba(255,255,255,.125);
+  }
+
+
+  .dropdown-item:hover{
+    color: #d4d4d4;
+    text-decoration: none;
+    background-color: black!important;
+  }
+  
+  .dropdown-divider {
+    height: 0;
+    margin: .5rem 0;
+    overflow: hidden;
+    border-top: 1px solid rgba(0,0,0,.125);
+  }
+  

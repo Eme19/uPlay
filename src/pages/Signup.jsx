@@ -118,7 +118,6 @@ const [showLoginModal, setShowLoginModal] = useState(false);
       return;
     }
   
-    // Check if country and state are selected
     if (form.country === "COUNTRY") {
       setCountrierror("Please select a country and state.");
       return;
@@ -271,12 +270,6 @@ const [showLoginModal, setShowLoginModal] = useState(false);
                 </Option>
               ))}
 
-{/* {Array.isArray(countries) && countries.map((country) => (
-  <Option key={country} value={country}>
-    {country}
-  </Option>
-))} */}
-
             </Select>
             {countrierror && <p style={{ color: "red" }}>{countrierror}</p>}
           </div>
@@ -322,9 +315,6 @@ const [showLoginModal, setShowLoginModal] = useState(false);
         
       </form>
       )}
-      {/* <p>
-        Already have an account? <Link to="/login">Login here!</Link>
-      </p> */}
 
       <div >
       <Modal

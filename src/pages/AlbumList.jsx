@@ -129,7 +129,7 @@ function AlbumList() {
 
 
   return (
-    <div c>
+    <div>
       <div className="albumdetail-wrapper-list">
         {isLoading ? (
           <Loading />
@@ -161,7 +161,7 @@ function AlbumList() {
     </div>
             
               </div>
-<div className="mt-10">
+<div className="pt-4">
 
 {showAlbums && (
                 <Row gutter={16}>

@@ -100,19 +100,16 @@ width: 80%!important;
 
 
 .ant-modal-content {
-  background-color:black!important; /* Set your desired background color */
+  background-color:black!important; 
   color: #864646 !important;
 }
 
 .ant-modal {
-  /* min-width: 300px !important;
-  min-height: 200px !important; */
   color: #928b8b !important;
   border-top: 1px solid #615f5f !important ;
   border-left: 1px solid #615f5f!important ;
   border-right: 1px solid  #615f5f!important ;
   border-bottom: 1px solid  #615f5f !important ;
-  /* border-radius: 20px !important; */
   background-color:black !important;
 }
 
@@ -127,7 +124,7 @@ margin-top: 5.3rem;
 
 
 .ant-modal-header {
-  background-color:rgb(39, 37, 37) !important; /* Set your desired background color */
+  background-color:rgb(39, 37, 37) !important;
   color: #951212 !important;
 }
 
@@ -224,13 +221,13 @@ margin-top: 5.3rem;
   font-size: 30px !important;
 }
 
-/* Style the checkbox */
+
 .chek-bx .ant-checkbox {
   background-color: rgb(43, 114, 114) !important;
   border: none;
 }
 
-/* Style the checked state of the checkbox */
+
 .chek-bx .ant-checkbox-checked .ant-checkbox-inner {
   background-color: black !important;
   border-top: 1px solid #696666;
@@ -247,11 +244,7 @@ margin-top: 5.3rem;
   border-bottom: 1px solid #b7b6b6 !important;
 }
 
-/* 
-.lnk-btn-lgn{
-  text-decoration: none;
-  
-} */
+
 
 @keyframes breathe {
   0% {
@@ -297,11 +290,11 @@ margin-top: 5.3rem;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease; /* Transition for smooth effect */
+    box-shadow 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
   transition: background-color 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease; /* Transition for smooth effect */
+    box-shadow 0.3s ease; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -330,7 +323,7 @@ margin-top: 5.3rem;
   background-color: black !important;
 }
 
-/* Target the selected item in the dropdown menu */
+
 .custom-select .ant-select-item-option-selected {
   background-color: black !important;
 }

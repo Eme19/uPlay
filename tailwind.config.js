@@ -85,7 +85,6 @@
 
 
 
-
 module.exports = {
   content: [
     "./pages/**/*.{js,jsx}",
@@ -113,17 +112,9 @@ module.exports = {
       // Custom day and night mode configuration
       darkSelector: '.dark-mode',
       darkMode: 'class',
-      theme: {
-        colors: {
-          // Define your dark mode colors here
-          background: 'var(--color-background)',
-          text: 'var(--color-text)',
-          // Add more dark mode colors as needed
-        },
-      },
     },
   },
   plugins: [
-      require('tailwindcss'),
+    require('tailwindcss'),
   ],
 };

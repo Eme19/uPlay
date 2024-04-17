@@ -13,8 +13,7 @@
     cursor: pointer;
   }
 
-  button:hover {
-    background-color: #d32f2f;
+  bbutton:hover {
     color: white;
   }
 
@@ -43,18 +42,17 @@
   }
 
   #li-styl {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-left: 2px;
-    margin-top: 4px;
-    margin-bottom: -15px;
+  color:  #be185d;
   }
 
   #li-styl-h {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-left: 2px;
     font-weight: 600px;
-    color: #e8e8e8;
-    margin-top: 5px;
+    color:  #d4d4d4;
+   padding-top: 0.2rem;
   }
 
   albm-detal-wrapper {

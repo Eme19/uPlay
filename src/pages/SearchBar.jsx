@@ -49,52 +49,7 @@ function SearchBar({
     },
   });
 
-  // const fetchData = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await api.get(
-  //       `/api/search?term=${searchInput}&random=${Math.random()}`
-  //     );
-  //     if (response.status !== 200) {
-  //       throw new Error(`Request failed with status: ${response.status}`);
-  //     }
-  //     const data = response.data;
-  //     console.log("API response:", data); // Log API response
-  //     setAlbums(data.data.albums.filter(album => album.type === 'album'));
-  //     setTracks(data.data.albums.filter(album => album.type === 'track'));
-  //     setArtists(data.data.artists);
-  //     setError(null);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //     setError(error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (searchInput) {
-  //     fetchData();
-  //   } else {
-  //     setAlbums([]);
-  //     setTracks([]);
-  //     setArtists([]);
-  //   }
-  // }, [searchInput]);
-
-  // const handleKeyDown = (event) => {
-  //   if (event.key === "Enter") {
-  //     search();
-  //     setShowAlbums(true)
-  //   }
-  // };
-
-  // const search = () => {
-  //   console.log("Search for: " + searchInput);
-  //   setShowAlbums(false)
-  // };
-
-
+  
 
   return (
     <div className="mt-10 ml-5">

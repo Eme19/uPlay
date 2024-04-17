@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import SongsDetailsPage from "./SongsDetailsPage";
 import axios from "axios";
 import { message } from "antd";
-
-
+import SongNavbar from "./navbar/SongNavbar";
+import "./Songs.css"
 
 function Songs() {
   const [allSongs, setAllSongs] = useState([]);
-
+ 
+  
   useEffect(() => {
     const api = axios.create({
       baseURL: process.env.REACT_APP_API_URL,
@@ -32,8 +33,9 @@ function Songs() {
   }, []);
 
   return (
-    <div>
-
+    <div className="pt-cust-song">
+      
+<SongNavbar/>
 {allSongs.map((song) => {
   return (
     <SongsDetailsPage 

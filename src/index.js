@@ -19,10 +19,10 @@ const toggleDarkMode = (e) => {
   }
 };
 
-// Add event listener for changes in the system's color scheme preference
+
 prefersDarkScheme.addListener(toggleDarkMode);
 
-// Initial check to set initial theme based on user's preference
+
 toggleDarkMode(prefersDarkScheme);
 
 

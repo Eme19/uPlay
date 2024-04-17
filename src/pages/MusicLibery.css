@@ -10,7 +10,7 @@
   }
   .custom-menu-item {
     border: 0.1px solid #696464;
-    padding: 10px 20px 10px 20px;
+    padding: 0px 20px 0px 20px;
    
   }
 
@@ -21,10 +21,10 @@
   }
 
   .text-4xl-custom{
-    font-size: 2.8rem;
+    font-size: 1.7rem;
   }
   .text-4xl-custom-md{
-    font-size: 2.2rem;
+    font-size: 1.3rem;
   }
   @keyframes breathe {
     0% {
@@ -39,8 +39,8 @@
     }
   }
   
-  /* Apply the breathe animation to elements with the .hi-animation class */
+  
   .hi-animation {
-    animation: breathe 7s infinite ease-in-out!important; /* Adjust the duration and other parameters as needed */
+    animation: breathe 7s infinite ease-in-out!important; 
   }
 }

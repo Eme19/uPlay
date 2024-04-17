@@ -46,7 +46,7 @@ function ProfileImage() {
         api
           .put(`/api/users`, { _id: user._id, image: response.data.image })
           .then(() => {
-            // Set the uploading state to false after the image upload is complete
+     
             setUploading(false);
           })
           .catch((err) => {

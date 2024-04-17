@@ -39,8 +39,8 @@ justify-content: space-around;
 
   .album-cover-track{
     border-radius: 4%;
-    width: 280px;
-    height: 300px;
+    width: 300px;
+    height: 340px;
     overflow: hidden;
   }
 
@@ -129,13 +129,13 @@ padding-top: 80px;
   margin-right: 5px; 
   vertical-align: middle; 
   font-size: 17px;
-  color:  #be185d;
+  color:#be185d;
 }
 
 .ply-icn {
   vertical-align: middle; 
   font-weight: 600;
-  color:   #be185d;
+  color:#be185d;
 }
 
 
@@ -149,3 +149,4 @@ padding-top: 80px;
   box-shadow: 0 2px 4px rgba(230, 221, 221, 0.1); 
   transition: border-bottom 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
 }
+
