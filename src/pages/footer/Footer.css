@@ -1,0 +1,52 @@
+
+
+
+
+.custm-styl-foter{
+padding-left: 1rem;
+padding-right: 2rem;
+}
+
+
+.custon-color-foter {
+  color: #a3a3a3;
+  transition: color 0.3s ease; 
+}
+
+.custon-color-foter:hover {
+  color: #be185d;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: rgba(17, 17, 17, 1);
+  transition: background-color 0.3s ease;
+  border-top: 1px solid rgb(28, 27, 27);
+}
+
+
+.transparent-bg {
+  background-color:rgba(17, 17, 17, 0.8); 
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-right: 10px; 
+}
+
+footer ul li:last-child {
+  margin-right: 0;
+}
+
+
+
+
+

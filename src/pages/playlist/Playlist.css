@@ -1,0 +1,49 @@
+.edi-playlist-style{
+    padding-top: rem;
+    padding-left: 0.7rem;
+    padding-left: 1.9rem;
+    padding-bottom: 0.1rem;
+}
+
+.edi-playlist-search{
+    padding-top: 4rem;
+    padding-left: 0.7rem;
+    padding-left: 1.9rem;
+padding-bottom: -20rem;
+}
+
+
+.search-pst{
+padding-top: -40rem;
+}
+
+edi-playlist-style:hover{
+    color: #be185d;
+}
+
+.mod-backgnd-bg {
+    background-color:black!important;
+}
+
+
+.mod-backgnd {
+    background-color: #18181b!important;
+}
+
+.gap-cusm-plylt{
+    gap: 25px;
+}
+
+.plyst-title{
+ padding-top: 22px;
+ padding-left: 0.8rem;
+}
+
+.pt-cstm-srch{
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.playst-search-b{
+    padding-bottom: 2rem;
+}

@@ -1,0 +1,37 @@
+.Nav-flex{
+    display: flex;
+    justify-content: space-between;
+    padding-left: em;
+}
+
+.prof-Img-custm {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.w-cust{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.py-cutm{
+  background-color: rgba(17, 17, 17, 0.9);
+
+}
+
+.pt-custm-prfl{
+  padding-top: 1.2rem;
+}
+  
+    .navbar a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: rgb(160, 60, 150);
+    }
+  
+    .navbar :hover {
+      color: rgb(250, 70, 232);
+    }
+  

@@ -1,0 +1,54 @@
+
+
+.artist-card{
+display: flex;
+justify-content: space-between;
+padding-top: 10px;
+padding-bottom: 10px;
+border: 0.1px solid rgb(43, 43, 43);
+}
+
+
+.artist-image-cover{
+    border-radius: 4%;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.artist-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.iconstyle{
+    color: #85073b;
+}
+
+.art-n{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.iconRIGHT{
+float: right;
+font-size: 18px;
+cursor: pointer;
+}
+
+
+.iconRIGHT:hover{
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    }
+
+.srch-pstn{
+margin-top: 1rem;
+margin-bottom: -1rem;
+}
+
+.custm-art-up-dwm{
+    padding-top: 5rem;
+}

@@ -1,0 +1,50 @@
+@media only screen and (max-width: 767px) {
+  .menu-style {
+    font-size: 1rem;
+    text-decoration: none;
+  }
+
+  .custom-menu .ant-menu-item {
+    border-bottom: 0.2px solid #ccc;
+    padding-bottom: 4px;
+  }
+  .custom-menu-item {
+     /* border: 0.1px solid #696464; */
+    padding: 5px 20px 5px 20px;
+    border-bottom: 0.12px solid #ccc;
+
+  }
+
+.pl-pr-custm{
+padding-left: 4.5rem;
+padding-right: 4.5rem;
+}
+
+  .green {
+    background-color: black !important;
+  }
+
+  .text-4xl-custom{
+    font-size: 1.7rem;
+  }
+  .text-4xl-custom-md{
+    font-size: 1.3rem;
+  }
+  @keyframes breathe {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  .hi-animation {
+    animation: breathe 7s infinite ease-in-out!important; 
+  }
+}
