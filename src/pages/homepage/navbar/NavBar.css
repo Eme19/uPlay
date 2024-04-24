@@ -1,0 +1,120 @@
+.Nav-flex{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.prof-Img-custm {
+  width: 35px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.w-cust{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.py-cutm-hme{
+  background-color: rgba(17, 17, 17, 0.9);
+  padding-left: 15px;
+padding-bottom: 8px;
+
+}
+
+  
+    .navbar a {
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: rgb(160, 60, 150);
+    }
+  
+    .navbar :hover {
+      color: rgb(250, 70, 232);
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    app-container {
+      display: flex;
+      height: 100vh;
+    }
+    
+    .main-content {
+      flex: 1;
+      background-color: #f0f0f0;
+      transition: margin-right 0.5s ease;
+      overflow-x: hidden;
+    }
+    
+    .sidebar {
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      background-color: #090909;
+
+      overflow-x: hidden;
+      transition: width 0.5s ease;
+    }
+    
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+    }
+    
+    .sidebar li {
+      padding: 10px;
+      color: white;
+    }
+    
+    .sidebar.open {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .shift-content {
+      margin-right: 250px; 
+    }
+    
+    .toggle-button {
+      position: fixed;
+      top: 8px;
+      right: 15px;
+      z-index: 999;
+    }
+    
+    .toggle-button-cancel{
+
+      padding-top: 10px;
+      padding-right: 20px;
+     
+    }
+
+    .custm-ul-hm ul li{
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .custm-ul-hm{
+    padding-top: 50px;
+    padding-left: 20px;
+    }

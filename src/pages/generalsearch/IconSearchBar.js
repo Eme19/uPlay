@@ -44,8 +44,9 @@ function IconSearchBar() {
         throw new Error(`Request failed with status: ${response.status}`);
       }
       const data = response.data;
+      
       console.log("API response:", data);
-      setAlbums(data.data.albums.filter((item) => item.type === "album"));
+      setAlbums(data.data.albums);
       setTracks(data.data.tracks);
       console.log("response.data.tracks", response.data.tracks);
       setArtists(data.data.artists);
@@ -70,6 +71,7 @@ function IconSearchBar() {
 
   const search = () => {
     console.log("Search for: " + searchInput);
+    fetchData();
   };
 
   function formatDate(timestamp) {

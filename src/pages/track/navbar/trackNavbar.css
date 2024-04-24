@@ -16,3 +16,14 @@ height: 4rem;
 background-color: #111111!important;
 }
 
+
+overlay-navbar {
+  background: linear-gradient(
+    to bottom,
+  
+    #111111,   
+    #172554, 
+    #111111      
+  );
+ 
+}

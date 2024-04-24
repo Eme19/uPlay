@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./pages/navbar/Navbar";
+import Navbar from "./pages/homepage/navbar/Navbar";
 import Home from "./pages/homepage/Home";
 import Signup from "./pages/signup/Signup";
 import Login from "./pages/login/Login";
@@ -28,12 +28,15 @@ import ProfileImage from "./pages/profile/ProfileImage";
 import "font-awesome/css/font-awesome.min.css";
 import EditProfileImage from "./pages/profile/EditProfileImage";
 import IsAdminRoute from "./context/IsAdminRoute";
-import IconSearchBar from "./pages/generalsearch/IconSearchBar";
 import TrackPlayer from "./pages/track/TrackPlayer";
 import AdminDashboard from "./pages/adminpage/AdminDashboard";
-import index from "./index";
+
+import { AuthContext } from "./context/auth.context";
+import IconSearchBar from "./pages/generalsearch/IconView";
 
 function App() {
+  const { user, isLoggedIn } = useContext(AuthContext);
+
   useEffect(() => {
     const currentTime = new Date();
     const hours = currentTime.getHours();
@@ -59,10 +62,12 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App " id="appBody">
+   
+   
       <Routes>
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/search/:albumId" element={<IconSearchBar />} />
+        <Route path="/all/search/" element={<IconSearchBar />} />
         <Route path="/artist/:artistId/albums" element={<ArtistAlbums />} />
         <Route path="/edit/profile" element={<EditProfileImage />} />
         <Route path="/edit/artist/:artistId" element={<EditArtist />} />

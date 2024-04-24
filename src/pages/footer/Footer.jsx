@@ -19,8 +19,8 @@ const Footer = () => {
 
   return (
     <footer className={scrollUp ? 'transparent-bg' : ''}>
-      <div className='flex justify-between cursor-pointer custm-styl-foter text-center'>
-        <div className='pt-2 custon-color-foter'><a href="#">
+      <div className=' capitalize flex justify-between cursor-pointer custm-styl-foter text-center'>
+        <div className=' custon-color-foter'><a href="#">
             <div><PlayCircleOutlined className='text-2xl'/> </div>
             <div className='text-sm custm-ty'>Listen Now</div>
           </a>
@@ -28,25 +28,25 @@ const Footer = () => {
 
 
 
-        <div className='pt-2 custon-color-foter'><a href="#">
+        <div className='custon-color-foter'><a href="#">
             <div><AudioOutlined  className='text-2xl'/> </div>
             <div  className='text-sm'>Live</div>
           </a>
         </div>
 
-        <div className='pt-2 custon-color-foter'><a href="#">
+        <div className=' custon-color-foter'><a href="#">
             <div><CompassOutlined  className='text-2xl'/> </div>
             <div className='text-sm'>Browser</div>
           </a>
         </div>
        
-        <div className='pt-2 custon-color-foter'><a href="#">
+        <div className='custon-color-foter'><a href="#">
             <div><BookOutlined  className='text-2xl'/> </div>
             <div  className='text-sm'>Library</div>
           </a>
         </div>
   
-        <div className='pt-2 custon-color-foter'><a href="#">
+        <div className='custon-color-foter'><a href="/all/search/">
             <div><SearchOutlined  className='text-2xl '/> </div>
             <div  className='text-sm '>Search</div>
           </a>

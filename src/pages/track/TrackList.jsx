@@ -293,6 +293,7 @@ import {
 } from "@ant-design/icons";
 import Login from "../login/Login";
 
+
 function TrackList() {
   const { albumId } = useParams();
   const [album, setAlbum] = useState(null);
@@ -452,16 +453,19 @@ function TrackList() {
               <Navbartrack artistName={artistName} showMode={showMode} />
             )}
           </div>
-          <div>
+       
+          <div className="overlay">
+            <div >
             {album && (
-              <div className="albm-wrapper-trk">
+              <div className="bg-fixed  albm-wrapper-trk">
                 <div className="album-detail-continer-track">
-                  <div className="album-cover-track ">
+                  <div className="album-cover-track  opacity-80">
                     <img
                       src={album.image}
                       alt={album.name}
-                      className="album-image"
+                      className="album-image  "
                     />
+                 
                   </div>
 
                   <ul className="album-info">
@@ -476,7 +480,7 @@ function TrackList() {
               </div>
             )}
 
-            <div className="btn-wrapper">
+<div className="btn-wrapper">
               <div>
                 <button
                   onClick={handlePlayButtonClick}
@@ -495,12 +499,16 @@ function TrackList() {
                 </button>
               </div>
             </div>
+            </div>
+        
 
-            <div className="track-list mt-10 cursor-pointer hover:text-stone-300">
+          
+
+            <div className="track-list mt-0 cursor-pointer hover:text-stone-300">
               {tracks.map((track, index) => (
                 <div
                   key={track._id}
-                  className="hover:text-stone-300  custm-mu-item-track "
+                  className="hover:text-stone-300 hover-bg-cstm"
                 >
                   <div className="grid grid-flow-col  mt-custome-traklst  cutom-track  ">
                     <div class="flex justify-normal hover:text-stone-300 ">

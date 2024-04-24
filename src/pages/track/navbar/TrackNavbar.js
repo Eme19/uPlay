@@ -99,9 +99,9 @@ function TrackNavbar({
             left: 0,
             right: 0,
             zIndex: 50,
-            backgroundColor: "rgba(17, 17, 17, 0.9) !important",
+            
           }}
-          className="affix-album flex cursor-pointer justify-between"
+          className="overlay-navbar  affix-album flex cursor-pointer justify-between"
         >
           <div key="profile" className="navbar-menu-item ml-4 mt-3">
             <Link to="/album/list" className="mr-5 ">
