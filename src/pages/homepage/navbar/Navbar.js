@@ -5,7 +5,7 @@ import { AuthContext } from "../../../context/auth.context";
 import logoImage from "../../../assets/logo1.png";
 import "./NavBar.css";
 import Login from "../../login/Login";
-import { MenuOutlined ,CloseOutlined, SearchOutlined  } from '@ant-design/icons';
+import { MenuOutlined ,CloseOutlined,CustomerServiceOutlined, SearchOutlined, CaretRightOutlined   } from '@ant-design/icons';
 import ProfileImage from "../../profile/ProfileImage";
 
 
@@ -67,14 +67,14 @@ function Navbar() {
             left: 0,
             right: 0,
             zIndex: 50,
-            backgroundColor: "rgba(17, 17, 17, 0.9)",
+            backgroundColor: "rgba(20, 17, 17, 0.9)",
           }}
           className="flex cursor-pointer justify-between py-cutm-hme "
         >
           {isLoggedIn && (
             <>
              
-                <div className="prof-Img-custm mt-1 ">
+                <div className="prof-Img-custm  ">
                 <a href="#">
                     <img className="w-cust " alt="logo" src={logoImage} />
                   </a>
@@ -83,12 +83,25 @@ function Navbar() {
             </>
           )}
 
-            
-        {/* <div className='custon-color-foter'><a href="#">
-            <div><SearchOutlined  className='text-2xl '/> </div>
-            <div  className='text-sm '>Search</div>
-          </a>
-        </div> */}
+<div className="alert alert-dark cust-alert bg-black " role="alert">
+<div className="flex">
+  <div>
+  <span className="text-white " style={{ marginInlineEnd: "6rem", fontSize: "16px"}}>
+  <CustomerServiceOutlined style={{fontSize: "18px"}}/>
+  </span>
+
+  <span style={{marginInlineEnd: "6rem", fontSize: "16px"}} className="font-medium text-white"> uPlay</span>
+  </div>
+
+ 
+  <span> 
+  <CaretRightOutlined style={{fontSize: "22px",  borderRadius: "1rem"}} className="text-white bg-pink-600"/> 
+  </span>
+
+</div>
+</div>
+
+
 
 
           <div className="pt-custm-prfl  ">

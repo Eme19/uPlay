@@ -1,4 +1,4 @@
-.soundWave-container{
+/* .soundWave-container{
     position: fixed;
     top: 0;
     left: 0;
@@ -83,3 +83,65 @@ animation: audio-wave 2.2s infinite ease-in-out;
     left: 55px;
     animation-delay: 1s;
 }
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .frame-image {
+    position: relative;
+  }
+  
+  img {
+    width: 200px;
+  }
+  
+  .loading-dots {
+    display: flex;
+  
+  }
+  
+  .dot{
+
+    width: 13px;
+    height: 13px; 
+    border-radius: 50%;
+    background-color: #fefdfd;
+    margin: 0 5px; 
+    opacity: 0;
+    animation: pulse 1s infinite alternate;
+
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+   

@@ -100,6 +100,27 @@ Link {
   text-align: center;
 }
 
+
+#li-styl-hme {
+
+  font-size: 1rem;
+  margin-left: 2px;
+  font-weight: 600px;
+
+ padding-top: 0.2rem;
+}
+
+#li-styl-h-hme {
+  font-size: 0.9rem;
+  margin-left: 2px;
+}
+
+
+.cst-home{
+  background-color: #111111;
+padding-bottom: 2rem;
+}
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {

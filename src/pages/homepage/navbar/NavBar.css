@@ -8,6 +8,7 @@
   width: 35px;
   height: 40px;
   overflow: hidden;
+  margin-top: 0.4rem;
 }
 
 .w-cust{
@@ -16,10 +17,19 @@
   object-fit: cover;
 }
 
+.cust-alert{
+padding: 1px 15px 7px 15px;
+margin-top: 0.8rem;
+border: transparent;
+
+
+margin-right: 2rem;
+}
+
 .py-cutm-hme{
-  background-color: rgba(17, 17, 17, 0.9);
+  background-color: transparent;
   padding-left: 15px;
-padding-bottom: 8px;
+padding-bottom: 1px;
 
 }
 

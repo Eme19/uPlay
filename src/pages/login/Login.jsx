@@ -6,6 +6,7 @@ import { message, Switch, Divider } from "antd";
 import "./Login.css";
 import logoImage from "../../assets/logo3.png";
 import Signup from "../signup/Signup";
+import Loading from "../loading/Loading";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -57,7 +58,7 @@ function Login() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><Loading/></div>;
   }
 
   return (
@@ -70,8 +71,12 @@ function Login() {
       </div>
 
 <div className="text-3xl custm-title-lgn font-bold">Sign in to uPlay </div>
+
+<div className="div-wrapper">
 <Divider  
                        className="Divider-cutm "/>
+</div>
+
 
 <form onSubmit={handleLoginSubmit}>
   <div className="input-container">
@@ -104,33 +109,45 @@ function Login() {
       <Switch
         checked={rememberMe}
         onChange={checked => setRememberMe(checked)}
+        className={rememberMe ?
+           'style' : 'custom-switch'}
       />
-      <span style={{ marginLeft: 8 }} >Remember Me</span>
+      <span style={{ marginLeft: 8 ,}} >Remember Me</span>
     </div>
 
-    <div className="btn-container">
-      <button type="submit" className="button-lg">
-        Login
-      </button>
+    <div className="btn-container ">
+    <button type="submit" className="button-lg bg-pink-600 text-black transition-transform duration-150 ease-out hover:scale-105">
+  Login
+</button>
+
     </div>
 
-    <div className="btn-container">
-      <Link to="/signup">
-        <button type="submit" className="button-lg-signp">
-          Sign up
-        </button>
-      </Link>
-    </div>
+  
   </div>
 </form>
 
 
-      <div>Forgot password</div>
+      <div className="text-center pt-10  font-medium">
+        <a href="#" className="underline decoration-solid">
+        Forgot your password?
+          </a>
+          </div>
 
       <div>
-        <span>Don't have account?</span>
+        <div className="text-center sgnup-act font-medium">
 
-      <p>Sign up for Uplay</p>
+        <span>Don't have an account?</span>
+        </div>
+       
+
+     
+      <div className="text-center pt-4">
+      <Link to="/signup">
+        <button type="submit" className=" font-medium underline decoration-solid">
+        Sign up for Uplay
+        </button>
+      </Link>
+    </div>
       </div>
     </div>
   );

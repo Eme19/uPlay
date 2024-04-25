@@ -292,7 +292,7 @@ import {
   RightSquareOutlined,
 } from "@ant-design/icons";
 import Login from "../login/Login";
-
+import Footer from "../footer/Footer";
 
 function TrackList() {
   const { albumId } = useParams();
@@ -564,6 +564,8 @@ function TrackList() {
                 autoPlay={true}
               />
             )}
+
+            <Footer/>
           </div>
         </>
       ) : (

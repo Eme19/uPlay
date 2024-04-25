@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/auth.context";
 import "./trackNavbar.css";
-import { LeftOutlined } from "@ant-design/icons";
+import { LeftOutlined , SearchOutlined} from "@ant-design/icons";
 import { Button, Dropdown, Menu, message } from "antd";
 import axios from "axios";
 import Login from "../../login/Login";
+
 
 function TrackNavbar({
   artistName,
@@ -99,32 +100,41 @@ function TrackNavbar({
             left: 0,
             right: 0,
             zIndex: 50,
-            
+
           }}
-          className="overlay-navbar  affix-album flex cursor-pointer justify-between"
+          className="affix-track-cst flex cursor-pointer justify-between"
         >
-          <div key="profile" className="navbar-menu-item ml-4 mt-3">
-            <Link to="/album/list" className="mr-5 ">
-              <LeftOutlined className="text-2xl custm-color" />
-              <span></span>
+          <div  className=" ml-3 mt-2">
+            <Link to="/album/list" className="flex">
+              <div>
+              <LeftOutlined className="text-2xl custm-color text-white" />
+              </div>
+             
+            <div className="pt-2">
+            <span className="text-md ">Albums</span>
+            </div>
             </Link>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-3">
             <Link
               to=""
-              className="mr-5 text-lg text-stone-300  hover:text-pink-700"
+              className="mr-5 text-lg text-pink-600  hover:text-pink-700"
             >
               {artistName}
             </Link>
           </div>
 
-          <div>
-            <Dropdown overlay={menu}>
-              <Link to="" className="text-5xl float-end text-pink-700  mr-3">
+          <div className="flex gap-2 pr-2">
+          <div className="cutm-srch-bar-tk"><SearchOutlined className="text-white"/></div>
+       
+          <Dropdown overlay={menu} >
+              <Link to="" className=" text-4x-cust text-white">
                 ...
               </Link>
             </Dropdown>
+       
+          
           </div>
         </nav>
       ) : (

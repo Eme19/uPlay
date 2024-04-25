@@ -20,14 +20,37 @@ form {
 
 .Divider-cutm {
  background-color: rgb(67, 66, 66)!important;
-
 width: 5%!important;
 margin-left: 2.5rem!important;
 
 }
 
+custom-switch .ant-switch-checked .ant-switch-handle::after {
+  background-color: black!important;
+}
 
+custom-switch .ant-switch-checked .ant-switch-inner {
+  background-color: rgb(245, 233, 235)!important;
+}
 
+custom-switch .ant-switch-handle {
+color: rgb(171, 44, 44)!important;
+}
+
+custom-switch .ant-switch-checked .ant-switch-inner {
+  background-color: rgb(148, 42, 60)!important;
+}
+
+.custom-switch .ant-switch-inner {
+  background-color: rgb(66, 60, 60);
+  color: black;
+}
+
+.custom-switch .ant-switch-inner:hover {
+  background-color: rgb(28, 26, 26);
+  color: black;
+  box-shadow: 0 0 0 2px white;
+}
 
 .custm-title-lgn {
 text-align: center;
@@ -37,6 +60,25 @@ input-container {
   margin-bottom: 20px;
   
 }
+.style .ant-switch-inner {
+  background-color:#db2777 !important;
+}
+
+.style .ant-switch-inner:hover {
+  box-shadow: 0 0 0 2px white;
+}
+
+.style .ant-switch:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(236, 231, 231, 0.5); 
+  transition: box-shadow 0.3s ease-out; 
+}
+
+.sgnup-act{
+padding-top: 3rem;
+color:rgb(186, 181, 181);
+}
+
 
 .text-color-lgn {
   color: rgb(255, 255, 255) !important;
@@ -57,7 +99,7 @@ input-lg {
 .input-lg {
   width: 100%;
   
-  padding: 12px 0px 12px 60px;
+  padding: 12px 120px 12px 10px;
   border: none;
   border-radius: 5px;
   transition: border 0.3s ease;
@@ -79,7 +121,7 @@ input-lg {
 }
 
 .btn-container {
-  padding-top: 50px;
+  padding-top: 45px;
 }
 
 .button-lg {
@@ -104,14 +146,10 @@ border:none;
   border-radius: 5px;
 }
 
-
-
-.button-lg:hover {
-  background-color: black;
-  border-top: 1px solid #787575;
-  border-left: 1px solid#787575;
-  border-right: 1px solid #787575;
-  border-bottom: 1px solid #787575;
-  color: white;
-  font-weight: bold;
+.div-wrapper{
+  width: 84%;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
+

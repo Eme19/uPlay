@@ -11,11 +11,22 @@ navbar {
   border-right: 0.1px solid #393333;
 }
 
-.affix-album {
-height: 4rem;
-background-color: #111111!important;
+.affix-track-cst {
+height: 3.4rem;
+background-color: rgba(17, 17, 17, 0.1)!important;
 }
 
+
+.cutm-srch-bar-tk{
+  padding-top: 0.5rem;
+  font-size: 20px;
+}
+
+
+.text-4x-cust{
+font-size: 40px;
+margin-top: -0.9rem;
+}
 
 overlay-navbar {
   background: linear-gradient(
@@ -23,7 +34,8 @@ overlay-navbar {
   
     #111111,   
     #172554, 
-    #111111      
+    #111111,      
+    #111111  
   );
  
 }
