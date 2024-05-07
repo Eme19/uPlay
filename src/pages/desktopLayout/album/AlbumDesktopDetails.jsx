@@ -1,33 +1,23 @@
-import React, { useState, useContext } from "react";
+
+
+
+import React, { useState, useContext, useRef } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/auth.context";
-import { message, Button, Dropdown, Menu, Modal } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import "./AlbumDetails.css";
-import Home from "../homepage/Home";
-import {
-  MenuUnfoldOutlined,
-  CloseCircleOutlined,
-  PlayCircleOutlined,
-  LeftSquareOutlined,
-  RightSquareOutlined,
-} from "@ant-design/icons";
+import { AuthContext } from "../../../context/auth.context";
+import { message, Button, Modal } from "antd";
+import "./AlbumDesktopDetails.css";
+import Home from "../../homepage/Home";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
-const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
-  const [isAddingToLibrary, setIsAddingToLibrary] = useState(false);
+
+
+
+const AlbumDetail = ({ handleAlbumClick, album, refreshAlbumList, onAddToLibrary }) => {
   const { user, isLoggedIn } = useContext(AuthContext);
   const isAdmin = user && user.role === "admin";
-  const storedToken = localStorage.getItem("authToken");
-  const [showMode, setShowMode] = useState(false);
-
   const navigate = useNavigate();
-
-  const handleModOk = () => {
-    setShowMode(false);
-    navigate("/login");
-  };
-
+  const [showMode, setShowMode] = useState(false);
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
@@ -38,7 +28,6 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
       const response = await api.delete(`/api/album/${albumId}`);
       console.log("Deleted", response.data);
       message.success("Album deleted successfully.");
-
       refreshAlbumList();
     } catch (error) {
       console.error("Error", error);
@@ -46,14 +35,20 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
     }
   };
 
+  
+
+
+
+
   return (
-    <div className="mb-4 ">
+    <div className="mb-1 ">
       {isLoggedIn ? (
-        <div className="flex  ml-7">
-          <div className="albm-detal-hd-contnern">
-            <div className="album-detail-continer  cursor-pointer">
-              <Link id="Link-style" to={`/album/${album._id}`}>
-                <div className="album-cover-mb cursor-pointer">
+        <div className="">
+          <div className="albm-detal-hd-contnern-dkstp">
+          
+            <div className="album-detail-continer cursor-pointer" onClick={() => handleAlbumClick(`/album/${album._id}`)}>
+
+                <div className="album-cover-dsktp cursor-pointer">
                   <img alt="album cover" src={album.image} />
                 </div>
                 <div className="album-info">
@@ -64,7 +59,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
                     </li>
                   </ul>
                 </div>
-              </Link>
+               
             </div>
 
             <div>
@@ -76,8 +71,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
                   footer={null}
                 >
                   <p className="mt-0 pt-3 text-sm text-center hover:text-left leading-relaxed text-stone-300 normal-case ">
-                    Under Production 🚧 keep in mind
-                    <strong>add to liberay</strong> button is functional
+                    Under Production 🚧 keep in mind <strong>add to library</strong> button is functional
                   </p>
                 </Modal>
               )}
@@ -106,3 +100,12 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
   );
 };
 export default AlbumDetail;
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Navbar from "./pages/homepage/navbar/Navbar";
 import Home from "./pages/homepage/Home";
 import Signup from "./pages/signup/Signup";
@@ -30,12 +30,14 @@ import EditProfileImage from "./pages/profile/EditProfileImage";
 import IsAdminRoute from "./context/IsAdminRoute";
 import TrackPlayer from "./pages/track/TrackPlayer";
 import AdminDashboard from "./pages/adminpage/AdminDashboard";
-
+import Account from  "./pages/account/Account";
 import { AuthContext } from "./context/auth.context";
 import IconSearchBar from "./pages/generalsearch/IconView";
+import Layout from "./pages/desktopLayout/home/Layout";
 
 function App() {
   const { user, isLoggedIn } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const currentTime = new Date();
@@ -61,11 +63,22 @@ function App() {
     return () => {};
   }, []);
 
+
+
+  
+  const isMobile = () => {
+    return /Mobi|Android/i.test(navigator.userAgent);
+  };
+
+
+
+
   return (
     <div className="App " id="appBody">
    
    
       <Routes>
+        <Route path="/account" element={<Account/>}/>
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/all/search/" element={<IconSearchBar />} />
         <Route path="/artist/:artistId/albums" element={<ArtistAlbums />} />
@@ -88,9 +101,18 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/image/upload" element={<ProfileImage />} />
         <Route path="/album" element={<Album />} />
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/mobile" element={<Home />} />
+        <Route exact path="/desktop" element={<Layout />} />
+        {isMobile() ? (
+          <Route path="/" element={<Home />} />
+        ) : (
+          <Route path="/" element={<Layout />} />
+        )}
+
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+
+
       </Routes>
       <ToastContainer />
     </div>

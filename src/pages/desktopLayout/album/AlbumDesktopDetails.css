@@ -1,0 +1,114 @@
+
+    utton {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  
+    bbutton:hover {
+      color: white;
+    }
+  
+    albm-detal-hd-contnern-dkstp {
+     display: flex;
+     flex-wrap: wrap;
+      }
+      
+  
+    .album-cover-dsktp {
+      border-radius: 4%;
+      width: 235px;
+      height: 250px;
+      overflow: hidden;
+    }
+  
+    .album-cover-dsktp img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    album-title ul {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    #li-styl {
+      font-size: 0.9rem;
+      margin-left: 2px;
+    color:  #be185d;
+    }
+  
+    #li-styl-h {
+      font-size: 1rem;
+      margin-left: 2px;
+      font-weight: 600px;
+      color:  #d4d4d4;
+     padding-top: 0.2rem;
+    }
+  
+    albm-detal-wrapper {
+      margin: 0 9px;
+      margin-left: px;
+    }
+    .bg-custom {
+      background-color: rgb(48, 48, 48) !important;
+    }
+  
+    .w-drop {
+      margin-top: 9rem;
+      width: 70% !important;
+      height: auto !important;
+    }
+    .ml-drp-custm {
+      padding-inline-end: 60px;
+    }
+  
+    .mt-custm {
+      padding-top: 6px;
+      margin-inline-end: 2px;
+      color: #be185d !important;
+    }
+  
+    .hover-custm:hover {
+      color: white !important;
+      border-color: transparent !important;
+      background-color:#0a0a0a!important;
+    }
+  
+  
+
+  
+  
+  /* @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .desktop-dtal-albm {
+      display: flex;
+      flex-direction: row;
+     width: 100%;
+    }
+  }
+  
+  
+  @media only screen and (min-width: 1024px) {
+    .desktop-dtal-albm {
+    
+  
+    }
+    
+  } */
+  
+  
+  
+  
+  
+  .desktop-dtal-albm {
+  flex-direction: row;
+  }

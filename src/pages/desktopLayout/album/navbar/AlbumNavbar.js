@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../context/auth.context";
+import { AuthContext } from "../../../../context/auth.context";
 import { Menu, Dropdown, Button } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
 import "./AlbumNavbar.css";
@@ -94,7 +94,7 @@ function AlbumNavbar({isScrollingUp}) {
   );
 
   return (
-    <div className="mobile-none">
+    <div >
       {isLoggedIn ? (
         <div>
           <nav

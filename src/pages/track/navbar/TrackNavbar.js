@@ -91,7 +91,7 @@ function TrackNavbar({
   );
 
   return (
-    <div>
+    <div className="mobile-none">
       {isLoggedIn ? (
         <nav
           style={{

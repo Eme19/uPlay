@@ -7,9 +7,12 @@ body {
 
 
 body.dark {
-  background-color: #111111;
+  background-color: black;
   color: #ffffff; 
 }
+
+
+  
 
 @media only screen and (max-width: 767px) {
   
@@ -24,7 +27,7 @@ body.dark {
 body {
   background-color:#f8fafc; 
   color: #0c0b0b;
-  padding-bottom: 4.9rem;
+  padding-bottom: 1.5rem;
 }
 
 
@@ -77,3 +80,7 @@ input[type="range"] {
 
 
 }
+
+
+
+    

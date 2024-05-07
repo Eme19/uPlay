@@ -18,7 +18,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className={scrollUp ? 'transparent-bg' : ''}>
+    <footer className={`${scrollUp ? 'transparent-bg ' : ''}mobile-none`}>
       <div className=' capitalize flex justify-between cursor-pointer custm-styl-foter text-center'>
         <div className=' custon-color-foter'><a href="#">
             <div><PlayCircleOutlined className='text-2xl'/> </div>

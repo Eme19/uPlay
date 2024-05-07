@@ -7,7 +7,7 @@ form {
 
 .log-container {
   padding-top: 10px;
-  padding-left: 10px;
+  padding-left: 1.2rem;
   padding-bottom: 50px;
 
 }
@@ -41,19 +41,24 @@ custom-switch .ant-switch-checked .ant-switch-inner {
   background-color: rgb(148, 42, 60)!important;
 }
 
-.custom-switch .ant-switch-inner {
+.custom-switch {
   background-color: rgb(66, 60, 60);
-  color: black;
+
 }
 
-.custom-switch .ant-switch-inner:hover {
+.custom-switch:hover {
   background-color: rgb(28, 26, 26);
   color: black;
   box-shadow: 0 0 0 2px white;
 }
 
+.custom-switch:focus {
+  box-shadow: 0 0 0 2px white;
+}
+
 .custm-title-lgn {
-text-align: center;
+text-align: left;
+padding-left: 2.5rem;
 }
 
 input-container {
@@ -64,13 +69,13 @@ input-container {
   background-color:#db2777 !important;
 }
 
-.style .ant-switch-inner:hover {
+.style:hover {
   box-shadow: 0 0 0 2px white;
 }
 
-.style .ant-switch:focus {
+.style:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(236, 231, 231, 0.5); 
+  box-shadow: 0 0 0 2px white;
   transition: box-shadow 0.3s ease-out; 
 }
 

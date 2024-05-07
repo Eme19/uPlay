@@ -1,0 +1,43 @@
+
+    .search-input{
+    
+      border-collapse: collapse ;
+      border: transparent;
+    }
+    
+    
+    
+    input::placeholder {
+      color: #999;
+    }
+    
+    .ml-log-custm {
+      margin-inline-end: rem;
+    }
+    
+    .py-custom{
+      padding: 8px 190px 8px 55px ;
+    
+    }
+    
+    
+    .ml-cutom{
+      margin-inline-start: 10rem;
+    }
+    
+    .bg-gray-ablm-cstm{
+      background-color: rgb(66, 65, 65);
+    
+    }
+    
+    .pt-custome{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    padding-left: 14px;
+    }
+    
+    
+    .icon-cl-cutm{
+      color: #9a9a9a;
+    }
+  

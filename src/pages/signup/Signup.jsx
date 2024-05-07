@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Input, Button, Select, Checkbox, message, Modal } from "antd";
+import { Input, Button, Select, Checkbox, message, Modal, Divider, Switch } from "antd";
 import authMethods from "../../components/apiservices/auth.servic";
 import axios from "axios";
 import "./Signup.css";
 import { AuthContext } from "../../context/auth.context";
 import Login from "../login/Login";
+import logoImage from "../../assets/logo3.png";
+
 
 const { Option } = Select;
 
@@ -165,40 +167,38 @@ function Signup() {
 
   return (
     <div>
+          <div className="log-container-signup">
+        <Link to="/">
+          <img id="logo-img-login" alt="logo" src={logoImage} />
+        </Link>
+      </div>
+
+<div className="text-3xl custm-title-flex font-bold">
+  <span>Sign up to start
+    </span>
+     <span>
+listening </span></div>
+
+<div className="div-wrapper-sigup">
+<Divider  
+                       className="Divider-cutm "/>
+</div>
+
       <div className="signup-container">
         <div className="log-borda">
-          {!showLoginModal && (
-            <h1 className="breathing-effect">
-              <Link
-                className="lnk-btn-lgn"
-                to=""
-                onClick={() => setShowLoginModal(true)}
-              >
-                Sign in
-              </Link>
-            </h1>
-          )}
+        
 
           <div></div>
         </div>
-        {showLoginModal && (
-          <Modal
-            className="login-modal"
-            visible={showLoginModal}
-            onCancel={() => setShowLoginModal(false)}
-            footer={null}
-          >
-            <Login />
-          </Modal>
-        )}
+  
       </div>
       {!showLoginModal && (
-        <form onSubmit={handleSignupSubmit}>
-          <div className="signup-form">
+        <form onSubmit={handleSignupSubmit} >
+          <div>
             <div className="inputstyle">
               <label className="lab-sigup">Username</label>
               <Input
-                className="input-formstyle"
+                className="input-formstyle  text-white"
                 type="text"
                 name="username"
                 value={form.username}
@@ -215,7 +215,7 @@ function Signup() {
             <div className="inputstyle">
               <label className="lab-sigup">Email</label>
               <Input
-                className="input-formstyle"
+                className="input-formstyle  text-white"
                 type="email"
                 name="email"
                 value={form.email}
@@ -236,7 +236,7 @@ function Signup() {
             <div className="inputstyle">
               <label className="lab-sigup">Password</label>
               <Input.Password
-                className="input-formstyle"
+                className="input-formstyle-passw"
                 name="password"
                 value={form.password}
                 onChange={(e) =>
@@ -254,15 +254,17 @@ function Signup() {
               )}
             </div>
 
-            <div className="inputstyle">
+            <div className="inputstyle signup-form ">
               <label className="lab-sigup">Country</label>
               <Select
                 value={form.country}
                 onChange={handleCountryChange}
                 required
+
               >
                 {countries?.map((country) => (
-                  <Option key={country} value={country}>
+                  
+                  <Option key={country} value={country}    className="option-style">
                     {country}
                   </Option>
                 ))}
@@ -270,12 +272,13 @@ function Signup() {
               {countrierror && <p style={{ color: "red" }}>{countrierror}</p>}
             </div>
 
-            <div className="inputstyle">
+            <div className="inputstyle signup-form ">
               <label className="lab-sigup">State</label>
               <Select
                 value={form.state}
                 onChange={(value) => handleFormChange("state", value)}
                 required
+              
               >
                 {states?.map((state) => (
                   <Option key={state} value={state}>
@@ -287,7 +290,7 @@ function Signup() {
               {staterror && <p style={{ color: "red" }}>{staterror}</p>}
             </div>
 
-            <div className="inputstyle-chk">
+            {/* <div className="inputstyle-chk">
               <Checkbox
                 className="chek-bx"
                 checked={form.consent}
@@ -300,17 +303,60 @@ function Signup() {
                   Please agree to the terms and conditions.
                 </span>
               )}
-            </div>
+            </div> */}
 
+
+
+<div className="swtch-wrapper mt-3 ">
+  <Switch
+ className={form.consent ? "custom-switch-sigup-checked" : "custom-switch-sigup"}
+    checked={form.consent}
+    onChange={(checked) => handleFormChange("consent", checked)}
+  />
+
+</div>
+
+{consentError && (
+    <span className="error-message">
+      Please agree to the terms and conditions.
+    </span>
+  )}
             <div className="btn-div">
-              <Button className="btn-form" type="primary" htmlType="submit">
+              <button className="btn-form  bg-pink-600 text-black text-base transition-transform duration-150 ease-out hover:scale-105"  type="submit">
                 Sign Up
-              </Button>
+              </button>
             </div>
           </div>
         </form>
       )}
 
+<div className="div-wrapper-sigup">
+<Divider  
+                       className="Divider-cutm "/>
+</div>
+
+<div>
+        <div className="text-center sgnup-act-signp font-medium">
+
+        <span>Already have an account?</span>
+        </div>
+       
+
+     
+      <div className="text-center pt-4">
+      <Link to="/signup">
+        <button type="submit" className=" font-medium underline decoration-solid">
+       Login in here.
+        </button>
+      </Link>
+    </div>
+      </div>
+
+
+<div className="text-center pt-5 sgnup-act-signp text-xs">
+  <span className=" underline decoration-solid">Privacy Policy</span> and <span className="underline decoration-solid ">Terms of Service</span>
+</div>
+      
       <div>
         <Modal
           className="err-modal-container"

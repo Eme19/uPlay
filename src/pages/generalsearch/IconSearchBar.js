@@ -119,8 +119,6 @@ function IconSearchBar() {
         {tracks.map((track, index) => (
           <Col sm={4} md={3} lg={2} key={index}>
             <Card className="mb-3" onClick={() => handleTrackClick(track)}>
-              {" "}
-              {/* Add onClick handler to initiate playback */}
               <Card.Img
                 variant="top"
                 src={track.image ? track.image : mp33}

@@ -1,3 +1,4 @@
+@media only screen and (max-width: 767px) {
 li {
   list-style: none;
 }
@@ -10,4 +11,6 @@ li {
 
 .cust-serc-albdetl{
   margin-top: -2rem;
+}
+
 }

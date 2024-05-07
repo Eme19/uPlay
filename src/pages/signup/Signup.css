@@ -40,9 +40,13 @@ label {
   background-color: rgb(220, 215, 215);
 } */
 
+
+
+.signup-conatiner{
+  padding-top: 1rem;
+}
 .signup-container {
-  padding-top: 8rem;
-  padding-bottom: 5rem;
+
   text-align: center;
 }
 
@@ -58,15 +62,26 @@ label {
 }
 
 .inputstyle .ant-select-selector {
-  padding: 4.5px !important ;
-  border: 2px solid #ccc;
+  padding: 10px !important ;
   font-size: 16px !important;
   width: 100% !important;
   height: 100% !important;
+  background-color: #111111 !important;
+  color: white;
+
+  border: 1px solid #847f7f!important;
+}
+
+.inputstyle .ant-select-selector:focus {
+  outline: none;
+  border: 2px solid rgb(255, 255, 255); 
+  color: white;
 }
 
 .inputstyle .ant-select-dropdown {
   font-size: 16px;
+  background-color: #111111 !important;
+  color: white;
 }
 
 /* .inputstyle .ant-select-item {
@@ -75,16 +90,86 @@ label {
 
 .input-formstyle {
   width: 100%;
-  padding: 12px 120px 12px 10px;
+  padding: 13px 130px 15px 20px;
   border: none;
   border-radius: 5px;
   transition: border 0.3s ease;
   background-color: #111111;
-  border-top: 1px solid #847f7f;
-    border-left: 1px solid#847f7f;
-    border-right: 1px solid#847f7f;
-    border-bottom: 1px solid #847f7f;
+ border: 1px solid #847f7f;
 }
+
+.custm-title-flex{
+  display: flex;
+  flex-direction: column;
+  padding-left: 6.5rem;
+}
+
+.log-container-signup {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
+
+}
+
+.div-wrapper-sigup{
+  width: 72%;
+  text-align: center;
+  padding-left: 4rem;
+  padding-top: 1.4rem;
+}
+
+.sgnup-act-signp{
+  padding-top: 1.5rem;
+  color:rgb(186, 181, 181);
+  }
+  
+
+
+.div-wrapper-sigup-bottom{
+  width: 72%;
+  text-align: center;
+  padding-left: 4rem;
+  padding-top: 1.4rem;
+}
+
+.input-formstyle:hover{
+  border: 2px solid rgb(255, 255, 255); 
+}
+
+.input-formstyle:focus {
+  outline: none;
+  border: 2px solid rgb(255, 255, 255); 
+}
+
+
+.input-formstyle-passw  {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+  background-color: #111111!important;
+  color:  #111111!important;
+border: 1px solid #847f7f!important;;
+}
+
+
+
+.input-formstyle-passw .ant-input-password-icon svg {
+  fill: #666666; 
+  float: right;
+
+}
+
+
+.input-formstyle-passw:hover{
+  border: 2px solid rgb(255, 255, 255)!important; 
+}
+
+.input-formstyle-passw:focus {
+  outline: none;
+  border: 2px solid rgb(255, 255, 255); 
+}
+
 
 .password-error-title {
   color: red !important;
@@ -137,11 +222,13 @@ margin-top: 5.3rem;
 }
 
 .btn-form {
-  width: 100%;
-  background-color: rgb(28, 75, 76);
-  margin-top: 20px;
-  font-weight: bold;
-  font-size: 15px;
+  width: 100%!important;
+  padding: 15px!important;
+border: none!important;
+  
+  cursor: pointer!important;
+  font-weight: bold!important;
+  border-radius: 100px!important;
 }
 
 .clos-modal {
@@ -219,6 +306,18 @@ margin-top: 5.3rem;
 .lab-sigup {
   text-align: start;
   font-weight: bold;
+  padding-bottom: 6px;
+}
+
+.option-style {
+ background-color:  #111111;
+ color: #db2777!important;
+ border: none!important;
+}
+
+
+.lab-sigup:hover{
+  color: white;
 }
 
 .inputstyle .ant-input-password-icon {
@@ -286,45 +385,11 @@ margin-top: 5.3rem;
   font-weight: bold;
 }
 
-.btn-form {
-  border-top: 1px solid  #615f5f;
-  border-left: 1px solid #615f5f;
-  border-right: 1px solid  #615f5f;
-  border-bottom: 1px solid #615f5f;
-  background-color: rgb(39, 37, 37) !important;
-  color: #928b8b;
-  border-radius: 5px;
-  padding: 10px 15px 36px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-  transition: background-color 0.3s ease, border-color 0.3s ease,
-    box-shadow 0.3s ease; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.btn-form:hover {
-  animation: colorChange 1s infinite alternate;
-}
-
-@keyframes colorChange {
-  0% {
-    background-color: rgb(215, 228, 228);
-    border-top: 1px solid #847f7f;
-    border-left: 1px solid#847f7f;
-    border-right: 1px solid#847f7f;
-    border-bottom: 1px solid #847f7f;
-  }
-  100% {
-    background-color: rgb(194, 205, 206);
-  }
-}
 
 .btn-div {
-  margin-top: 5px;
+  padding-top: 40px;
 }
 
 .custom-select .ant-select-dropdown-menu-item {
@@ -342,4 +407,39 @@ margin-top: 5.3rem;
 
 .modal-error:hover {
   color: rgb(230, 126, 126);
+}
+
+
+
+.custom-switch-sigup {
+  background-color: rgb(66, 60, 60)!important;
+}
+
+.custom-switch-sigup-checked {
+  background-color:#db2777!important;
+}
+
+.custom-switch-sigup:hover{
+  box-shadow: 0 0 0 2px white;
+}
+
+.custom-switch-sigup-checked:hover {
+  box-shadow: 0 0 0 2px white;
+}
+
+.custom-switch-sigup-checked:focus {
+  box-shadow: 0 0 0 2px white;
+}
+
+.custom-switch-sigup:focus {
+  box-shadow: 0 0 0 2px white;
+}
+
+
+.swtch-wrapper{
+ 
+}
+
+.error-message{
+  color: #ce8989;
 }

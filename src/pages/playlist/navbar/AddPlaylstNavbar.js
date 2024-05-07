@@ -95,7 +95,7 @@ function Navbar({ isScrollingUp }) {
   );
 
   return (
-    <>
+    <div className="mobile-none">
       {isLoggedIn ? (
         <nav
           style={{
@@ -134,7 +134,7 @@ function Navbar({ isScrollingUp }) {
           <Login />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

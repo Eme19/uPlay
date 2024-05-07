@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../context/auth.context";
+import { AuthContext } from "../../../../context/auth.context";
 // import "../trackNavbar.css";
 import { LeftOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import "./SongNavbar.css";
-import Login from "../../login/Login";
+import Login from "../../../login/Login";
 
 function SongNavbar() {
   const { isLoggedIn } = useContext(AuthContext);

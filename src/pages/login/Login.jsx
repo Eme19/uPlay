@@ -116,7 +116,7 @@ function Login() {
     </div>
 
     <div className="btn-container ">
-    <button type="submit" className="button-lg bg-pink-600 text-black transition-transform duration-150 ease-out hover:scale-105">
+    <button type="submit" className="button-lg bg-pink-600 text-base text-black transition-transform duration-150 ease-out hover:scale-105">
   Login
 </button>
 

@@ -10,7 +10,7 @@ function Navbar() {
   const { isLoggedIn, user } = useContext(AuthContext);
 
   return (
-    <>
+    <div className="mobile-none">
       {isLoggedIn ? (
         <nav
           style={{
@@ -45,7 +45,7 @@ function Navbar() {
           <Login />
         </div>
       )}
-    </>
+    </div>
   );
 }
 

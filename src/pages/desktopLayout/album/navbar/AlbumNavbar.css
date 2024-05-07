@@ -1,0 +1,40 @@
+.affix-album {
+
+    height: 80px;
+    background-color: rgb(20, 19, 19)!important;
+    transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+logo-img-albm {
+  width: 20%;
+  height: auto;
+}
+
+.alm-title{
+padding-top: 1rem;
+padding-inline-end: 4.5rem;
+}
+
+.w-custm-nav {
+  width: 20%;
+  height: auto;
+}
+
+
+.mt-ablm-icon{
+  padding-top: 0.6rem;
+}
+
+.mt-ablm-icon-ptn{
+padding-top: 0.8rem;
+color: #be185d!important;
+}
+
+.nav-sty{
+  border-bottom: 1px solid rgb(88, 88, 88);
+}
+
+.albm-lgo-nav{
+  width: 4rem;
+  height: auto;
+}

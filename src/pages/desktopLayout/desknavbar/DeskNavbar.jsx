@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../context/theme.context";
 import { AuthContext } from "../../../context/auth.context";
 import logoImage from "../../../assets/logo1.png";
-import "./NavBar.css";
+import "./DeskNavbar.css";
 import Login from "../../login/Login";
 import { MenuOutlined ,CloseOutlined,CustomerServiceOutlined, SearchOutlined, CaretRightOutlined   } from '@ant-design/icons';
 import ProfileImage from "../../profile/ProfileImage";

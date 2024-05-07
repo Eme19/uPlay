@@ -91,7 +91,7 @@ function TrackNavProps({ artistName }) {
   };
 
   return (
-    <div>
+    <div className="mobile-none">
       {isLoading ? (
         <Loading />
       ) : (

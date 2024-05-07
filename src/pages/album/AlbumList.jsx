@@ -156,7 +156,7 @@ function AlbumList() {
                       right: 0,
                       zIndex: 50,
                       backgroundColor: "rgba(17, 17, 17, 0.9)",
-                      transition: "top 0.5s",
+                     
                     }}
                     className=" flex cursor-pointer justify-between"
                   >

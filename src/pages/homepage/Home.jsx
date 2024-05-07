@@ -15,12 +15,11 @@ import axios from "axios";
 import Navbar from "./navbar/Navbar";
 import "../../main.css";
 import "../album/AlbumDetails.css";
-import HomeLoading from "./homeloading/HomeLoading"
+import HomeLoading from "./homeloading/HomeLoading";
 import Footer from "../footer/Footer";
 import Login from "../login/Login";
 import Loadings from "../loading/Loading";
-
-
+import Layout from "../desktopLayout/home/Layout";
 
 function Home() {
   const { theme } = useContext(ThemeContext);
@@ -34,8 +33,6 @@ function Home() {
     baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
   });
-
-
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -74,91 +71,84 @@ function Home() {
   }, [isLoggedIn]);
 
   return (
-    <div className="cst-home">
-    {loading && !isLoggedIn ? ( 
-      <HomeLoading />
-    ) : (
-      <div>
-        {isLoggedIn && (
-          <div>
-            <Navbar />
-            <div className="pt-cusm-hom ">
-              <MusicHome />
-              <Divider
-                style={{ borderColor: "#a8a29e" }}
-                className="px-3  pt-4 "
-              >
-                <div
-                  className="transition duration-300 animate-bounce ease-in-out text-white pt-3 pb-1 text-xl "
-                  style={{ paddingInlineEnd: "" }}
-                >
-                  Library
-                </div>
-              </Divider>
-              <div className="flex flex-wrap gap ml-6 ">
-                {recentlyAddedAlbums.map((album) => (
-                  <div key={album._id} className="albm-detal-hd-contner ">
-                    <div className="album-detail-continer ">
-                      <Link id="Link-style" to={`/album/${album._id}`}>
-                        <div className="album-cover ">
-                          <img
-                            alt="album cover"
-                            src={album.image}
-                            className=" album-image"
-                          />
-                        </div>
-                        <div className="album-info">
-                          <ul className="album-title">
-                          <li
-                              id="li-styl-hme"
-                              className="text-white align-baseline text-left"
-                            >
-                              {album.artist &&
-                                album.artist.map((artist) => (
-                                  <span key={artist._id}>
-                                    {artist.name}
-                                  </span>
-                                ))}
-                            </li>
-                            <li
-                              id="li-styl-h-hme"
-                              className="text-zinc-400 align-baseline text-left"
-                            >
-                              {album.title}{" "}
-                            </li>
-                         
-                          </ul>
-                        </div>
-                      </Link>
-                    </div>
-                  </div>
-                ))}
+    <div className="cst-home ">
+      {loading && !isLoggedIn ? (
+        <HomeLoading />
+      ) : (
+        <div>
+          {isLoggedIn && (
+            <div>
+              <div className="mobile-none">
+                <Navbar />
               </div>
-        
+              <div className="pt-cusm-hom  mobile-none">
+                <MusicHome />
+                <Divider
+                  style={{ borderColor: "#a8a29e" }}
+                  className="px-3  pt-4 "
+                >
+                  <div className="transition duration-300 animate-bounce ease-in-out text-white pt-3 pb-1 text-xl ">
+                    Library
+                  </div>
+                </Divider>
+
+                <div className="flex flex-wrap gap ml-6 ">
+                  {recentlyAddedAlbums.map((album) => (
+                    <div key={album._id} className="albm-detal-hd-contner ">
+                      <div className="album-detail-continer ">
+                        <Link id="Link-style" to={`/album/${album._id}`}>
+                          <div className="album-cover ">
+                            <img
+                              alt="album cover"
+                              src={album.image}
+                              className=" album-image"
+                            />
+                          </div>
+                          <div className="album-info">
+                            <ul className="album-title">
+                              <li
+                                id="li-styl-hme"
+                                className="text-white align-baseline text-left"
+                              >
+                                {album.artist &&
+                                  album.artist.map((artist) => (
+                                    <span key={artist._id}>{artist.name}</span>
+                                  ))}
+                              </li>
+                              <li
+                                id="li-styl-h-hme"
+                                className="text-zinc-400 align-baseline text-left"
+                              >
+                                {album.title}{" "}
+                              </li>
+                            </ul>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
-          </div>
-        )}
-        {!isLoggedIn && (
-          <div
-            className="home-background"
-          >
-            <Login/>
-            <div className="home-buttons">
-              {user && user.role === "admin" && (
-                <Link to="/admin">
-                  <Button type="primary">Admin Page</Button>
-                </Link>
-              )}
+          )}
+          {!isLoggedIn && (
+            <div className="home-background">
+              <Login />
+              <div className="home-buttons">
+                {user && user.role === "admin" && (
+                  <Link to="/admin">
+                    <Button type="primary">Admin Page</Button>
+                  </Link>
+                )}
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-    )}
-    {isLoggedIn &&   <Footer />}
-  
-  </div>
-  
-);
+          )}
+        </div>
+      )}
+      {isLoggedIn && <Footer />}
+    </div>
+  );
 }
 
 export default Home;

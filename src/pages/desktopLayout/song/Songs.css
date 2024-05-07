@@ -1,0 +1,29 @@
+.desktop-song {
+  display: flex;
+  flex-direction: row;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 0.1px solid rgb(43, 43, 43);
+}
+
+.table-dark :hover {
+    background-color: blue;
+    color: white;
+  }
+
+.table thead th {
+  background-color: #1a1a1a;
+}
+
+.table tbody td {
+  background-color: #1a1a1a;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+.custm-tble tbody {
+  background-color: blue;
+  color: white;
+}

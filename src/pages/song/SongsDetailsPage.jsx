@@ -84,11 +84,11 @@ function SongsDetailsPage({ song }) {
   return (
     <div >
 
-      <div onClick={handleAddToLibrary}></div>
+    
 
    
-      <div  className="song-card-search">
-      <div className="song-image-srch ml-3">
+      <div  className="song-card-search  desktop-song">
+      <div className="song-image-srch ml-3" onClick={handleAddToLibrary}>
             <img src={mp33}  alt={song.name}  className="song-image-cover-srch rounded-xl" />
           </div>
 

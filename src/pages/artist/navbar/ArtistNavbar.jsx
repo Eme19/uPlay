@@ -104,7 +104,7 @@ function ArtistNavbar({isScrollingUp}) {
   );
 
   return (
-    <>
+    <div className="mobile-none">
       {isLoggedIn ? (
         <nav
           style={{
@@ -149,7 +149,7 @@ function ArtistNavbar({isScrollingUp}) {
           <Login />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
