@@ -2,47 +2,66 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
+  withCredentials: true
 });
 
-const signUp = ({ email, password, username, country, state, consent }) => {
-  return api
-    .post("/auth/signup", { email, password, username, country, consent,  state })
-    .then((response) => response.data)
-    .catch((err) => console.error(err));
+const signUp = async ({ email, password, username, country, state, consent }) => {
+  try {
+    const response = await api.post("/auth/signup", { email, password, username, country, state, consent });
+    return response.data;
+  } catch (err) {
+    console.error("Sign up error:", err);
+    throw err;
+  }
 };
 
-console.log("signUp", signUp)
-
-
-const logIn = ({ email, username, password }) => {
-  return api
-    .post("/auth/login", { email, username, password })
-    .then((response) => response.data)
-    .catch((err) => console.error(err));
+const logIn = async ({ email, username, password }) => {
+  try {
+    const response = await api.post("/auth/login", { email, username, password });
+    return response.data;
+  } catch (err) {
+    console.error("Log in error:", err);
+    throw err;
+  }
 };
 
-const verifyToken = (storedToken) => {
-  return api
-    .get("/auth/verify", {
-      headers: { Authorization: `Bearer ${storedToken}` },
-    })
-    .then((response) => response.data)
-    .catch((err) => console.error(err));
+const verifyToken = async (storedToken) => {
+  try {
+    const response = await api.get("/auth/verify", {
+      headers: { Authorization: `Bearer ${storedToken}` }
+    });
+    return response.data;
+  } catch (err) {
+    console.error("Verify token error:", err);
+    throw err;
+  }
 };
 
-const uploadPhoto = (uploadData) => {
-  return api
-    .post("/api/upload", uploadData)
-    .then((response) => response.data)
-    .catch((err) => console.error(err));
+const uploadPhoto = async (uploadData) => {
+  try {
+    const response = await api.post("/api/upload", uploadData);
+    return response.data;
+  } catch (err) {
+    console.error("Upload photo error:", err);
+    throw err;
+  }
 };
 
-const getCurrentUser = () => {
+const getCurrentUser = async () => {
   const storedToken = localStorage.getItem("authToken");
-  return api
-    .get("/api/users", { headers: { Authorization: `Bearer ${storedToken}` } })
-    .then((response) => response.data)
-    .catch((err) => console.error(err));
+  if (!storedToken) {
+    throw new Error("No token found");
+  }
+
+  try {
+    const response = await api.get("/api/users", {
+      headers: { Authorization: `Bearer ${storedToken}` }
+    });
+    return response.data;
+  } catch (err) {
+    console.error("Get current user error:", err);
+    throw err;
+  }
 };
 
 const authMethods = {
@@ -51,7 +70,6 @@ const authMethods = {
   verifyToken,
   uploadPhoto,
   getCurrentUser,
-
 };
 
 export default authMethods;
