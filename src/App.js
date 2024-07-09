@@ -98,7 +98,7 @@ function App() {
         <Route exact path="/mobile" element={<Home />} />
         <Route exact path="/desktop" element={<Layout />} />
         {isMobile() ? (
-           <Route path="/" element={<Layout />} />
+           <Route path="/" element={<Home />} />
        
         ) : (
           <Route path="/" element={<Layout />} />

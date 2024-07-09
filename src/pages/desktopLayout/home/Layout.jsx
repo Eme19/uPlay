@@ -455,8 +455,8 @@ const Layout = () => {
         <div className="right-side rounded-t-md">{selectedAlbumId && <TrackList albumId={selectedAlbumId} />}</div>
       </div>
       ): (
-        <LoginDesktop/>
-       //<DefaultHomePage/>
+        // <LoginDesktop/>
+       <DefaultHomePage/>
       )}
     </div>
   );
