@@ -17,12 +17,33 @@ function AlbumList({ handleAlbumClick }) {
   const [isLoading, setIsLoading] = useState(true);
   const { isLoggedIn } = useContext(AuthContext);
   const [findAlbumInput, setFindAlbumInput] = useState("");
-
+  const [isScrollingUp, setIsScrollingUp] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
   });
+
+
+
+    
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      setIsScrollingUp(prevScrollPos < currentScrollPos);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
 
   const getAlbums = async () => {
     try {
@@ -57,11 +78,12 @@ function AlbumList({ handleAlbumClick }) {
 
             <div>
 
+
                 
-            <AlbumSearch
+            {/* <AlbumSearch
                       findAlbumInput={findAlbumInput}
                       setFindAlbumInput={setFindAlbumInput}
-                    />
+                    /> */}
 
 {!findAlbumInput && (
               <div className="pt-4 flex  flex-wrap gap-cusm-albmLis">

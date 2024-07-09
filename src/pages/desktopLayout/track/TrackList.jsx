@@ -296,6 +296,7 @@ import {
 import Login from "../../login/Login";
 import Footer from "../../footer/Footer";
 import "./TrackListdsktp.css"
+import Layout from "../home/Layout";
 
 function TrackList(props) {
   const [album, setAlbum] = useState(null);
@@ -453,9 +454,9 @@ function TrackList(props) {
           <div className="overlay">
             <div>
             {album && (
-              <div className="bg-fixed  albm-wrapper-trk">
+              <div className="bg-fixed  albm-wrapper-track">
                 <div className="album-detail-continer-track">
-                  <div className="album-cover-track  opacity-80">
+                  <div className="album-covertrack   opacity-80">
                     <img
                       src={album.image}
                       alt={album.name}

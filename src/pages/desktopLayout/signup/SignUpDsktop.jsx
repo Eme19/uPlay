@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Input, Button, Select, Checkbox, message, Modal, Divider, Switch } from "antd";
-import authMethods from "../../components/apiservices/auth.servic";
+import { Input, Button, Select, message, Modal, Divider, Switch } from "antd";
+import authMethods from "../../../components/apiservices/auth.servic";
 import axios from "axios";
-import "./Signup.css";
-import { AuthContext } from "../../context/auth.context";
-import Login from "../login/Login";
-import logoImage from "../../assets/logo3.png";
+import "./SignUpDsktop.css";
+import { AuthContext } from "../../../context/auth.context";
+import logoImage from "../../../assets/logo3.png";
 
 
 const { Option } = Select;
@@ -173,15 +172,18 @@ function Signup() {
         </Link>
       </div>
 
+
+      <div className="hd-wrapper-sgnup">
+      <div>
+
 <div className="text-3xl custm-title-flex font-bold">
   <span>Sign up to start
     </span>
      <span>
 listening </span></div>
 
-<div className="div-wrapper-sigup">
-<Divider  
-                       className="Divider-cutm "/>
+<div className="div-wrapper-sigup-dsktp">
+<Divider className="Divider-cutm-dktp "/>
 </div>
 
       <div className="signup-container">
@@ -194,7 +196,7 @@ listening </span></div>
       </div>
       {!showLoginModal && (
         <form onSubmit={handleSignupSubmit} >
-          <div>
+          <div >
             <div className="inputstyle">
               <label className="lab-sigup">Username</label>
               <Input
@@ -254,13 +256,17 @@ listening </span></div>
               )}
             </div>
 
+<div>
+
+    
+</div>
             <div className="inputstyle signup-form ">
               <label className="lab-sigup">Country</label>
               <Select
                 value={form.country}
                 onChange={handleCountryChange}
                 required
-
+className="border-style"
               >
                 {countries?.map((country) => (
                   
@@ -278,7 +284,7 @@ listening </span></div>
                 value={form.state}
                 onChange={(value) => handleFormChange("state", value)}
                 required
-              
+                className="border-style"
               >
                 {states?.map((state) => (
                   <Option key={state} value={state}>
@@ -290,23 +296,7 @@ listening </span></div>
               {staterror && <p style={{ color: "red" }}>{staterror}</p>}
             </div>
 
-            {/* <div className="inputstyle-chk">
-              <Checkbox
-                className="chek-bx"
-                checked={form.consent}
-                onChange={(e) => handleFormChange("consent", e.target.checked)}
-              >
-                I agree to the terms and conditions
-              </Checkbox>
-              {consentError && (
-                <span className="error-message">
-                  Please agree to the terms and conditions.
-                </span>
-              )}
-            </div> */}
-
-
-
+       
 <div className="swtch-wrapper mt-3 ">
   <Switch
  className={form.consent ? "custom-switch-sigup-checked" : "custom-switch-sigup"}
@@ -344,7 +334,7 @@ listening </span></div>
 
      
       <div className="text-center pt-4">
-      <Link to="/login">
+      <Link to="/signin">
         <button type="submit" className=" font-medium underline decoration-solid">
        Login in here.
         </button>
@@ -400,6 +390,8 @@ listening </span></div>
           </p>
           <p className="success-text">Proceed to login.</p>
         </Modal>
+      </div>
+      </div>
       </div>
     </div>
   );

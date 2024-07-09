@@ -126,7 +126,7 @@ padding: 5px 5px 10px 5px;
 
 .hover-bg-cstm {
   
-  transition: background-color 0.3s, padding 0.3s; /* Add transition */
+  transition: background-color 0.3s, padding 0.3s; 
 }
 .btn-wrapper button {
   padding: 10px 40px 10px 40px;

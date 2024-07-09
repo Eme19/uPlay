@@ -1,46 +1,3 @@
-/* h1 {
-  text-align: start;
-  font-size: 2rem;
-  padding-left: 3.9rem;
-  padding-top: 3rem;
-  font-family: sans-serif;
-  color: rgb(104, 131, 104);
-}
-
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 60%;
-}
-
-label {
-  float: left;
-  padding-bottom: 0.2rem;
-  padding-top: 1rem;
-  padding-left: 0.5rem;
-  font-weight: lighter;
-  font-size: 0.93rem;
-  font-family: sans-serif;
-}
-
-.btn-form {
-  border-collapse: collapse;
-  border: transparent;
-  color: black;
-  background-color: rgb(235, 239, 240);
-  cursor: pointer;
-  font-weight: bolder;
-  padding: 0.6rem 3.5rem 0.6rem 3.5rem;
-  border-radius: 0.3rem;
-}
-
-.input-formstyle {
-  background-color: rgb(220, 215, 215);
-} */
-
-
 
 .signup-conatiner{
   padding-top: 1rem;
@@ -84,9 +41,7 @@ label {
   color: white;
 }
 
-/* .inputstyle .ant-select-item {
-  font-size: 16px; 
-} */
+
 
 .input-formstyle {
   width: 100%;
@@ -98,9 +53,10 @@ label {
  border: 1px solid #847f7f;
 }
 
-.custm-title-flex{
+.custm-title-flex-desktop{
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding-left: 6.5rem;
 }
 
@@ -111,7 +67,7 @@ label {
 
 }
 
-.div-wrapper-sigup{
+.div-wrapper-sigup-dsktp{
   width: 72%;
   text-align: center;
   padding-left: 4rem;
@@ -123,6 +79,12 @@ label {
   color:rgb(186, 181, 181);
   }
   
+
+.Divider-cutm-dktp{
+  background-color: rgb(67, 66, 66)!important;
+  margin-right: 29rem;
+    width: 100%;
+}
 
 
 .div-wrapper-sigup-bottom{

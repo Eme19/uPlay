@@ -24,6 +24,7 @@ function AlbumList() {
     withCredentials: true,
   });
 
+
   const getAlbums = async () => {
     try {
       const response = await api.get(`/api/album`);
@@ -36,6 +37,7 @@ function AlbumList() {
     }
   };
 
+  
   const refreshAlbumList = () => {
     console.log("Refreshing all album list...");
     getAlbums();

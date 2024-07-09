@@ -11,6 +11,7 @@ import {
   RightSquareOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 function SongsDetailsPage({ song }) {
   const [isAddingToLibrary, setIsAddingToLibrary] = useState(false);
@@ -114,6 +115,7 @@ function SongsDetailsPage({ song }) {
         </div>
    
 
+<Footer/>
       {showMode && (
         <Modal
           className="w-drop rounded-md"

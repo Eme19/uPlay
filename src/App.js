@@ -30,10 +30,12 @@ import EditProfileImage from "./pages/profile/EditProfileImage";
 import IsAdminRoute from "./context/IsAdminRoute";
 import TrackPlayer from "./pages/track/TrackPlayer";
 import AdminDashboard from "./pages/adminpage/AdminDashboard";
-import Account from  "./pages/account/Account";
+import Account from "./pages/account/Account";
 import { AuthContext } from "./context/auth.context";
 import IconSearchBar from "./pages/generalsearch/IconView";
 import Layout from "./pages/desktopLayout/home/Layout";
+import Logindsktop from "./pages/desktopLayout/login/LoginDesktop";
+import Signupdsktop from "./pages/desktopLayout/signup/SignUpDsktop";
 
 function App() {
   const { user, isLoggedIn } = useContext(AuthContext);
@@ -63,22 +65,14 @@ function App() {
     return () => {};
   }, []);
 
-
-
-  
   const isMobile = () => {
     return /Mobi|Android/i.test(navigator.userAgent);
   };
 
-
-
-
   return (
     <div className="App " id="appBody">
-   
-   
       <Routes>
-        <Route path="/account" element={<Account/>}/>
+        <Route path="/account" element={<Account />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/all/search/" element={<IconSearchBar />} />
         <Route path="/artist/:artistId/albums" element={<ArtistAlbums />} />
@@ -104,7 +98,8 @@ function App() {
         <Route exact path="/mobile" element={<Home />} />
         <Route exact path="/desktop" element={<Layout />} />
         {isMobile() ? (
-          <Route path="/" element={<Home />} />
+           <Route path="/" element={<Layout />} />
+       
         ) : (
           <Route path="/" element={<Layout />} />
         )}
@@ -112,7 +107,8 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 
-
+        <Route path="/sign-up" element={<Signupdsktop />} />
+        <Route path="/signin" element={<Logindsktop />} />
       </Routes>
       <ToastContainer />
     </div>

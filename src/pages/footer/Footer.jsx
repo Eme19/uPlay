@@ -40,7 +40,7 @@ const Footer = () => {
           </a>
         </div>
        
-        <div className='custon-color-foter'><a href="#">
+        <div className='custon-color-foter'><a href="/">
             <div><BookOutlined  className='text-2xl'/> </div>
             <div  className='text-sm'>Library</div>
           </a>
