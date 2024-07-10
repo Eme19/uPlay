@@ -5,6 +5,16 @@ const api = axios.create({
   withCredentials: true
 });
 
+// Function to save token to localStorage
+const saveToken = (token) => {
+  localStorage.setItem("authToken", token);
+};
+
+// Function to get token from localStorage
+const getToken = () => {
+  return localStorage.getItem("authToken");
+};
+
 const signUp = async ({ email, password, username, country, state, consent }) => {
   try {
     const response = await api.post("/auth/signup", { email, password, username, country, state, consent });
@@ -18,6 +28,7 @@ const signUp = async ({ email, password, username, country, state, consent }) =>
 const logIn = async ({ email, username, password }) => {
   try {
     const response = await api.post("/auth/login", { email, username, password });
+    saveToken(response.data.token); // Save the token to localStorage
     return response.data;
   } catch (err) {
     console.error("Log in error:", err);
@@ -25,8 +36,9 @@ const logIn = async ({ email, username, password }) => {
   }
 };
 
-const verifyToken = async (storedToken) => {
+const verifyToken = async () => {
   try {
+    const storedToken = getToken();
     const response = await api.get("/auth/verify", {
       headers: { Authorization: `Bearer ${storedToken}` }
     });
@@ -48,12 +60,11 @@ const uploadPhoto = async (uploadData) => {
 };
 
 const getCurrentUser = async () => {
-  const storedToken = localStorage.getItem("authToken");
-  if (!storedToken) {
-    throw new Error("No token found");
-  }
-
   try {
+    const storedToken = getToken();
+    if (!storedToken) {
+      throw new Error("No token found");
+    }
     const response = await api.get("/api/users", {
       headers: { Authorization: `Bearer ${storedToken}` }
     });
@@ -73,3 +84,4 @@ const authMethods = {
 };
 
 export default authMethods;
+
