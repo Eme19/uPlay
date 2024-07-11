@@ -1,28 +1,44 @@
 import React, { useState } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import './DefaultHomePage.css'; 
+import logo3 from '../../../assets/logo1.png';
+import Navbar from "../defaulthomepage/defaultnavbar/DefaultNavbar"
+import Footer from "../defaulthomepage/defaultfooter/DefaultFooter"
 
 function DefaultHomePage() {
   const [url] = useState('https://u-play.vercel.app');
 
   return (
-    <div className='text-black' style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Scan QR Code to Open on Your Phone</h1>
+
+    <div>
+      <Navbar/>
+ <div className='text-black main-container'>
       <div className="qr-code-container">
         <QRCodeSVG
           value={url}
-          size={256}
+          size={236}
           imageSettings={{
-            src: "/logo.png",
-            x: undefined,
-            y: undefined,
-            height: 64,
-            width: 64,
+            src: logo3, 
+            height: 35, 
+            width: 50,
+            x: 100, 
+            y: 100,
             excavate: true,
           }}
         />
+
       </div>
     </div>
+
+    <div className='text-center text-6xl pt-10 text-stone-200 custm-qr-stylin'>
+    <h1>Experience the Best Music</h1>
+    <p>Scan the QR code to enjoy our web app on your mobile device</p>
+        </div>
+
+
+        <Footer/>
+    </div>
+   
   );
 }
 
