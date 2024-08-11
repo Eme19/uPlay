@@ -18,7 +18,6 @@ function Login() {
   const navigate = useNavigate();
   const [rememberMe, setRememberMe] = useState(false);
 
-
   const handleIdentifier = (e) => {
     setIdentifier(e.target.value);
     setError("");
