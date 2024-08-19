@@ -71,7 +71,7 @@ function Home() {
   }, [isLoggedIn]);
 
   return (
-    <div className="cst-home ">
+    <div className="cst-home-container">
       {loading && !isLoggedIn ? (
         <HomeLoading />
       ) : (
@@ -85,14 +85,14 @@ function Home() {
                 <MusicHome />
                 <Divider
                   style={{ borderColor: "#a8a29e" }}
-                  className="px-3  pt-4 "
+                  className="px-3.5  pt-4 "
                 >
-                  <div className="transition duration-300 animate-bounce ease-in-out text-white pt-3 pb-1 text-xl ">
+                  <div className=" transition duration-300 animate-bounce ease-in-out text-white pt-3 pb-1 text-xl ">
                     Library
                   </div>
                 </Divider>
 
-                <div className="flex flex-wrap gap ml-6 ">
+                <div className="flex flex-wrap gap-2 ">
                   {recentlyAddedAlbums.map((album) => (
                     <div key={album._id} className="albm-detal-hd-contner ">
                       <div className="album-detail-continer ">

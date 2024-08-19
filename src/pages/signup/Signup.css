@@ -1,3 +1,37 @@
+@media (max-width: 768px) {
+  body {
+    margin: 0; 
+    padding:0; 
+
+  }
+
+  #logo-img-login-sigup{
+    width: 140px;
+    height: auto; 
+  }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color:  #111111 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+
+.signup-conatiner-signup{
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+  }
 
 .signup-conatiner{
   padding-top: 1rem;
@@ -60,19 +94,38 @@
   padding-left: 6.5rem;
 }
 
-.log-container-signup {
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-bottom: 20px;
 
+
+.custm-title-flex-sigup{
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem;
+}
+
+.log-container-signup {
+  padding-bottom: 70px;
 }
 
 .div-wrapper-sigup-dsktp{
   width: 72%;
   text-align: center;
-  padding-left: 4rem;
   padding-top: 1.4rem;
 }
+
+.div-wrapper-sigup-page{
+  width: 96%;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+
+.Divider-cutm-signup{
+  background-color: rgb(67, 66, 66)!important;
+
+  
+}
+
 
 .sgnup-act-signp{
   padding-top: 1.5rem;
@@ -85,6 +138,7 @@
   margin-right: 29rem;
     width: 100%;
 }
+
 
 
 .div-wrapper-sigup-bottom{
@@ -104,20 +158,26 @@
 }
 
 
-.input-formstyle-passw  {
-  width: 100%;
-  padding: 0.9rem;
-  border-radius: 5px;
-  transition: border 0.3s ease;
-  background-color: #111111!important;
-  color:  #111111!important;
-border: 1px solid #847f7f!important;;
+.input-formstyle-passw  .ant-input-password {
+  width: 100% !important;
+  padding: 0.9rem !important;
+  border-radius: 5px !important;
+  transition: border 0.3s ease !important;
+  background-color: #111111 !important;
+  color: #f4eeee !important;
+  border: 1px solid #847f7f !important;
+}
+
+
+.ant-input-password input {
+  background-color: #111111 !important;
+  color: #f4eeee !important;
 }
 
 
 
 .input-formstyle-passw .ant-input-password-icon svg {
-  fill: #666666; 
+  fill: #a5a1a1!important; 
   float: right;
 
 }
@@ -404,4 +464,6 @@ border: none!important;
 
 .error-message{
   color: #ce8989;
+}
+
 }

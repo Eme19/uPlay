@@ -1,27 +1,42 @@
+@media (max-width: 768px) {
+
+  body {
+    margin: 0; 
+    padding:0; 
+
+  }
+
 form {
   display: flex;
   justify-content: center;
   width: 100%;
- 
 }
 
+.login-body-container{
+  padding-top: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-bottom: 2rem;
+
+}
+
+
 .log-container {
-  padding-top: 10px;
-  padding-left: 1.2rem;
-  padding-bottom: 50px;
+  padding-top: 30px;
+  padding-left: 1rem;
+  padding-bottom: 2rem;
 
 }
 
 #logo-img-login {
-  width: 80px;
-  height: 80px; 
+  width: 130px;
+  height: 125px; 
 }
 
 
 .Divider-cutm {
  background-color: rgb(67, 66, 66)!important;
 width: 5%!important;
-margin-left: 2.5rem!important;
 
 }
 
@@ -58,7 +73,7 @@ custom-switch .ant-switch-checked .ant-switch-inner {
 
 .custm-title-lgn {
 text-align: left;
-padding-left: 2.5rem;
+padding-left: 0.3rem;
 }
 
 input-container {
@@ -129,12 +144,12 @@ input-lg {
   padding-top: 45px;
 }
 
-.button-lg {
+.button-lg-mobil {
   width: 100%;
   padding: 15px;
 border: none;
-  background-color: #222121;
-  color: #928b8b;
+  /* background-color: #222121; */
+  /* color: #928b8b; */
   cursor: pointer;
   font-weight: bold;
   border-radius: 100px;
@@ -152,9 +167,10 @@ border:none;
 }
 
 .div-wrapper{
-  width: 84%;
+  width: 98%;
   align-items: center;
-  padding-top: 1rem;
+  /* padding-top: rem; */
   padding-bottom: 1rem;
 }
 
+}

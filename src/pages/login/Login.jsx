@@ -68,8 +68,10 @@ function Login() {
           <img id="logo-img-login" alt="logo" src={logoImage} />
         </Link>
       </div>
+      <div className="login-body-container">
 
-<div className="text-3xl custm-title-lgn font-bold">Sign in to uPlay </div>
+        
+<div className="text-3xl custm-title-lgn  font-bold">Sign in to uPlay </div>
 
 <div className="div-wrapper">
 <Divider  
@@ -115,8 +117,8 @@ function Login() {
     </div>
 
     <div className="btn-container ">
-    <button type="submit" className="button-lg bg-pink-600 text-base text-black transition-transform duration-150 ease-out hover:scale-105">
-  Login
+    <button type="submit" className="button-lg-mobil bg-pink-600 text-black text-base transition-transform duration-150 ease-out hover:scale-105">
+  Login 
 </button>
 
     </div>
@@ -148,6 +150,7 @@ function Login() {
       </Link>
     </div>
       </div>
+    </div>
     </div>
   );
 }

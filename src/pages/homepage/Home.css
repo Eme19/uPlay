@@ -1,7 +1,15 @@
+/* 
 @media only screen and (max-width: 767px) {
+  body {
+    margin: 0; 
+    padding:0; 
+  }
+
+
 .desktp-none{
   display: none;
 }
+
 
 h2 {
   padding-left: 0.9rem;
@@ -120,41 +128,190 @@ Link {
 }
 
 
-.cst-home{
-  background-color: #111111;
-padding-bottom: 2rem;
+.cst-home-container {
+  background-color: #111111; 
+  padding-bottom: 6rem;     
+  padding-left: 2rem;       
+  padding-right: 2rem;     
+  padding-top: 20rem;    
+  color: #f4f4f4;          
+  min-height: 100vh;       
+  box-sizing: border-box;  
+  display: flex;            
+  flex-direction: column;  
 }
 
+} */
+
+
+
+/* General Reset for Mobile */
+@media only screen and (max-width: 767px) {
+  body {
+    margin: 0; 
+    padding: 0; 
+  }
+
+  /* Hide elements only for mobile */
+  .desktp-none {
+    display: none;
+  }
+
+  /* Header styling */
+  h2 {
+    padding-left: 0.9rem;
+    font-size: 1.2rem;
+  }
+
+  /* Home page style */
+  .home-style-position {
+    display: flex;
+    justify-content: center;
+    padding-top: 12rem;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  .pt-cusm-hom {
+    padding-top: 5.7rem;
+  }
+
+  /* List items styling */
+  li {
+    font-size: 4rem;
+    list-style-type: none;
+  }
+
+  /* Button container */
+  .home-button-style {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Gap between elements */
+  .gap {
+    gap: 26px;
+  }
+
+  /* Features list styling */
+  .home-features li {
+    font-size: 20px;
+    padding: 13px;
+    color: rgb(114, 117, 119);
+    font-family: "Times New Roman", Times, serif;
+    animation: breathe 3s infinite;
+    margin-inline-end: 8px;
+    text-transform: capitalize;
+  }
+
+  /* Animation keyframes */
+  @keyframes breathe {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Animation delay for features list items */
+  .home-features li:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  .home-features li:nth-child(3) {
+    animation-delay: 2s;
+  }
+
+  /* Icon styles */
+  .icon-hm-sty-play, 
+  .icon-hm-sty-build, 
+  .icon-hm-sty-share {
+    font-size: 70px;
+    color: rgb(114, 117, 119);
+    margin-inline-end: 8px;
+  }
+
+  .icon-hm-sty-play:hover,
+  .icon-hm-sty-build:hover {
+    color: rgb(140, 137, 137);
+  }
+
+  .icon-hm-sty-share {
+    color: rgb(162, 166, 169);
+  }
+
+  /* Link styling */
+  .lnk-hm-sty {
+    text-decoration: none;
+    color: rgb(114, 117, 119);
+  }
+
+  Link {
+    text-transform: capitalize;
+  }
+
+  /* Center image */
+  .image-style {
+    text-align: center;
+  }
+
+  /* List item specific styling */
+  #li-styl-hme {
+    font-size: 1rem;
+    margin-left: 2px;
+    font-weight: 600;
+    padding-top: 0.2rem;
+  }
+
+  #li-styl-h-hme {
+    font-size: 0.9rem;
+    margin-left: 2px;
+  }
+
+  /* Home container styling */
+  .cst-home-container {
+    background-color: #111111;
+    padding-bottom: 6rem;     
+    padding-left: 2rem;       
+    padding-right: 2rem;     
+    padding-top: 20rem;    
+    color: #f4f4f4;          
+    min-height: 100vh;       
+    box-sizing: border-box;  
+    display: flex;            
+    flex-direction: column;  
+  }
 }
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .cst-home-container {
+    padding-left: 0.5rem;  
+    padding-right: 0.5rem;  
+    padding-bottom: 3rem;   
+    padding-top: 1rem;     
+  }
+}
+
+
+
 
 
 
 
 
 @media only screen and (min-width: 1024px) {
-  /* layout-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-  
-  left-side, .center, .right-side {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  left-side {
-    background-color: black;
-  }
-  
-  right-side {
-    background-color: #e0e0e0;
-  }
-  
-  center {
-    flex: 2; 
-    background-color: #d0d0d0;
-  } */
+
 
   .mobile-none{
     display: none;
@@ -168,4 +325,8 @@ padding-bottom: 2rem;
   .mobile-none{
     display: none;
   }
+
+
+
+  
   }

@@ -35,10 +35,46 @@ function Signup() {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [navbarVisible, setNavbarVisible] = useState(true); // State for navbar visibility
+  const [lastScrollTop, setLastScrollTop] = useState(0); 
+ 
+  
+
+
+  // const handleScroll = () => {
+  //   setShowNavbar(true);
+  //   clearTimeout(window.navbarTimeout);
+  //   window.navbarTimeout = setTimeout(() => {
+  //     setShowNavbar(false);
+  //   }, 3000); // Hide after 1 second of inactivity
+  // };
+
+
+  const handleScroll = () => {
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScrollTop > lastScrollTop) {
+      // Scrolling down
+      setNavbarVisible(true);
+    } else {
+      // Scrolling up
+      setNavbarVisible(false);
+    }
+    setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); // For Mobile or negative scrolling
+  };
+
+
 
   useEffect(() => {
     fetchCountries();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
+  // useEffect(() => {
+  //   fetchCountries();
+  // }, []);
 
   const fetchCountries = async () => {
     try {
@@ -167,21 +203,31 @@ function Signup() {
 
   return (
     <div>
-          <div className="log-container-signup">
+     {navbarVisible && (
+        <div className="navbar">
+          <Link to="/">
+            <img id="logo-img-login-sigup" alt="logo" src={logoImage} />
+          </Link>
+        </div>
+      )}
+
+<div className="log-container-signup">
+        
         <Link to="/">
-          <img id="logo-img-login" alt="logo" src={logoImage} />
+          <img id="logo-img-login-sigup" alt="logo" src={logoImage} />
         </Link>
       </div>
+<div className="signup-conatiner-signup">
 
-<div className="text-3xl custm-title-flex font-bold">
+<div className="text-3xl custm-title-flex-sigup font-bold">
   <span>Sign up to start
     </span>
      <span>
 listening </span></div>
 
-<div className="div-wrapper-sigup">
+<div className="div-wrapper-sigup-page">
 <Divider  
-                       className="Divider-cutm "/>
+                       className="Divider-cutm-signup"/>
 </div>
 
       <div className="signup-container">
@@ -400,6 +446,7 @@ listening </span></div>
           </p>
           <p className="success-text">Proceed to login.</p>
         </Modal>
+      </div>
       </div>
     </div>
   );

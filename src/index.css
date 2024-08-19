@@ -2,32 +2,39 @@
 body {
   background-color: #c95757; 
   color: #0c0b0b;
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+
+
+
 
 
 body.dark {
   background-color: black;
   color: #ffffff; 
+  
 }
 
 
-  
+* {
+  box-sizing: inherit; /* Apply box-sizing to all elements */
+}
 
 @media only screen and (max-width: 767px) {
   
-/* body {
-  margin: 0;
-  padding: 0;
-  /* background-color: rgb(39, 37, 37) ; */
-	/* background-color: rgb(20, 19, 19);
 
-} */
 
 body {
   background-color:#f8fafc; 
   color: #0c0b0b;
   padding-bottom: 1.5rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 

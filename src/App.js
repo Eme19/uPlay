@@ -1,5 +1,6 @@
+
 import React, { useEffect, useContext } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Navbar from "./pages/homepage/navbar/Navbar";
 import Home from "./pages/homepage/Home";
 import Signup from "./pages/signup/Signup";
@@ -61,54 +62,59 @@ function App() {
     } else {
       body.classList.remove("dark");
     }
-
-    return () => {};
   }, []);
 
   const isMobile = () => {
     return /Mobi|Android/i.test(navigator.userAgent);
   };
 
+  const MobileRoute = ({ element }) => {
+    return isMobile() ? element : <Navigate to="/desktop" />;
+  };
+
+  const DesktopRoute = ({ element }) => {
+    return !isMobile() ? element : <Navigate to="/mobile" />;
+  };
+
   return (
-    <div className="App " id="appBody">
+    <div className="App" id="appBody">
       <Routes>
-        <Route path="/account" element={<Account />} />
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-        <Route path="/all/search/" element={<IconSearchBar />} />
-        <Route path="/artist/:artistId/albums" element={<ArtistAlbums />} />
-        <Route path="/edit/profile" element={<EditProfileImage />} />
-        <Route path="/edit/artist/:artistId" element={<EditArtist />} />
-        <Route path="/playlist" element={<Playlist />} />
-        <Route path="/playlist/:playlistId" element={<PlaylistDetails />} />
-        <Route path="/songs" element={<Songs />} />
-        <Route path="/artist" element={<ArtistList />} />
-        <Route path="/artist/:artistId" element={<ArtistDetail />} />
-        <Route path="/artist/:artistId/album" element={<ArtistAlbums />} />
-        <Route path="/edit/track/:trackId" element={<EditTrack />} />
-        <Route path="/edit/album/:albumId" element={<EditAlbum />} />
-        <Route path="/create/playlist" element={<CreatePlaylist />} />
-        <Route path="/album/:albumId" element={<TrackList />} />
-        <Route path="/admin" element={<AdminHome />} />
-        <Route path="/add/artist" element={<AddArtist />} />
-        <Route path="/track" element={<AddTrack />} />
-        <Route path="/album/list" element={<AlbumList />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/image/upload" element={<ProfileImage />} />
-        <Route path="/album" element={<Album />} />
-        <Route exact path="/mobile" element={<Home />} />
-        <Route exact path="/desktop" element={<Layout />} />
-        {isMobile() ? (
-           <Route path="/" element={<Home />} />
-       
-        ) : (
-          <Route path="/" element={<Layout />} />
-        )}
+        {/* Mobile Routes */}
+        <Route path="/account" element={<MobileRoute element={<Account />} />} />
+        <Route path="/admin/dashboard" element={<MobileRoute element={<AdminDashboard />} />} />
+        <Route path="/all/search/" element={<MobileRoute element={<IconSearchBar />} />} />
+        <Route path="/artist/:artistId/albums" element={<MobileRoute element={<ArtistAlbums />} />} />
+        <Route path="/edit/profile" element={<MobileRoute element={<EditProfileImage />} />} />
+        <Route path="/edit/artist/:artistId" element={<MobileRoute element={<EditArtist />} />} />
+        <Route path="/playlist" element={<MobileRoute element={<Playlist />} />} />
+        <Route path="/playlist/:playlistId" element={<MobileRoute element={<PlaylistDetails />} />} />
+        <Route path="/songs" element={<MobileRoute element={<Songs />} />} />
+        <Route path="/artist" element={<MobileRoute element={<ArtistList />} />} />
+        <Route path="/artist/:artistId" element={<MobileRoute element={<ArtistDetail />} />} />
+        <Route path="/artist/:artistId/album" element={<MobileRoute element={<ArtistAlbums />} />} />
+        <Route path="/edit/track/:trackId" element={<MobileRoute element={<EditTrack />} />} />
+        <Route path="/edit/album/:albumId" element={<MobileRoute element={<EditAlbum />} />} />
+        <Route path="/create/playlist" element={<MobileRoute element={<CreatePlaylist />} />} />
+        <Route path="/album/:albumId" element={<MobileRoute element={<TrackList />} />} />
+        <Route path="/admin" element={<MobileRoute element={<AdminHome />} />} />
+        <Route path="/add/artist" element={<MobileRoute element={<AddArtist />} />} />
+        <Route path="/track" element={<MobileRoute element={<AddTrack />} />} />
+        <Route path="/album/list" element={<MobileRoute element={<AlbumList />} />} />
+        <Route path="/profile" element={<MobileRoute element={<Profile />} />} />
+        <Route path="/image/upload" element={<MobileRoute element={<ProfileImage />} />} />
+        <Route path="/album" element={<MobileRoute element={<Album />} />} />
+        <Route exact path="/mobile" element={<MobileRoute element={<Home />} />} />
 
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<Login />} />
+        {/* Desktop Routes */}
+        <Route exact path="/desktop" element={<DesktopRoute element={<Layout />} />} />
+        <Route path="/" element={<DesktopRoute element={<Layout />} />} />
 
-        <Route path="/sign-up" element={<Signupdsktop />} />
-        <Route path="/signin" element={<Logindsktop />} />
+        {/* Shared Routes */}
+        <Route path="/signup" element={<MobileRoute element={<Signup/>} />} />
+
+        <Route path="/login"element={<MobileRoute element={<Login />} />} />
+        <Route path="/sign-up" element={<DesktopRoute element={<Signupdsktop />} />} />
+        <Route path="/signin" element={<DesktopRoute element={<Logindsktop />} />} />
       </Routes>
       <ToastContainer />
     </div>
@@ -116,4 +122,3 @@ function App() {
 }
 
 export default App;
-
