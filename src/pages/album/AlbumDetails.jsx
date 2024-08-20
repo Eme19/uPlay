@@ -49,7 +49,7 @@ const AlbumDetail = ({ album, refreshAlbumList, onAddToLibrary }) => {
   return (
     <div className="mb-4 ">
       {isLoggedIn ? (
-        <div className="flex  ml-7">
+        <div className="flex  ml-8">
           <div className="albm-detal-hd-contnern">
             <div className="album-detail-continer  cursor-pointer">
               <Link id="Link-style" to={`/album/${album._id}`}>

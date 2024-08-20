@@ -64,7 +64,7 @@ function AlbumSearch({
 
   console.log("albumSearch", albumSearch)
   return (
-    <div className="mt-10 ml-5">
+    <div className="mt-10">
       
       <div className="flex justify-center ">
     

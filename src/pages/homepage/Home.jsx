@@ -71,7 +71,7 @@ function Home() {
   }, [isLoggedIn]);
 
   return (
-    <div className="cst-home-container">
+    <div className="cst-home-container mb-10">
       {loading && !isLoggedIn ? (
         <HomeLoading />
       ) : (
@@ -85,50 +85,51 @@ function Home() {
                 <MusicHome />
                 <Divider
                   style={{ borderColor: "#a8a29e" }}
-                  className="px-3.5  pt-4 "
+                  className="px-3.5  pt-4"
                 >
                   <div className=" transition duration-300 animate-bounce ease-in-out text-white pt-3 pb-1 text-xl ">
                     Library
                   </div>
                 </Divider>
 
-                <div className="flex flex-wrap gap-2 ">
-                  {recentlyAddedAlbums.map((album) => (
-                    <div key={album._id} className="albm-detal-hd-contner ">
-                      <div className="album-detail-continer ">
-                        <Link id="Link-style" to={`/album/${album._id}`}>
-                          <div className="album-cover ">
-                            <img
-                              alt="album cover"
-                              src={album.image}
-                              className=" album-image"
-                            />
-                          </div>
-                          <div className="album-info">
-                            <ul className="album-title">
-                              <li
-                                id="li-styl-hme"
-                                className="text-white align-baseline text-left"
-                              >
-                                {album.artist &&
-                                  album.artist.map((artist) => (
-                                    <span key={artist._id}>{artist.name}</span>
-                                  ))}
-                              </li>
-                              <li
-                                id="li-styl-h-hme"
-                                className="text-zinc-400 align-baseline text-left"
-                              >
-                                {album.title}{" "}
-                              </li>
-                            </ul>
-                          </div>
-                        </Link>
-                      </div>
-                    </div>
+                <div className="pt-2 grid  grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ml-5">
+  {recentlyAddedAlbums.map((album) => (
+    <div key={album._id}>
+      <div className="album-detail-container border-none border-gray-300 rounded-lg overflow-hidden">
+        <Link id="Link-style" to={`/album/${album._id}`} className="block">
+          <div className="album-cover-home cursor-pointer">
+            <img
+              alt="album cover"
+              src={album.image}
+              className="album-image-homep"
+            />
+          </div>
+          <div className="album-info  ">
+            <ul className="album-title space-y-1">
+              <li
+                id="li-styl-hme"
+                className="text-white text-left"
+              >
+                {album.artist &&
+                  album.artist.map((artist) => (
+                    <span key={artist._id}>{artist.name}</span>
                   ))}
-                </div>
-              </div>
+              </li>
+              <li
+                id="li-styl-h-hme"
+                className="text-zinc-400 text-left"
+              >
+                {album.title}
+              </li>
+            </ul>
+          </div>
+        </Link>
+      </div>
+    </div>
+  ))}
+</div>
+
+</div>
 
             </div>
           )}

@@ -1,169 +1,23 @@
 /* 
-@media only screen and (max-width: 767px) {
-  body {
-    margin: 0; 
-    padding:0; 
-  }
 
-
-.desktp-none{
-  display: none;
-}
-
-
-h2 {
-  padding-left: 0.9rem;
-  font-size: 1.2rem;
-}
-
-.home-style-position {
-  display: flex;
-  justify-content: center;
-  padding-top: 12rem;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-
-.pt-cusm-hom{
-  padding-top: 5.7rem;
-}
-
-li {
-  font-size: 4rem;
-  list-style-type: none;
-}
-
-.home-button-style {
-  display: flex;
-  justify-content: center;
-}
-
-.gap{
- gap: 26px;
-}
-
-.home-features li {
-  font-size: 30px;
-  padding: 13px;
-  color: rgb(28, 75, 76);
-  font-family: "Times New Roman", Times, serif;
-}
-
-@keyframes breathe {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.home-features li {
-  animation: breathe 3s infinite;
-  font-size: 20px;
-  color: rgb(114, 117, 119);
-  margin-inline-end: 8px;
-  text-transform: capitalize;
-}
-
-.home-features li:nth-child(2) {
-  animation-delay: 1s;
-}
-
-.home-features li:nth-child(3) {
-  animation-delay: 2s;
-}
-
-.icon-hm-sty-play {
-  font-size: 70px;
-  color: rgb(114, 117, 119);
-  margin-inline-end: 8px;
-}
-
-.icon-hm-sty-play:hover {
-  color: rgb(140, 137, 137);
-}
-
-.icon-hm-sty-build {
-  font-size: 70px;
-  color: rgb(114, 117, 119);
-  margin-inline-end: 8px;
-}
-
-.lnk-hm-sty {
-  text-decoration: none;
-  color: rgb(114, 117, 119);
-}
-
-.icon-hm-sty-share {
-  font-size: 70px;
-  color: rgb(162, 166, 169);
-  margin-inline-end: 8px;
-}
-
-Link {
-  text-transform: capitalize;
-}
-
-.image-style {
-  text-align: center;
-}
-
-
-#li-styl-hme {
-
-  font-size: 1rem;
-  margin-left: 2px;
-  font-weight: 600px;
-
- padding-top: 0.2rem;
-}
-
-#li-styl-h-hme {
-  font-size: 0.9rem;
-  margin-left: 2px;
-}
-
-
-.cst-home-container {
-  background-color: #111111; 
-  padding-bottom: 6rem;     
-  padding-left: 2rem;       
-  padding-right: 2rem;     
-  padding-top: 20rem;    
-  color: #f4f4f4;          
-  min-height: 100vh;       
-  box-sizing: border-box;  
-  display: flex;            
-  flex-direction: column;  
-}
-
-} */
-
-
-
-/* General Reset for Mobile */
 @media only screen and (max-width: 767px) {
   body {
     margin: 0; 
     padding: 0; 
   }
 
-  /* Hide elements only for mobile */
+
   .desktp-none {
     display: none;
   }
 
-  /* Header styling */
+
   h2 {
     padding-left: 0.9rem;
     font-size: 1.2rem;
   }
 
-  /* Home page style */
+ 
   .home-style-position {
     display: flex;
     justify-content: center;
@@ -176,24 +30,211 @@ Link {
     padding-top: 5.7rem;
   }
 
-  /* List items styling */
+
   li {
     font-size: 4rem;
     list-style-type: none;
   }
 
-  /* Button container */
+
   .home-button-style {
     display: flex;
     justify-content: center;
   }
 
-  /* Gap between elements */
+
   .gap {
     gap: 26px;
   }
 
-  /* Features list styling */
+
+  .home-features li {
+    font-size: 20px;
+    padding: 13px;
+    color: rgb(114, 117, 119);
+    font-family: "Times New Roman", Times, serif;
+    animation: breathe 3s infinite;
+    margin-inline-end: 8px;
+    text-transform: capitalize;
+  }
+
+ 
+  @keyframes breathe {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+ 
+  .home-features li:nth-child(2) {
+    animation-delay: 1s;
+  }
+
+  .home-features li:nth-child(3) {
+    animation-delay: 2s;
+  }
+
+  
+  .icon-hm-sty-play, 
+  .icon-hm-sty-build, 
+  .icon-hm-sty-share {
+    font-size: 70px;
+    color: rgb(114, 117, 119);
+    margin-inline-end: 8px;
+  }
+
+  .icon-hm-sty-play:hover,
+  .icon-hm-sty-build:hover {
+    color: rgb(140, 137, 137);
+  }
+
+  .icon-hm-sty-share {
+    color: rgb(162, 166, 169);
+  }
+
+ 
+  .lnk-hm-sty {
+    text-decoration: none;
+    color: rgb(114, 117, 119);
+  }
+
+  Link {
+    text-transform: capitalize;
+  }
+
+  
+  .image-style {
+    text-align: center;
+  }
+
+  #li-styl-hme {
+    font-size: 1rem;
+    margin-left: 2px;
+    font-weight: 600;
+    padding-top: 0.2rem;
+  }
+
+  #li-styl-h-hme {
+    font-size: 0.9rem;
+    margin-left: 2px;
+  }
+
+  .cst-home-container {
+    background-color: #111111;
+    padding: 6rem 2rem 6rem 2rem; 
+  }
+
+
+
+
+  .album-cover{
+    border-radius: 4%;
+    width: 210px;
+    height: 210px;
+    overflow: hidden;
+  }
+
+  .album-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+
+
+
+
+@media (max-width: 480px) {
+  .cst-home-container {
+    padding: 1rem 0.5rem 3rem 0.5rem; 
+  }
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .mobile-none {
+    display: none; 
+  }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Reset for Mobile */
+@media only screen and (max-width: 767px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px; /* General font size for better readability on mobile */
+  }
+
+  /* Hide desktop-specific elements */
+  .desktp-none {
+    display: none;
+  }
+
+  /* Header styling */
+  h2 {
+    padding-left: 0.9rem;
+    font-size: 1.2rem;
+  }
+
+  /* Home page positioning */
+  .home-style-position {
+    display: flex;
+    justify-content: center;
+    padding-top: 12rem;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  /* Custom padding adjustments */
+  .pt-cusm-hom {
+    padding-top: 5.7rem;
+  }
+
+  /* List items styling */
+  li {
+    font-size: 4rem;
+    list-style: none;
+  }
+
+  /* Centered button styling */
+  .home-button-style {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Gap adjustment */
+  .gap {
+    gap: 26px;
+  }
+
+  /* Features list styling with animation */
   .home-features li {
     font-size: 20px;
     padding: 13px;
@@ -217,7 +258,6 @@ Link {
     }
   }
 
-  /* Animation delay for features list items */
   .home-features li:nth-child(2) {
     animation-delay: 1s;
   }
@@ -226,9 +266,8 @@ Link {
     animation-delay: 2s;
   }
 
-  /* Icon styles */
-  .icon-hm-sty-play, 
-  .icon-hm-sty-build, 
+  .icon-hm-sty-play,
+  .icon-hm-sty-build,
   .icon-hm-sty-share {
     font-size: 70px;
     color: rgb(114, 117, 119);
@@ -244,22 +283,18 @@ Link {
     color: rgb(162, 166, 169);
   }
 
-  /* Link styling */
+
   .lnk-hm-sty {
     text-decoration: none;
     color: rgb(114, 117, 119);
   }
 
-  Link {
-    text-transform: capitalize;
-  }
 
-  /* Center image */
   .image-style {
     text-align: center;
   }
 
-  /* List item specific styling */
+
   #li-styl-hme {
     font-size: 1rem;
     margin-left: 2px;
@@ -272,61 +307,47 @@ Link {
     margin-left: 2px;
   }
 
-  /* Home container styling */
+ 
   .cst-home-container {
     background-color: #111111;
-    padding-bottom: 6rem;     
-    padding-left: 2rem;       
-    padding-right: 2rem;     
-    padding-top: 20rem;    
-    color: #f4f4f4;          
-    min-height: 100vh;       
-    box-sizing: border-box;  
-    display: flex;            
-    flex-direction: column;  
+    padding: 6rem 2rem 6rem 2rem; 
   }
+
+
+  .album-cover-home {
+    width: 100%; /* Ensure it fills the parent container */
+    height: 0;
+    padding-top: 100%; /* Creates a square aspect ratio (1:1) */
+    position: relative; 
+    overflow: hidden;
+  }
+  
+  .album-image-homep {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    
+  }
+  
+  
+  
+  
+  
 }
-
-
-
-
-
-
 
 
 @media (max-width: 480px) {
   .cst-home-container {
-    padding-left: 0.5rem;  
-    padding-right: 0.5rem;  
-    padding-bottom: 3rem;   
-    padding-top: 1rem;     
+    padding: 1rem 0.5rem 3rem 0.5rem; /* Adjust padding for small devices */
   }
 }
 
-
-
-
-
-
-
-
+/* Styles for devices wider than 1024px */
 @media only screen and (min-width: 1024px) {
-
-
-  .mobile-none{
-    display: none;
+  .mobile-none {
+    display: none; /* Hide mobile-specific elements on large screens */
   }
-
- 
 }
-
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  .mobile-none{
-    display: none;
-  }
-
-
-
-  
-  }
