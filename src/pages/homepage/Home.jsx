@@ -92,7 +92,7 @@ function Home() {
                   </div>
                 </Divider>
 
-                <div className="pt-2 grid  grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ml-5">
+                <div className="pt-2  grid  grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ml-7">
   {recentlyAddedAlbums.map((album) => (
     <div key={album._id}>
       <div className="album-detail-container border-none border-gray-300 rounded-lg overflow-hidden">

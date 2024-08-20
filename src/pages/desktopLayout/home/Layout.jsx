@@ -441,12 +441,15 @@ const Layout = () => {
                 <div>
                   <AlbumSearch  findAlbumInput={findAlbumInput}
                       setFindAlbumInput={setFindAlbumInput}/>
-                  <p className="float-right">Hello world</p>
+                  <p className="float-right text-stone-300 ">All Album</p>
                 </div>
               </nav>
+              <div className="ml-20-custm">
               {!findAlbumInput && (
               <AlbumList handleAlbumClick={handleAlbumClick} />
               )}
+              </div>
+             
             </>
           )}
           {activeContent === "songs" && <Songs />}

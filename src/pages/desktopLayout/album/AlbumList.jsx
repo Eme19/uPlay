@@ -70,7 +70,7 @@ function AlbumList({ handleAlbumClick }) {
 
   return (
     <div>
-      <div className="albumdetail-wrapper-list">
+      <div className="albumdetail-wrapper-list ">
         {isLoading ? (
           <Loading />
         ) : isLoggedIn ? (
@@ -86,7 +86,7 @@ function AlbumList({ handleAlbumClick }) {
                     /> */}
 
 {!findAlbumInput && (
-              <div className="pt-4 flex  flex-wrap gap-cusm-albmLis">
+              <div className="pt-4 flex  flex-wrap gap-cusm-albmLis ">
 
                 {albums.map((album) => (
                   <AlbumDetail

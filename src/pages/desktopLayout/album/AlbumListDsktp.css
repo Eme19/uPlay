@@ -6,7 +6,7 @@
     
     .albumdetail-wrapper-list{
       margin-top: -65px;
-      margin-left: px;
+     padding-left: ;
     }
     
     .cust-serc-albdetl{
@@ -15,5 +15,7 @@
     }
     
 .gap-cusm-albmLis{
-  gap: 1.1rem;
+  gap: 1rem;
+
+
 }
