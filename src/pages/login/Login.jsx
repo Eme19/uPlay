@@ -41,6 +41,7 @@ function Login() {
     axios
       .post(`${API_URL}/auth/login`, loginData, {
         withCredentials: true,
+          credentials: 'include',
         headers: {
           "Content-Type": "application/json",
         },

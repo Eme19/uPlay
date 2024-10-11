@@ -14,6 +14,12 @@ import mp33 from "../../assets/mp33.png";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import AudioPlayer from "../../components/AudioPlayer";
+import { SearchIcon, MicrophoneIcon } from "@heroicons/react/outline";
+
+
+
+
+
 
 function IconSearchBar() {
   const [searchInput, setSearchInput] = useState("");
@@ -91,15 +97,22 @@ function IconSearchBar() {
   };
 
   return (
-    <Container>
-      <InputGroup className="my-3" size="lg">
+    <Container className="sticky top-0 z-100 bg-transparent md:bg-white md:relative">
+      <InputGroup className="my-3 " size="md">
         <FormControl
+         className=" cursor-pointer text-base pl-10    border-none rounded-1xl"
           placeholder="Search For Artist"
           type="input"
           value={searchInput}
           onChange={(event) => setSearchInput(event.target.value)}
         />
-        <Button onClick={search}>Search</Button>
+         <div className="absolute inset-y-0 left-0 flex items-center pl-2 pointer-events-none">
+                 
+                  <MicrophoneIcon className="h-6 w-6 text-gray-400 cursor-pointer icon-cl-cutm" />
+                </div>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                <SearchIcon className="h-6 w-6 text-gray-400 cursor-pointer  icon-cl-cutm" />                </div>
+        {/* <Button onClick={search}>Search</Button> */}
       </InputGroup>
 
       <Row className="mx-2">
