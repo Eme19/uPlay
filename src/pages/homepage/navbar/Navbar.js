@@ -60,8 +60,8 @@ function Navbar() {
 
 
   const handleLogout = () => {
-    logOutUser(); // Call logout function
-    navigate("/login"); // Navigate to login page after logout
+    logOutUser(); 
+    navigate("/login");
   };
 
 
