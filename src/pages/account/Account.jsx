@@ -4,9 +4,8 @@ import ProjectImg from "../../assets/logo1.png";
 import logo from "../../assets/logo3.png";
 import "./Account.css";
 import { CloseOutlined } from "@ant-design/icons";
-import { RightOutlined } from '@ant-design/icons';
-import { Modal, Button } from 'react-bootstrap';
-
+import { RightOutlined } from "@ant-design/icons";
+import { Modal, Button } from "react-bootstrap";
 
 function Settings() {
   const [showTeamForm, setShowTeamForm] = useState(false);
@@ -89,27 +88,15 @@ function Settings() {
               <img id="logo-img-login-acct" alt="logo" src={logo} />
             </Link>
           </div>
-
-          {/* {!isScrollingUp && (
-            <div className='pt-2.5 text-lg  capitalize tracking-wide'>
-              Project
-            </div>
-          )} */}
         </div>
 
         {isScrollingUp && (
-            <div className="pt-4 text-base  capitalize tracking-wide">
-             Account
-            </div>
-          )}
+          <div className="pt-4 text-base  capitalize tracking-wide">
+            Account
+          </div>
+        )}
 
         <div className="flex gap-0 text-white">
-          {/* {!isScrollingUp && (
-            <div className="pt-4 text-base  capitalize tracking-wide">
-              Payment Plans
-            </div>
-          )} */}
-
           <div className="pt-1.5">
             <Link href="/">
               <img
@@ -131,11 +118,11 @@ function Settings() {
           marginTop: "7rem",
         }}
       >
-          {!isScrollingUp && (
-        <div className="relative  pb-10 text-center align-baseline text-xl font-semibold  capitalize tracking-wide  text-white">
-          Account Settings
-        </div>
-          )}
+        {!isScrollingUp && (
+          <div className="relative  pb-10 text-center align-baseline text-xl font-semibold  capitalize tracking-wide  text-white">
+            Account Settings
+          </div>
+        )}
         <div
           className="relative mb-4 flex justify-between rounded-lg border-none bg-zinc-700 px-4 py-2 tracking-wide"
           role="alert"
@@ -146,7 +133,6 @@ function Settings() {
           <div className="pt-1 transition-transform duration-150 ease-out hover:scale-105 text-lg text-white font-semibold custm-color-acct underline cursor-pointer underline-offset-2 subpixel-antialiased shadow-gray-950">
             Edit
           </div>
-          
         </div>
 
         <div
@@ -202,18 +188,16 @@ function Settings() {
               </div>
             </div>
           )}
- </div>
+        </div>
 
-
-
-<div
+        <div
           className="relative custm-top-pstn flex justify-between rounded-lg border-none bg-zinc-700 px-4 py-2 tracking-wide"
           role="alert"
         >
           {!showUsernameForm && (
             <>
               <div className="pt-2 pb-2 text-base capitalize text-white">
-              Username
+                Username
               </div>
               <div
                 className="pt-1 transition-transform duration-150 ease-out hover:scale-105 text-lg text-white  font-semibold custm-color-acct underline cursor-pointer underline-offset-2 subpixel-antialiased shadow-gray-950"
@@ -224,12 +208,11 @@ function Settings() {
             </>
           )}
 
-          
-       {showUsernameForm && (
+          {showUsernameForm && (
             <div className="flex items-center justify-between cursor-pointer tracking-wide text-stone-600  ">
               <div className="justify-items-start">
                 <div className="pt-2 pb-1 text-start  text-base capitalize text-white">
-                Username
+                  Username
                 </div>
                 <div className="pb-3">
                   <input
@@ -262,47 +245,43 @@ function Settings() {
           )}
         </div>
 
+        <div
+          className="relative custm-top-pstn flex cursor-pointer justify-between rounded-lg border-none bg-zinc-700 px-4 py-2 tracking-wide"
+          role="alert"
+        >
+          <div className="pt-2 pb-2 text-base capitalize text-white">
+            Payment Plans
+          </div>
+          <div className="pt-1  transition-transform duration-150 ease-out hover:scale-105 text-lg text-white font-semibold text underline cursor-pointer underline-offset-2 subpixel-antialiased shadow-gray-950">
+            <RightOutlined className="text-stone-300 pr-1" />
+          </div>
+        </div>
 
         <div
           className="relative custm-top-pstn flex cursor-pointer justify-between rounded-lg border-none bg-zinc-700 px-4 py-2 tracking-wide"
           role="alert"
         >
           <div className="pt-2 pb-2 text-base capitalize text-white">
-          Payment Plans
+            Notifications
           </div>
           <div className="pt-1  transition-transform duration-150 ease-out hover:scale-105 text-lg text-white font-semibold text underline cursor-pointer underline-offset-2 subpixel-antialiased shadow-gray-950">
-          <RightOutlined className="text-stone-300 pr-1"/>
+            <RightOutlined className="text-stone-300 pr-1" />
           </div>
         </div>
-
-
-        <div
-          className="relative custm-top-pstn flex cursor-pointer justify-between rounded-lg border-none bg-zinc-700 px-4 py-2 tracking-wide"
-          role="alert"
-        >
-          <div className="pt-2 pb-2 text-base capitalize text-white">
-       Notifications
-          </div>
-          <div className="pt-1  transition-transform duration-150 ease-out hover:scale-105 text-lg text-white font-semibold text underline cursor-pointer underline-offset-2 subpixel-antialiased shadow-gray-950">
-          <RightOutlined className="text-stone-300 pr-1"/>
-          </div>
-        </div>
-
 
         <div
           className="relative custm-top-pstn-delet cursor-pointer flex justify-between rounded-lg border-none bg-zinc-700 px-4 py-2 tracking-wide"
           role="alert"
         >
-
-{!showDeleteConfirmation && (
+          {!showDeleteConfirmation && (
             <>
               <div className=" flex-col justify-items-start pt-2">
                 <div className="pt-2 text-start text-red-500 text-lg capitalize">
                   Delete My Account
                 </div>
                 <div className=" text-start  text-xs capitalize text-white pb-4">
-                  Deleting account will permanently <br></br> delete all data and you
-                  cannot retrieve it.
+                  Deleting account will permanently <br></br> delete all data
+                  and you cannot retrieve it.
                 </div>
               </div>
               <div className="mt-cutm-btn">
@@ -310,7 +289,7 @@ function Settings() {
                   className="rounded-md border-none bckgrnd-col px-4  transition-transform duration-150 ease-out hover:scale-105 text-lg text-white py-2 text-base text-white shadow-lg shadow-gray-950"
                   onClick={toggleDeleteConfirmation}
                 >
-                  Delete 
+                  Delete
                 </div>
               </div>
             </>
@@ -323,8 +302,8 @@ function Settings() {
                   Delete My Account
                 </div>
                 <div className=" text-start  text-xs capitalize text-white pb-4">
-                  Deleting account will permanently <br></br> delete all data and you
-                  cannot retrieve it.
+                  Deleting account will permanently <br></br> delete all data
+                  and you cannot retrieve it.
                 </div>
               </div>
               <div className="mt-cutm-btn">
@@ -332,28 +311,34 @@ function Settings() {
                   className="rounded-md border-none bckgrnd-col px-4  transition-transform duration-150 ease-out hover:scale-105 text-lg text-white py-2 text-base text-white shadow-lg shadow-gray-950"
                   onClick={toggleDeleteConfirmation}
                 >
-                  Delete 
+                  Delete
                 </div>
               </div>
             </>
           )}
 
-<Modal show={showDeleteConfirmation} onHide={toggleDeleteConfirmation} className="mt-40 mobile-modal">
-        <Modal.Header >
-          <Modal.Title  className="pt-2 text-start text-red-500 text-lg capitalize">Delete Account</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="text-center text-base  text-stone-600">
-          <p>Are you sure you want to delete your account?</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={handleDelete}>
-            Yes, Delete
-          </Button>
-          <Button variant="secondary" onClick={toggleDeleteConfirmation}>
-            Cancel
-          </Button>
-        </Modal.Footer>
-      </Modal>
+          <Modal
+            show={showDeleteConfirmation}
+            onHide={toggleDeleteConfirmation}
+            className="mt-40 mobile-modal"
+          >
+            <Modal.Header>
+              <Modal.Title className="pt-2 text-start text-red-500 text-lg capitalize">
+                Delete Account
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className="text-center text-base  text-stone-600">
+              <p>Are you sure you want to delete your account?</p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="danger" onClick={handleDelete}>
+                Yes, Delete
+              </Button>
+              <Button variant="secondary" onClick={toggleDeleteConfirmation}>
+                Cancel
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
       </div>
     </div>

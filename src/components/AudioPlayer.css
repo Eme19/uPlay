@@ -8,7 +8,7 @@
 
 .col-card {
   background-color: rgb(28, 28, 28);
-  padding:30px 10px 20px 30px;
+  padding: 30px 10px 20px 30px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -26,22 +26,18 @@
   color: white;
 }
 
-.contain-imag-trac-inf{
+.contain-imag-trac-inf {
   display: flex;
   justify-content: space-around;
-
 }
 
-
-.btn-no-background  {
-  fill: white ;
+.btn-no-background {
+  fill: white;
   font-size: 28px;
-  background-color: transparent!important;
+  background-color: transparent !important;
 }
-
-
 
 .btn-audio {
-background-color: none!important ;
-margin-right: 30px;
+  background-color: none !important ;
+  margin-right: 30px;
 }

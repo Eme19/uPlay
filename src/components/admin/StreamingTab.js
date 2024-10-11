@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Streaming = () => {
-  const [trackName, setTrackName] = useState('');
+  const [trackName, setTrackName] = useState("");
   const [streamingId, setStreamingId] = useState(null);
 
   const startStreaming = async () => {
     try {
-      const response = await axios.post('/stream/start-streaming', {
-        userId: 'user123', 
+      const response = await axios.post("/stream/start-streaming", {
+        userId: "user123",
         trackName,
       });
       setStreamingId(response.data._id);
     } catch (error) {
-      console.error('Error starting streaming:', error);
+      console.error("Error starting streaming:", error);
     }
   };
 
@@ -22,7 +22,7 @@ const Streaming = () => {
       await axios.put(`/stream/stop-streaming/${streamingId}`);
       setStreamingId(null);
     } catch (error) {
-      console.error('Error stopping streaming:', error);
+      console.error("Error stopping streaming:", error);
     }
   };
 

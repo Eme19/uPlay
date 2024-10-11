@@ -1,21 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-import axios from 'axios';
-import AdminDashboard from '../../pages/AdminDashboard';
-
+import React, { useState, useEffect } from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import axios from "axios";
+import AdminDashboard from "../../pages/AdminDashboard";
 
 const AdminComponent = () => {
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   const handleClick = async () => {
     try {
-      const response = await axios.get('/auth/admin');
+      const response = await axios.get("/auth/admin");
       setMessage(response.data.message);
-      setError('');
+      setError("");
     } catch (err) {
-      setMessage('');
-      setError('Access Denied. You must be an admin.');
+      setMessage("");
+      setError("Access Denied. You must be an admin.");
     }
   };
 
@@ -32,12 +31,3 @@ const AdminComponent = () => {
 };
 
 export default AdminComponent;
-
-
-
-
-
-
-
-
-

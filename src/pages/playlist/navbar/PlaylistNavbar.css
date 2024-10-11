@@ -1,14 +1,13 @@
-.p-playlst-custm{
-  
-        background-color: rgba(17, 17, 17, 0.9);
-    padding: 6px 0px 5px 0px;
+.p-playlst-custm {
+  background-color: rgba(17, 17, 17, 0.9);
+  padding: 6px 0px 5px 0px;
 }
 
-.pt-plylst-nav{
-    padding-top: 0.3rem;
-    padding-left: 0.5rem;
+.pt-plylst-nav {
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
 }
 
-.mt-cstum-icon{
-    padding-top: 0.9rem;
+.mt-cstum-icon {
+  padding-top: 0.9rem;
 }

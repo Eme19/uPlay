@@ -74,10 +74,7 @@ function Navbar() {
             </div>
           </div>
 
-          <div
-            className="alert alert-dark cust-alert-defct  "
-            role="alert"
-          >
+          <div className="alert alert-dark cust-alert-defct  " role="alert">
             <div className="flex pt-3 pr-20 ">
               <div>
                 <span
@@ -91,13 +88,17 @@ function Navbar() {
                   style={{ marginInlineEnd: "6rem", fontSize: "18px" }}
                   className="font-medium text-white "
                 >
-      Live Music
+                  Live Music
                 </span>
               </div>
 
               <span>
                 <CaretRightOutlined
-                  style={{ fontSize: "25px", borderRadius: "1rem", marginTop: "0.28rem" }}
+                  style={{
+                    fontSize: "25px",
+                    borderRadius: "1rem",
+                    marginTop: "0.28rem",
+                  }}
                   className="text-white bg-pink-600"
                 />
               </span>
@@ -111,7 +112,10 @@ function Navbar() {
                   isSidebarOpen ? "shift-content" : ""
                 }`}
               >
-                <button className="toggle-button pt-3 pr-4" onClick={toggleSidebar}>
+                <button
+                  className="toggle-button pt-3 pr-4"
+                  onClick={toggleSidebar}
+                >
                   {isSidebarOpen ? (
                     <span className="text-2xl">
                       <CloseOutlined />

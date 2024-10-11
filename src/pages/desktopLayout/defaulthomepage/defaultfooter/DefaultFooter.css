@@ -1,22 +1,18 @@
 .socl-foota-right {
-    margin-bottom: 5rem;
-   
+  margin-bottom: 5rem;
 }
 
+.logo-sty {
+  padding-left: 2rem;
+}
 
-  .logo-sty{
-      padding-left: 2rem;
-  }
-
-
-
-.footer-container{
-  position: fixed!important;
+.footer-container {
+  position: fixed !important;
   bottom: 0 !important;
-  width: 100%!important;
-  height: 7.5%!important;
-  background-color: rgb(0, 0, 0)!important;
-  transition: background-color 0.3s ease!important;
-  border-top: 1px solid rgb(28, 27, 27)!important;
+  width: 100% !important;
+  height: 7.5% !important;
+  background-color: rgb(0, 0, 0) !important;
+  transition: background-color 0.3s ease !important;
+  border-top: 1px solid rgb(28, 27, 27) !important;
   padding-bottom: 8rem;
 }

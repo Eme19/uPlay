@@ -1,13 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Input, Button, Select, Checkbox, message, Modal, Divider, Switch } from "antd";
+import {
+  Input,
+  Button,
+  Select,
+  Checkbox,
+  message,
+  Modal,
+  Divider,
+  Switch,
+} from "antd";
 import authMethods from "../../components/apiservices/auth.servic";
 import axios from "axios";
 import "./Signup.css";
 import { AuthContext } from "../../context/auth.context";
 import Login from "../login/Login";
 import logoImage from "../../assets/logo3.png";
-
 
 const { Option } = Select;
 
@@ -36,10 +44,7 @@ function Signup() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true); // State for navbar visibility
-  const [lastScrollTop, setLastScrollTop] = useState(0); 
- 
-  
-
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
   // const handleScroll = () => {
   //   setShowNavbar(true);
@@ -49,9 +54,9 @@ function Signup() {
   //   }, 3000); // Hide after 1 second of inactivity
   // };
 
-
   const handleScroll = () => {
-    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
     if (currentScrollTop > lastScrollTop) {
       // Scrolling down
       setNavbarVisible(true);
@@ -61,8 +66,6 @@ function Signup() {
     }
     setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop); // For Mobile or negative scrolling
   };
-
-
 
   useEffect(() => {
     fetchCountries();
@@ -203,7 +206,7 @@ function Signup() {
 
   return (
     <div>
-     {navbarVisible && (
+      {navbarVisible && (
         <div className="navbar">
           <Link to="/">
             <img id="logo-img-login-sigup" alt="logo" src={logoImage} />
@@ -211,132 +214,128 @@ function Signup() {
         </div>
       )}
 
-<div className="log-container-signup">
-        
+      <div className="log-container-signup">
         <Link to="/">
           <img id="logo-img-login-sigup" alt="logo" src={logoImage} />
         </Link>
       </div>
-<div className="signup-conatiner-signup">
-
-<div className="text-3xl custm-title-flex-sigup font-bold">
-  <span>Sign up to start
-    </span>
-     <span>
-listening </span></div>
-
-<div className="div-wrapper-sigup-page">
-<Divider  
-                       className="Divider-cutm-signup"/>
-</div>
-
-      <div className="signup-container">
-        <div className="log-borda">
-        
-
-          <div></div>
+      <div className="signup-conatiner-signup">
+        <div className="text-3xl custm-title-flex-sigup font-bold">
+          <span>Sign up to start</span>
+          <span>listening </span>
         </div>
-  
-      </div>
-      {!showLoginModal && (
-        <form onSubmit={handleSignupSubmit} >
-          <div>
-            <div className="inputstyle">
-              <label className="lab-sigup">Username</label>
-              <Input
-                className="input-formstyle  text-white"
-                type="text"
-                name="username"
-                value={form.username}
-                onChange={(e) =>
-                  handleFormChange(e.target.name, e.target.value)
-                }
-                required
-                placeholder="Username"
-                autocomplete="username"
-              />
-              {usernameError && <p style={{ color: "red" }}>{usernameError}</p>}
-            </div>
 
-            <div className="inputstyle">
-              <label className="lab-sigup">Email</label>
-              <Input
-                className="input-formstyle  text-white"
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={(e) =>
-                  handleFormChange(e.target.name, e.target.value)
-                }
-                required
-                placeholder="Email"
-                autocomplete="Email"
-              />
-              {emailError && (
-                <span className="error-message">
-                  Please enter a valid email.
-                </span>
-              )}
-            </div>
+        <div className="div-wrapper-sigup-page">
+          <Divider className="Divider-cutm-signup" />
+        </div>
 
-            <div className="inputstyle">
-              <label className="lab-sigup">Password</label>
-              <Input.Password
-                className="input-formstyle-passw"
-                name="password"
-                value={form.password}
-                onChange={(e) =>
-                  handleFormChange(e.target.name, e.target.value)
-                }
-                required
-                placeholder="Password"
-                autocomplete="Password"
-              />
-              {passwordError && (
-                <span className="error-message">
-                  Password must have at least 6 characters, including one digit,
-                  one lowercase letter, and one uppercase letter.
-                </span>
-              )}
-            </div>
+        <div className="signup-container">
+          <div className="log-borda">
+            <div></div>
+          </div>
+        </div>
+        {!showLoginModal && (
+          <form onSubmit={handleSignupSubmit}>
+            <div>
+              <div className="inputstyle">
+                <label className="lab-sigup">Username</label>
+                <Input
+                  className="input-formstyle  text-white"
+                  type="text"
+                  name="username"
+                  value={form.username}
+                  onChange={(e) =>
+                    handleFormChange(e.target.name, e.target.value)
+                  }
+                  required
+                  placeholder="Username"
+                  autocomplete="username"
+                />
+                {usernameError && (
+                  <p style={{ color: "red" }}>{usernameError}</p>
+                )}
+              </div>
 
-            <div className="inputstyle signup-form ">
-              <label className="lab-sigup">Country</label>
-              <Select
-                value={form.country}
-                onChange={handleCountryChange}
-                required
+              <div className="inputstyle">
+                <label className="lab-sigup">Email</label>
+                <Input
+                  className="input-formstyle  text-white"
+                  type="email"
+                  name="email"
+                  value={form.email}
+                  onChange={(e) =>
+                    handleFormChange(e.target.name, e.target.value)
+                  }
+                  required
+                  placeholder="Email"
+                  autocomplete="Email"
+                />
+                {emailError && (
+                  <span className="error-message">
+                    Please enter a valid email.
+                  </span>
+                )}
+              </div>
 
-              >
-                {countries?.map((country) => (
-                  
-                  <Option key={country} value={country}    className="option-style">
-                    {country}
-                  </Option>
-                ))}
-              </Select>
-              {countrierror && <p style={{ color: "red" }}>{countrierror}</p>}
-            </div>
+              <div className="inputstyle">
+                <label className="lab-sigup">Password</label>
+                <Input.Password
+                  className="input-formstyle-passw"
+                  name="password"
+                  value={form.password}
+                  onChange={(e) =>
+                    handleFormChange(e.target.name, e.target.value)
+                  }
+                  required
+                  placeholder="Password"
+                  autocomplete="Password"
+                />
+                {passwordError && (
+                  <span className="error-message">
+                    Password must have at least 6 characters, including one
+                    digit, one lowercase letter, and one uppercase letter.
+                  </span>
+                )}
+              </div>
 
-            <div className="inputstyle signup-form ">
-              <label className="lab-sigup">State</label>
-              <Select
-                value={form.state}
-                onChange={(value) => handleFormChange("state", value)}
-                required
-              
-              >
-                {states?.map((state) => (
-                  <Option key={state} value={state}>
-                    {state}
-                  </Option>
-                ))}
-              </Select>
+              <div className="inputstyle signup-form ">
+                <label className="lab-sigup">Country</label>
+                <Select
+                  value={form.country}
+                  onChange={handleCountryChange}
+                  required
+                >
+                  {countries?.map((country) => (
+                    <Option
+                      key={country}
+                      value={country}
+                      className="option-style"
+                    >
+                      {country}
+                    </Option>
+                  ))}
+                </Select>
+                {countrierror && <p style={{ color: "red" }}>{countrierror}</p>}
+              </div>
 
-              {staterror && <p style={{ color: "red" }}>{staterror}</p>}
-            </div>
+              <div className="inputstyle signup-form ">
+                <label className="lab-sigup">State</label>
+                <Select
+                  value={form.state}
+                  onChange={(value) => handleFormChange("state", value)}
+                  required
+                >
+                  {states?.map((state) => (
+                    <Option key={state} value={state}>
+                      {state}
+                    </Option>
+                  ))}
+                </Select>
 
-            {/* <div className="inputstyle-chk">
+                {staterror && <p style={{ color: "red" }}>{staterror}</p>}
+              </div>
+
+              {/* <div className="inputstyle-chk">
               <Checkbox
                 className="chek-bx"
                 checked={form.consent}
@@ -351,102 +350,112 @@ listening </span></div>
               )}
             </div> */}
 
+              <div className="swtch-wrapper mt-3 ">
+                <Switch
+                  className={
+                    form.consent
+                      ? "custom-switch-sigup-checked"
+                      : "custom-switch-sigup"
+                  }
+                  checked={form.consent}
+                  onChange={(checked) => handleFormChange("consent", checked)}
+                />
+              </div>
 
-
-<div className="swtch-wrapper mt-3 ">
-  <Switch
- className={form.consent ? "custom-switch-sigup-checked" : "custom-switch-sigup"}
-    checked={form.consent}
-    onChange={(checked) => handleFormChange("consent", checked)}
-  />
-
-</div>
-
-{consentError && (
-    <span className="error-message">
-      Please agree to the terms and conditions.
-    </span>
-  )}
-            <div className="btn-div">
-              <button className="btn-form  bg-pink-600 text-black text-base transition-transform duration-150 ease-out hover:scale-105"  type="submit">
-                Sign Up
-              </button>
+              {consentError && (
+                <span className="error-message">
+                  Please agree to the terms and conditions.
+                </span>
+              )}
+              <div className="btn-div">
+                <button
+                  className="btn-form  bg-pink-600 text-black text-base transition-transform duration-150 ease-out hover:scale-105"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
-      )}
+          </form>
+        )}
 
-<div className="div-wrapper-sigup">
-<Divider  
-                       className="Divider-cutm "/>
-</div>
-
-<div>
-        <div className="text-center sgnup-act-signp font-medium">
-
-        <span>Already have an account?</span>
+        <div className="div-wrapper-sigup">
+          <Divider className="Divider-cutm " />
         </div>
-       
 
-     
-      <div className="text-center pt-4">
-      <Link to="/login">
-        <button type="submit" className=" font-medium underline decoration-solid">
-       Login in here.
-        </button>
-      </Link>
-    </div>
-      </div>
+        <div>
+          <div className="text-center sgnup-act-signp font-medium">
+            <span>Already have an account?</span>
+          </div>
 
+          <div className="text-center pt-4">
+            <Link to="/login">
+              <button
+                type="submit"
+                className=" font-medium underline decoration-solid"
+              >
+                Login in here.
+              </button>
+            </Link>
+          </div>
+        </div>
 
-<div className="text-center pt-5 sgnup-act-signp text-xs">
-  <span className=" underline decoration-solid">Privacy Policy</span> and <span className="underline decoration-solid ">Terms of Service</span>
-</div>
-      
-      <div>
-        <Modal
-          className="err-modal-container"
-          visible={isModalOpen}
-          onCancel={closeModal}
-          title={<span className="password-error-title">Password Error</span>}
-          footer={[
-            <Button key="close" className="clos-modal" onClick={closeModal}>
-              Close
-            </Button>,
-          ]}
-        >
-          <p className="modal-error">
-            Password must have at least 6 characters, including one digit, one
-            lowercase letter, and one uppercase letter.
-          </p>
-        </Modal>
-      </div>
+        <div className="text-center pt-5 sgnup-act-signp text-xs">
+          <span className=" underline decoration-solid">Privacy Policy</span>{" "}
+          and{" "}
+          <span className="underline decoration-solid ">Terms of Service</span>
+        </div>
 
-      <div>
-        <Modal
-          title={<span className="success-title">Registration Successful</span>}
-          visible={successModalVisible}
-          onCancel={() => setSuccessModalVisible(false)}
-          className="success-modl-container"
-          footer={[
-            <span
-              key="cancel"
-              className="modal-btn-cancl cancel-btn"
-              onClick={() => setSuccessModalVisible(false)}
-            >
-              Cancel
-            </span>,
-            <span key="ok" className="modal-btn ok-btn" onClick={handleModalOk}>
-              OK
-            </span>,
-          ]}
-        >
-          <p className="success-text">
-            Your account has been successfully created!
-          </p>
-          <p className="success-text">Proceed to login.</p>
-        </Modal>
-      </div>
+        <div>
+          <Modal
+            className="err-modal-container"
+            visible={isModalOpen}
+            onCancel={closeModal}
+            title={<span className="password-error-title">Password Error</span>}
+            footer={[
+              <Button key="close" className="clos-modal" onClick={closeModal}>
+                Close
+              </Button>,
+            ]}
+          >
+            <p className="modal-error">
+              Password must have at least 6 characters, including one digit, one
+              lowercase letter, and one uppercase letter.
+            </p>
+          </Modal>
+        </div>
+
+        <div>
+          <Modal
+            title={
+              <span className="success-title">Registration Successful</span>
+            }
+            visible={successModalVisible}
+            onCancel={() => setSuccessModalVisible(false)}
+            className="success-modl-container"
+            footer={[
+              <span
+                key="cancel"
+                className="modal-btn-cancl cancel-btn"
+                onClick={() => setSuccessModalVisible(false)}
+              >
+                Cancel
+              </span>,
+              <span
+                key="ok"
+                className="modal-btn ok-btn"
+                onClick={handleModalOk}
+              >
+                OK
+              </span>,
+            ]}
+          >
+            <p className="success-text">
+              Your account has been successfully created!
+            </p>
+            <p className="success-text">Proceed to login.</p>
+          </Modal>
+        </div>
       </div>
     </div>
   );

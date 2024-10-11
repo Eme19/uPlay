@@ -1,184 +1,164 @@
 form {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-   
-  }
-  
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 
+.logo-container {
+  padding-top: 30px;
+  padding-left: 2rem;
+  padding-bottom: 50px;
+}
 
-  .logo-container {
-    padding-top: 30px;
-    padding-left: 2rem;
-    padding-bottom: 50px;
-
-  }
-
-
-  .hd-wrapper{
+.hd-wrapper {
   display: flex;
   justify-content: center;
   padding-top: 1rem;
-  
+}
 
-  }
+.dflt-bg-cr {
+  background: linear-gradient(
+    to bottom,
+    #111111,
+    #111111,
+    #111111,
+    #111111,
+    #172554,
+    #111111,
+    #111111
+  );
+  padding-bottom: 5rem;
+}
 
-  .dflt-bg-cr{
-    background: linear-gradient(
-        to bottom,
-        #111111,   
-        #111111, 
-        #111111,   
-        #111111,
-        #172554, 
-        #111111,   
-        #111111      
-      );
-      padding-bottom: 5rem;
-  }
+#logo-img-login-desktop {
+  width: 100px;
+  height: 100px;
+}
 
-
-  #logo-img-login-desktop {
-    width: 100px;
-    height: 100px; 
-  }
-  
-  
-  .Divider-cutm {
-   background-color: rgb(67, 66, 66)!important;
-margin-right: 29rem;
+.Divider-cutm {
+  background-color: rgb(67, 66, 66) !important;
+  margin-right: 29rem;
   width: 100%;
-  }
-  
-  custom-switch .ant-switch-checked .ant-switch-handle::after {
-    background-color: black!important;
-  }
-  
-  custom-switch .ant-switch-checked .ant-switch-inner {
-    background-color: rgb(245, 233, 235)!important;
-  }
-  
-  custom-switch .ant-switch-handle {
-  color: rgb(171, 44, 44)!important;
-  }
-  
-  custom-switch .ant-switch-checked .ant-switch-inner {
-    background-color: rgb(148, 42, 60)!important;
-  }
-  
-  .custom-switch {
-    background-color: rgb(66, 60, 60);
-  
-  }
-  
-  .custom-switch:hover {
-    background-color: rgb(28, 26, 26);
-    color: black;
-    box-shadow: 0 0 0 2px white;
-  }
-  
-  .custom-switch:focus {
-    box-shadow: 0 0 0 2px white;
-  }
-  
-  .custm-title-lgn-dsktop {
+}
+
+custom-switch .ant-switch-checked .ant-switch-handle::after {
+  background-color: black !important;
+}
+
+custom-switch .ant-switch-checked .ant-switch-inner {
+  background-color: rgb(245, 233, 235) !important;
+}
+
+custom-switch .ant-switch-handle {
+  color: rgb(171, 44, 44) !important;
+}
+
+custom-switch .ant-switch-checked .ant-switch-inner {
+  background-color: rgb(148, 42, 60) !important;
+}
+
+.custom-switch {
+  background-color: rgb(66, 60, 60);
+}
+
+.custom-switch:hover {
+  background-color: rgb(28, 26, 26);
+  color: black;
+  box-shadow: 0 0 0 2px white;
+}
+
+.custom-switch:focus {
+  box-shadow: 0 0 0 2px white;
+}
+
+.custm-title-lgn-dsktop {
   text-align: center;
+}
 
-  }
-  
+.style .ant-switch-inner {
+  background-color: #db2777 !important;
+}
 
-  .style .ant-switch-inner {
-    background-color:#db2777 !important;
-  }
-  
-  .style:hover {
-    box-shadow: 0 0 0 2px white;
-  }
-  
-  .style:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px white;
-    transition: box-shadow 0.3s ease-out; 
-  }
-  
-  .sgnup-act{
+.style:hover {
+  box-shadow: 0 0 0 2px white;
+}
+
+.style:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px white;
+  transition: box-shadow 0.3s ease-out;
+}
+
+.sgnup-act {
   padding-top: 3rem;
-  color:rgb(186, 181, 181);
-  }
-  
-  
-  .text-color-lgn {
-    color: rgb(255, 255, 255) !important;
-    padding-bottom:5px ;
-  }
-  
-  .custm-check{
-    padding-bottom:15px ;
-  }
-  
-  input-lg {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .input-lg {
-    width: 100%;
-    
-    padding: 12px 120px 12px 10px;
-    border: none;
-    border-radius: 5px;
-    transition: border 0.3s ease;
-    background-color: #111111;
-    border-top: 1px solid #847f7f;
-      border-left: 1px solid#847f7f;
-      border-right: 1px solid#847f7f;
-      border-bottom: 1px solid #847f7f;
-  }
-  
-  .input-lg:focus {
-    outline: none;
-    border: 2px solid rgb(255, 255, 255); 
-  }
-  
-  
-  .input-lg.error {
-    border-color: red; 
-  }
-  
-  .btn-container {
-    padding-top: 45px;
-  }
-  
-  .button-lg {
-    width: 100%;
-    padding: 15px;
+  color: rgb(186, 181, 181);
+}
+
+.text-color-lgn {
+  color: rgb(255, 255, 255) !important;
+  padding-bottom: 5px;
+}
+
+.custm-check {
+  padding-bottom: 15px;
+}
+
+input-lg {
+  width: 100%;
+  padding: 15px;
   border: none;
-    background-color: #222121;
-    color: #928b8b;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 100px;
-  }
-  
-  .button-lg-signp {
-    width: 100%;
-    padding: 15px;
-  border:none;
-    background-color:none!important;
-    color: #928b8b;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
-  }
-  
+  border-radius: 5px;
+}
 
+.input-lg {
+  width: 100%;
 
+  padding: 12px 120px 12px 10px;
+  border: none;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+  background-color: #111111;
+  border-top: 1px solid #847f7f;
+  border-left: 1px solid#847f7f;
+  border-right: 1px solid#847f7f;
+  border-bottom: 1px solid #847f7f;
+}
 
-  
+.input-lg:focus {
+  outline: none;
+  border: 2px solid rgb(255, 255, 255);
+}
 
-  .btm-defat-colr{
-    background-color: #db2777 !important;
-  }
-  
+.input-lg.error {
+  border-color: red;
+}
+
+.btn-container {
+  padding-top: 45px;
+}
+
+.button-lg {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: #222121;
+  color: #928b8b;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 100px;
+}
+
+.button-lg-signp {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background-color: none !important;
+  color: #928b8b;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btm-defat-colr {
+  background-color: #db2777 !important;
+}

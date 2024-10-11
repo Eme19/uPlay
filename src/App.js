@@ -1,4 +1,3 @@
-
 import React, { useEffect, useContext } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Navbar from "./pages/homepage/navbar/Navbar";
@@ -80,41 +79,115 @@ function App() {
     <div className="App" id="appBody">
       <Routes>
         {/* Mobile Routes */}
-        <Route path="/account" element={<MobileRoute element={<Account />} />} />
-        <Route path="/admin/dashboard" element={<MobileRoute element={<AdminDashboard />} />} />
-        <Route path="/all/search/" element={<MobileRoute element={<IconSearchBar />} />} />
-        <Route path="/artist/:artistId/albums" element={<MobileRoute element={<ArtistAlbums />} />} />
-        <Route path="/edit/profile" element={<MobileRoute element={<EditProfileImage />} />} />
-        <Route path="/edit/artist/:artistId" element={<MobileRoute element={<EditArtist />} />} />
-        <Route path="/playlist" element={<MobileRoute element={<Playlist />} />} />
-        <Route path="/playlist/:playlistId" element={<MobileRoute element={<PlaylistDetails />} />} />
+        <Route
+          path="/account"
+          element={<MobileRoute element={<Account />} />}
+        />
+        <Route
+          path="/admin/dashboard"
+          element={<MobileRoute element={<AdminDashboard />} />}
+        />
+        <Route
+          path="/all/search/"
+          element={<MobileRoute element={<IconSearchBar />} />}
+        />
+        <Route
+          path="/artist/:artistId/albums"
+          element={<MobileRoute element={<ArtistAlbums />} />}
+        />
+        <Route
+          path="/edit/profile"
+          element={<MobileRoute element={<EditProfileImage />} />}
+        />
+        <Route
+          path="/edit/artist/:artistId"
+          element={<MobileRoute element={<EditArtist />} />}
+        />
+        <Route
+          path="/playlist"
+          element={<MobileRoute element={<Playlist />} />}
+        />
+        <Route
+          path="/playlist/:playlistId"
+          element={<MobileRoute element={<PlaylistDetails />} />}
+        />
         <Route path="/songs" element={<MobileRoute element={<Songs />} />} />
-        <Route path="/artist" element={<MobileRoute element={<ArtistList />} />} />
-        <Route path="/artist/:artistId" element={<MobileRoute element={<ArtistDetail />} />} />
-        <Route path="/artist/:artistId/album" element={<MobileRoute element={<ArtistAlbums />} />} />
-        <Route path="/edit/track/:trackId" element={<MobileRoute element={<EditTrack />} />} />
-        <Route path="/edit/album/:albumId" element={<MobileRoute element={<EditAlbum />} />} />
-        <Route path="/create/playlist" element={<MobileRoute element={<CreatePlaylist />} />} />
-        <Route path="/album/:albumId" element={<MobileRoute element={<TrackList />} />} />
-        <Route path="/admin" element={<MobileRoute element={<AdminHome />} />} />
-        <Route path="/add/artist" element={<MobileRoute element={<AddArtist />} />} />
+        <Route
+          path="/artist"
+          element={<MobileRoute element={<ArtistList />} />}
+        />
+        <Route
+          path="/artist/:artistId"
+          element={<MobileRoute element={<ArtistDetail />} />}
+        />
+        <Route
+          path="/artist/:artistId/album"
+          element={<MobileRoute element={<ArtistAlbums />} />}
+        />
+        <Route
+          path="/edit/track/:trackId"
+          element={<MobileRoute element={<EditTrack />} />}
+        />
+        <Route
+          path="/edit/album/:albumId"
+          element={<MobileRoute element={<EditAlbum />} />}
+        />
+        <Route
+          path="/create/playlist"
+          element={<MobileRoute element={<CreatePlaylist />} />}
+        />
+        <Route
+          path="/album/:albumId"
+          element={<MobileRoute element={<TrackList />} />}
+        />
+        <Route
+          path="/admin"
+          element={<MobileRoute element={<AdminHome />} />}
+        />
+        <Route
+          path="/add/artist"
+          element={<MobileRoute element={<AddArtist />} />}
+        />
         <Route path="/track" element={<MobileRoute element={<AddTrack />} />} />
-        <Route path="/album/list" element={<MobileRoute element={<AlbumList />} />} />
-        <Route path="/profile" element={<MobileRoute element={<Profile />} />} />
-        <Route path="/image/upload" element={<MobileRoute element={<ProfileImage />} />} />
+        <Route
+          path="/album/list"
+          element={<MobileRoute element={<AlbumList />} />}
+        />
+        <Route
+          path="/profile"
+          element={<MobileRoute element={<Profile />} />}
+        />
+        <Route
+          path="/image/upload"
+          element={<MobileRoute element={<ProfileImage />} />}
+        />
         <Route path="/album" element={<MobileRoute element={<Album />} />} />
-        <Route exact path="/mobile" element={<MobileRoute element={<Home />} />} />
+        <Route
+          exact
+          path="/mobile"
+          element={<MobileRoute element={<Home />} />}
+        />
 
         {/* Desktop Routes */}
-        <Route exact path="/desktop" element={<DesktopRoute element={<Layout />} />} />
+        <Route
+          exact
+          path="/desktop"
+          element={<DesktopRoute element={<Layout />} />}
+        />
         <Route path="/" element={<DesktopRoute element={<Layout />} />} />
 
         {/* Shared Routes */}
-        <Route path="/signup" element={<MobileRoute element={<Signup/>} />} />
+        <Route path="/signup" element={<MobileRoute element={<Signup />} />} />
 
-        <Route path="/login"element={<MobileRoute element={<Login />} />} />
-        <Route path="/sign-up" element={<DesktopRoute element={<Signupdsktop />} />} />
-        <Route path="/signin" element={<DesktopRoute element={<Logindsktop />} />} />
+        <Route path="/login" element={<MobileRoute element={<Login />} />} />
+        <Route
+          path="/sign-up"
+          element={<DesktopRoute element={<Signupdsktop />} />}
+        />
+        <Route
+          path="/signin"
+          element={<DesktopRoute element={<Logindsktop />} />}
+        />
       </Routes>
       <ToastContainer />
     </div>

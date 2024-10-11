@@ -6,7 +6,7 @@ import { LeftOutlined } from "@ant-design/icons";
 import "./AlbumNavbar.css";
 import { FilterOutlined } from "@ant-design/icons";
 
-function AlbumNavbar({isScrollingUp}) {
+function AlbumNavbar({ isScrollingUp }) {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [activeMenuItem, setActiveMenuItem] = useState("AllPlayList");
 
@@ -121,9 +121,7 @@ function AlbumNavbar({isScrollingUp}) {
                 </Link>
               </div>
             </div>
-            {isScrollingUp && (
-     <div className="text-lg alm-title">Albums</div>
-    )}
+            {isScrollingUp && <div className="text-lg alm-title">Albums</div>}
             <div key="profile" className="navbar-menu-item pr-2 ">
               <Dropdown overlay={profileMenu} className="text-white ">
                 <a

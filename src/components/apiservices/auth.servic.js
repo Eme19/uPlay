@@ -2,22 +2,34 @@ import axios from "axios";
 
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  withCredentials: true
+  withCredentials: true,
 });
 
-// Function to save token to localStorage
 const saveToken = (token) => {
   localStorage.setItem("authToken", token);
 };
 
-// Function to get token from localStorage
 const getToken = () => {
   return localStorage.getItem("authToken");
 };
 
-const signUp = async ({ email, password, username, country, state, consent }) => {
+const signUp = async ({
+  email,
+  password,
+  username,
+  country,
+  state,
+  consent,
+}) => {
   try {
-    const response = await api.post("/auth/signup", { email, password, username, country, state, consent });
+    const response = await api.post("/auth/signup", {
+      email,
+      password,
+      username,
+      country,
+      state,
+      consent,
+    });
     return response.data;
   } catch (err) {
     console.error("Sign up error:", err);
@@ -27,7 +39,11 @@ const signUp = async ({ email, password, username, country, state, consent }) =>
 
 const logIn = async ({ email, username, password }) => {
   try {
-    const response = await api.post("/auth/login", { email, username, password });
+    const response = await api.post("/auth/login", {
+      email,
+      username,
+      password,
+    });
     saveToken(response.data.token); // Save the token to localStorage
     return response.data;
   } catch (err) {
@@ -40,7 +56,7 @@ const verifyToken = async () => {
   try {
     const storedToken = getToken();
     const response = await api.get("/auth/verify", {
-      headers: { Authorization: `Bearer ${storedToken}` }
+      headers: { Authorization: `Bearer ${storedToken}` },
     });
     return response.data;
   } catch (err) {
@@ -66,7 +82,7 @@ const getCurrentUser = async () => {
       throw new Error("No token found");
     }
     const response = await api.get("/api/users", {
-      headers: { Authorization: `Bearer ${storedToken}` }
+      headers: { Authorization: `Bearer ${storedToken}` },
     });
     return response.data;
   } catch (err) {
@@ -84,4 +100,3 @@ const authMethods = {
 };
 
 export default authMethods;
-

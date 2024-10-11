@@ -1,87 +1,86 @@
 .social-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2rem;
-  }
-  
-  .contact-info {
-    text-align: center;
-  }
-  
-  .social-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #323d47;
-    color: white;
-    transition: background-color 0.3s, color 0.3s;
-    font-size: 24px;
-  }
-  
-  .social-icons a:hover {
-    background-color: transparent;
-  }
-  
-  .hover-youtube:hover {
-    color: #9f1b31;
-  }
-  
-.facebk-style:hover{
-    color:  #5792c9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
 }
 
-.instgram-styl:hover{
-    color: #9f1b31;
+.contact-info {
+  text-align: center;
 }
 
-.link-styl-cl:hover{
-    color:  #5792c9;
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-  .social-footer {
-    margin-left: 3rem;
-    padding-top: 0.5rem;
-    font-size: 14px;
-    font-weight: 300;
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #323d47;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  background-color: transparent;
+}
+
+.hover-youtube:hover {
+  color: #9f1b31;
+}
+
+.facebk-style:hover {
+  color: #5792c9;
+}
+
+.instgram-styl:hover {
+  color: #9f1b31;
+}
+
+.link-styl-cl:hover {
+  color: #5792c9;
+}
+
+.social-footer {
+  margin-left: 3rem;
+  padding-top: 0.5rem;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.social-icon-sty {
+  display: inline-flex;
+  gap: 8px;
+  overflow: hidden;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 100%,
+    transparent 100%
+  );
+}
+
+@keyframes moveBackwards {
+  0% {
+    transform: translateX(0);
   }
-  
-  .social-icon-sty {
-    display: inline-flex;
-    gap: 8px;
-    overflow: hidden;
-    width: 100%;
-    justify-content: center;
-    position: relative;
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 10%,
-      black 100%,
-      transparent 100%
-    );
+  100% {
+    transform: translateX(-100%);
   }
-  
-  @keyframes moveBackwards {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .social-icon-sty a {
-    animation: moveBackwards 9s infinite linear;
-  }
-  
+}
+
+.social-icon-sty a {
+  animation: moveBackwards 9s infinite linear;
+}

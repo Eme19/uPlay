@@ -1,93 +1,74 @@
-
 body {
-  background-color: #111111;
+  background-color: #279726;
   color: #0c0b0b;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
-
-
-
-
-
 body.dark {
   background-color: #111111;
-  color: #ffffff; 
-  
+  color: #ffffff;
 }
-
 
 * {
   padding: 0;
   margin: 0;
-  box-sizing: inherit; /* Apply box-sizing to all elements */
+  box-sizing: inherit;
 }
 
 @media only screen and (max-width: 767px) {
+  body {
+    background-color: #111111;
+    color: #0c0b0b;
+    padding-bottom: 1.5rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-body {
-  background-color: #111111;
-  color: #0c0b0b;
-  padding-bottom: 1.5rem;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  body.dark {
+    background-color: #111111;
+    color: #ffffff;
+  }
+
+  .audio-player {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  .display-track {
+    display: flex;
+    align-items: center;
+  }
+
+  .audio-info {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+
+  .audio-image img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .audio-icon {
+    font-size: 48px;
+    color: #888;
+  }
+
+  .progress {
+    display: flex;
+    align-items: center;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
 }
-
-
-body.dark {
-  background-color: #111111;
-  color: #ffffff; 
-}
-
-
-
-.audio-player {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #1e1e1e;
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.display-track {
-  display: flex;
-  align-items: center;
-}
-
-.audio-info {
-  display: flex;
-  align-items: center;
-  margin-left: 20px;
-}
-
-.audio-image img {
-  max-width: 100px;
-  height: auto;
-  border-radius: 4px;
-}
-
-.audio-icon {
-  font-size: 48px;
-  color: #888;
-}
-
-.progress {
-  display: flex;
-  align-items: center;
-}
-
-input[type="range"] {
-  width: 100%;
-}
-
-
-}
-
-
-
-    

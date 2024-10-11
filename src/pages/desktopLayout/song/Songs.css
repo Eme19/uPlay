@@ -7,9 +7,9 @@
 }
 
 .table-dark :hover {
-    background-color: blue;
-    color: white;
-  }
+  background-color: blue;
+  color: white;
+}
 
 .table thead th {
   background-color: #1a1a1a;

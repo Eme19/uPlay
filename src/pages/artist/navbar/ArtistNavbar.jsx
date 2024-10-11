@@ -1,18 +1,17 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../../context/auth.context"; 
+import { AuthContext } from "../../../context/auth.context";
 import "./ArtistNavbar.css";
 import { LeftOutlined } from "@ant-design/icons";
 import Login from "../../login/Login";
 import { Button, Dropdown, Menu } from "antd";
 import ArtistSearch from "../search/ArtistSearch";
 
-function ArtistNavbar({isScrollingUp}) {
+function ArtistNavbar({ isScrollingUp }) {
   const { isLoggedIn } = useContext(AuthContext);
   const [activeMenuItem, setActiveMenuItem] = useState("AllPlayList");
- 
 
-  const   handleAllArtist = () => {
+  const handleAllArtist = () => {
     return;
   };
 
@@ -91,10 +90,12 @@ function ArtistNavbar({isScrollingUp}) {
         <Button
           className="text-stone-300 text-sm hover-custm text-left "
           type="link"
-          onClick={() => { handleSortByArtist();  setActiveMenuItem("SortbyArtist");}
-        }
+          onClick={() => {
+            handleSortByArtist();
+            setActiveMenuItem("SortbyArtist");
+          }}
         >
-             {activeMenuItem === "SortbyArtist" && (
+          {activeMenuItem === "SortbyArtist" && (
             <span className="text-base  text-Algn-cstm activ-custm">✓</span>
           )}
           Sort by Artist
@@ -117,24 +118,20 @@ function ArtistNavbar({isScrollingUp}) {
           }}
           className="flex cursor-pointer justify-between new-playlst "
         >
-       
-      
-              <div className="Nav-flex ">
-                <div className=" ml-4 mt-cstum-icon custm">
-                  <Link to="/" className="mr-2 flex custm">
-                    <div>
-                      <LeftOutlined className="icon-style hover:text-white custm" />
-                    </div>
-                    <span className="Font-custm custm pt-plylst hover:text-white">
-                      Library
-                    </span>
-                  </Link>
+          <div className="Nav-flex ">
+            <div className=" ml-4 mt-cstum-icon custm">
+              <Link to="/" className="mr-2 flex custm">
+                <div>
+                  <LeftOutlined className="icon-style hover:text-white custm" />
                 </div>
-              </div>
-              
-       {isScrollingUp && (
-     <div className="text-lg cust-art-lst">Artist</div>
-    )}
+                <span className="Font-custm custm pt-plylst hover:text-white">
+                  Library
+                </span>
+              </Link>
+            </div>
+          </div>
+
+          {isScrollingUp && <div className="text-lg cust-art-lst">Artist</div>}
           <div>
             <Dropdown overlay={menu}>
               <Link to="" className="text-4xl  text-pink-700 pr-3 pb-2">
@@ -142,7 +139,6 @@ function ArtistNavbar({isScrollingUp}) {
               </Link>
             </Dropdown>
           </div>
-
         </nav>
       ) : (
         <div>

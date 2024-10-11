@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useParams, useNavigate } from 'react-router-dom';
-import { Input, message } from 'antd';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
+import { Input, message } from "antd";
 
 function EditPlaylist() {
   const { playlistId } = useParams();
   const [playlist, setPlaylist] = useState({
-    description: '',
-    image: '',
-    name: '',
+    description: "",
+    image: "",
+    name: "",
   });
 
-  const [selectedTrack, setSelectedTrack] = useState('');
+  const [selectedTrack, setSelectedTrack] = useState("");
   const [tracks, setTracks] = useState([]);
-  const [updatedDescription, setUpdatedDescription] = useState('');
+  const [updatedDescription, setUpdatedDescription] = useState("");
   const [updatedImage, setUpdatedImage] = useState(null);
 
-  const storedToken = localStorage.getItem('authToken');
+  const storedToken = localStorage.getItem("authToken");
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
@@ -36,10 +36,10 @@ function EditPlaylist() {
           image: fetchedPlaylist.image,
           name: fetchedPlaylist.name,
         });
-        setSelectedTrack(fetchedPlaylist.trackIds || '');
+        setSelectedTrack(fetchedPlaylist.trackIds || "");
         setUpdatedDescription(fetchedPlaylist.description);
       } catch (error) {
-        console.error('Error fetching playlist:', error);
+        console.error("Error fetching playlist:", error);
       }
     };
 
@@ -52,7 +52,7 @@ function EditPlaylist() {
         const response = await api.get(`/api/track`);
         setTracks(response.data.tracks);
       } catch (error) {
-        console.error('Error fetching tracks:', error);
+        console.error("Error fetching tracks:", error);
       }
     };
 
@@ -66,27 +66,27 @@ function EditPlaylist() {
 
   const handleEditPlaylist = async () => {
     const formData = new FormData();
-    formData.append('description', updatedDescription);
-    formData.append('image', playlist.image);
-    formData.append('name', playlist.name);
-    formData.append('trackId', selectedTrack);
+    formData.append("description", updatedDescription);
+    formData.append("image", playlist.image);
+    formData.append("name", playlist.name);
+    formData.append("trackId", selectedTrack);
 
     try {
       const response = await api.put(`/api/playlist/${playlistId}`, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
 
       if (response.status === 200) {
-        message.success('Playlist edited successfully');
+        message.success("Playlist edited successfully");
         navigate(`/playlist/${playlistId}`);
       } else {
-        message.error('Error editing playlist. Please try again.');
+        message.error("Error editing playlist. Please try again.");
       }
     } catch (error) {
-      console.error('Error editing playlist:', error);
-      message.error('An error occurred while editing the playlist');
+      console.error("Error editing playlist:", error);
+      message.error("An error occurred while editing the playlist");
     }
   };
 
@@ -144,12 +144,3 @@ function EditPlaylist() {
 }
 
 export default EditPlaylist;
-
-
-
-
-
-
-
-
-

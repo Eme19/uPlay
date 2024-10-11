@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Table, Button, Modal, Form, Input, message } from 'antd';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Table, Button, Modal, Form, Input, message } from "antd";
+import axios from "axios";
 
 const { confirm } = Modal;
 
@@ -11,18 +11,18 @@ const AppActivityTab = () => {
 
   const columns = [
     {
-      title: 'Activity',
-      dataIndex: 'activity',
-      key: 'activity',
+      title: "Activity",
+      dataIndex: "activity",
+      key: "activity",
     },
     {
-      title: 'Time',
-      dataIndex: 'time',
-      key: 'time',
+      title: "Time",
+      dataIndex: "time",
+      key: "time",
     },
     {
-      title: 'Actions',
-      key: 'actions',
+      title: "Actions",
+      key: "actions",
       render: (text, record) => (
         <span>
           <Button type="link" onClick={() => editActivity(record)}>
@@ -42,7 +42,7 @@ const AppActivityTab = () => {
 
   const fetchAppActivityData = async () => {
     try {
-      const response = await axios.get('/api/app-activity');
+      const response = await axios.get("/api/app-activity");
       setAppActivity(response.data);
     } catch (error) {
       console.error('Error fetching "App Activity" data:', error);
@@ -53,8 +53,8 @@ const AppActivityTab = () => {
   const handleOk = async () => {
     try {
       const values = await form.validateFields();
-      const response = await axios.post('/api/app-activity', values);
-      message.success('App Activity added successfully');
+      const response = await axios.post("/api/app-activity", values);
+      message.success("App Activity added successfully");
       setIsModalVisible(false);
       form.resetFields();
       fetchAppActivityData();
@@ -75,12 +75,12 @@ const AppActivityTab = () => {
 
   const deleteActivity = (id) => {
     confirm({
-      title: 'Delete this activity?',
-      content: 'This action cannot be undone.',
+      title: "Delete this activity?",
+      content: "This action cannot be undone.",
       onOk: async () => {
         try {
           await axios.delete(`/api/app-activity/${id}`);
-          message.success('App Activity deleted successfully');
+          message.success("App Activity deleted successfully");
           fetchAppActivityData();
         } catch (error) {
           console.error('Error deleting "App Activity" record:', error);
@@ -106,14 +106,14 @@ const AppActivityTab = () => {
           <Form.Item
             name="activity"
             label="Activity"
-            rules={[{ required: true, message: 'Please enter the activity' }]}
+            rules={[{ required: true, message: "Please enter the activity" }]}
           >
             <Input />
           </Form.Item>
           <Form.Item
             name="time"
             label="Time"
-            rules={[{ required: true, message: 'Please enter the time' }]}
+            rules={[{ required: true, message: "Please enter the time" }]}
           >
             <Input />
           </Form.Item>

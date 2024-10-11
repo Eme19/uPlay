@@ -1,11 +1,10 @@
-.edit-album-flex{
-    display: flex;
-    justify-content: center;
+.edit-album-flex {
+  display: flex;
+  justify-content: center;
 }
 
-
-#btn-padding{
-    padding-top: 3rem;
-   float: right;
-    padding-bottom: 3rem;
+#btn-padding {
+  padding-top: 3rem;
+  float: right;
+  padding-bottom: 3rem;
 }

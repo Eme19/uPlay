@@ -1,42 +1,4 @@
-// import React from "react";
-// import "./Loading.css";
-
-// function Loading () {
-
-
-//     return(
-//         <div className="soundWave-container">
-//         <div className="sound-wave">
-//            <div></div> 
-//            <div></div> 
-//            <div></div> 
-//            <div></div> 
-//            <div></div> 
-//         </div>
-//         </div>
-//     )
-// }
-
-// export default Loading;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import "./Loading.css";
 
 const Loading = () => {
@@ -44,11 +6,10 @@ const Loading = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-    
       setDotCount((prevCount) => (prevCount < 3 ? prevCount + 1 : 0));
-    }, 500); 
+    }, 500);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -65,4 +26,3 @@ const Loading = () => {
 };
 
 export default Loading;
-

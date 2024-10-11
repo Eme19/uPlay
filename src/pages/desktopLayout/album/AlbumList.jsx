@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect, useContext, useRef } from "react";
 import axios from "axios";
 import AlbumDetail from "./AlbumDesktopDetails";
@@ -9,8 +7,7 @@ import AlbumSearch from "./search/AlbumSearch";
 import Login from "../../login/Login";
 import Footer from "../../footer/Footer";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
-import "./AlbumListDsktp.css"
-
+import "./AlbumListDsktp.css";
 
 function AlbumList({ handleAlbumClick }) {
   const [albums, setAlbums] = useState([]);
@@ -19,16 +16,12 @@ function AlbumList({ handleAlbumClick }) {
   const [findAlbumInput, setFindAlbumInput] = useState("");
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
   });
 
-
-
-    
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos =
@@ -43,7 +36,6 @@ function AlbumList({ handleAlbumClick }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
 
   const getAlbums = async () => {
     try {
@@ -65,9 +57,6 @@ function AlbumList({ handleAlbumClick }) {
     console.log("Adding album to library:", albumId);
   };
 
-  
-
-
   return (
     <div>
       <div className="albumdetail-wrapper-list ">
@@ -75,30 +64,25 @@ function AlbumList({ handleAlbumClick }) {
           <Loading />
         ) : isLoggedIn ? (
           <>
-
             <div>
-
-
-                
-            {/* <AlbumSearch
+              {/* <AlbumSearch
                       findAlbumInput={findAlbumInput}
                       setFindAlbumInput={setFindAlbumInput}
                     /> */}
 
-{!findAlbumInput && (
-              <div className="pt-4 flex  flex-wrap gap-cusm-albmLis ">
-
-                {albums.map((album) => (
-                  <AlbumDetail
-                    key={album._id}
-                    album={album}
-                    refreshAlbumList={getAlbums}
-                    onAddToLibrary={handleAddToLibrary}
-                    handleAlbumClick={() => handleAlbumClick(album)}
-                  />
-                ))}
-              </div>
-               )}
+              {!findAlbumInput && (
+                <div className="pt-4 flex  flex-wrap gap-cusm-albmLis ">
+                  {albums.map((album) => (
+                    <AlbumDetail
+                      key={album._id}
+                      album={album}
+                      refreshAlbumList={getAlbums}
+                      onAddToLibrary={handleAddToLibrary}
+                      handleAlbumClick={() => handleAlbumClick(album)}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </>
         ) : (
@@ -113,6 +97,3 @@ function AlbumList({ handleAlbumClick }) {
 }
 
 export default AlbumList;
-
-
-

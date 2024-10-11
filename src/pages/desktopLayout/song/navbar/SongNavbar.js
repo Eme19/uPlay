@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../../context/auth.context";
-// import "../trackNavbar.css";
 import { LeftOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import "./SongNavbar.css";
@@ -57,17 +56,14 @@ function SongNavbar() {
               <div>
                 <LeftOutlined className="text-2xl custm-color" />
               </div>
-            
-                <span className="mt-2-cust text-base font-medium custm-color">
-                  Library
-                </span>
-  
+
+              <span className="mt-2-cust text-base font-medium custm-color">
+                Library
+              </span>
             </Link>
           </div>
 
-          {isScrollingUp && (
-<div className="pt-4 text-lg">Songs</div>
-          )}
+          {isScrollingUp && <div className="pt-4 text-lg">Songs</div>}
 
           <div className="flex mt-2.5 pt-1 text-lg font-medium text-stone-200 pr-4 ">
             <div className="pr-2 mt-2-cust custm-color"> Songs</div>

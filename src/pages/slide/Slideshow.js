@@ -1,11 +1,8 @@
 import "./Slideshow.css";
 import React, { useState, useEffect, useRef } from "react";
-import kanye1 from "../assets/kanye1.png";
-import beli from "../assets/beli.png";
 import jayz from "../assets/jayz.png";
 import kanye from "../assets/sweetboyye.png";
 
-import beli1 from "../assets/beli1.png";
 
 const images = [jayz, kanye];
 
@@ -45,7 +42,7 @@ const Slideshow = () => {
         1,
         slideWidth - 2,
         canvasRef.current.clientHeight - 2
-      ); // Adjusted to render inside the border
+      ); 
     };
     img.src = images[counter];
   }, [counter, slideWidth]);

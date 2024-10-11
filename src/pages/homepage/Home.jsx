@@ -84,8 +84,8 @@ function Home() {
               <div className="pt-cusm-hom  mobile-none">
                 <MusicHome />
                 <Divider
-                  style={{ borderColor: "#a8a29e" }}
-                  className="px-3.5  pt-4"
+                  style={{ borderColor: "#a8a29e", marginLeft: "1rem" }}
+                  className="px-3.9  pt-4 "
                 >
                   <div className=" transition duration-300 animate-bounce ease-in-out text-white pt-3 pb-1 text-xl ">
                     Library
@@ -93,44 +93,46 @@ function Home() {
                 </Divider>
 
                 <div className="pt-2  grid  grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ml-7">
-  {recentlyAddedAlbums.map((album) => (
-    <div key={album._id}>
-      <div className="album-detail-container border-none border-gray-300 rounded-lg overflow-hidden">
-        <Link id="Link-style" to={`/album/${album._id}`} className="block">
-          <div className="album-cover-home cursor-pointer">
-            <img
-              alt="album cover"
-              src={album.image}
-              className="album-image-homep"
-            />
-          </div>
-          <div className="album-info  ">
-            <ul className="album-title space-y-1">
-              <li
-                id="li-styl-hme"
-                className="text-white text-left"
-              >
-                {album.artist &&
-                  album.artist.map((artist) => (
-                    <span key={artist._id}>{artist.name}</span>
+                  {recentlyAddedAlbums.map((album) => (
+                    <div key={album._id}>
+                      <div className="album-detail-container border-none border-gray-300 rounded-lg overflow-hidden">
+                        <Link
+                          id="Link-style"
+                          to={`/album/${album._id}`}
+                          className="block"
+                        >
+                          <div className="album-cover-home cursor-pointer">
+                            <img
+                              alt="album cover"
+                              src={album.image}
+                              className="album-image-homep"
+                            />
+                          </div>
+                          <div className="album-info  ">
+                            <ul className="album-title space-y-1">
+                              <li
+                                id="li-styl-hme"
+                                className="text-white text-left"
+                              >
+                                {album.artist &&
+                                  album.artist.map((artist) => (
+                                    <span key={artist._id}>{artist.name}</span>
+                                  ))}
+                              </li>
+                              <li
+                                id="li-styl-h-hme"
+                                className="text-zinc-400 text-left"
+                              >
+                                {album.title}
+                              </li>
+                            </ul>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
                   ))}
-              </li>
-              <li
-                id="li-styl-h-hme"
-                className="text-zinc-400 text-left"
-              >
-                {album.title}
-              </li>
-            </ul>
-          </div>
-        </Link>
-      </div>
-    </div>
-  ))}
-</div>
-
-</div>
-
+                </div>
+              </div>
             </div>
           )}
           {!isLoggedIn && (

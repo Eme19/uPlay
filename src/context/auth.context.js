@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 
 const API_URL = process.env.REACT_APP_API_URL;
 const AuthContext = React.createContext();
@@ -15,10 +13,9 @@ function AuthProviderWrapper({ children }) {
     axios.defaults.withCredentials = true;
   }, []);
 
-  
   const authenticateUser = () => {
     axios
-      .get(`${API_URL}/auth/verify`, { withCredentials: true }) 
+      .get(`${API_URL}/auth/verify`, { withCredentials: true })
       .then((response) => {
         const user = response.data;
         setIsLoggedIn(true);
@@ -31,11 +28,10 @@ function AuthProviderWrapper({ children }) {
         setUser(null);
       });
   };
-  
 
   const logOutUser = () => {
     axios
-      .post(`${API_URL}/auth/logout`, null, { withCredentials: true }) 
+      .post(`${API_URL}/auth/logout`, null, { withCredentials: true })
       .then(() => {
         setIsLoggedIn(false);
         setIsLoading(false);

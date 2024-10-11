@@ -2,44 +2,40 @@
   background-color: rgba(17, 17, 17, 0.9);
   padding: 0px 0px 15px 0px;
   border-bottom: 1px solid rgb(88, 88, 88);
-  /* padding-bottom: -20rem; */
 }
 
-.activ-custm{
- padding-inline-end: 1rem;   
+.activ-custm {
+  padding-inline-end: 1rem;
 }
 
-.text-Algn-cstm{
-    text-align: center!important;
+.text-Algn-cstm {
+  text-align: center !important;
 }
 
-.p-ply-title{
-    padding-top: 1rem;
-    padding-right: 1.5rem;
+.p-ply-title {
+  padding-top: 1rem;
+  padding-right: 1.5rem;
 }
 
-.text-Algn-Icon{
-    text-align: left!important;
+.text-Algn-Icon {
+  text-align: left !important;
 }
 
-.pt-plylst{
-    padding-top: 0.2rem;
-    padding-left: 0.3rem;
+.pt-plylst {
+  padding-top: 0.2rem;
+  padding-left: 0.3rem;
 }
 
-.icon-style{
-    font-size: 20px;
-    color: #be185d;
+.icon-style {
+  font-size: 20px;
+  color: #be185d;
 }
 
-
-
-.Font-custm{
-    font-size: 15px;
-    color: #be185d;
+.Font-custm {
+  font-size: 15px;
+  color: #be185d;
 }
 
-
-.custm:hover{
-    color: #be185d!important;
+.custm:hover {
+  color: #be185d !important;
 }

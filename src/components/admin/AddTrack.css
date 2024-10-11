@@ -1,13 +1,12 @@
-.addtrack-formstyle{
-    display: flex;
-    justify-content: center;
-   
+.addtrack-formstyle {
+  display: flex;
+  justify-content: center;
 }
 
-h5{
-    padding: 2rem;
+h5 {
+  padding: 2rem;
 }
 
-.btn-addtrack{
-    padding-top: 1rem;
+.btn-addtrack {
+  padding-top: 1rem;
 }

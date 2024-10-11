@@ -5,19 +5,19 @@ import { AuthContext } from "../../../context/auth.context";
 import logoImage from "../../../assets/logo1.png";
 import "./DeskNavbar.css";
 import Login from "../../login/Login";
-import { MenuOutlined ,CloseOutlined,CustomerServiceOutlined, SearchOutlined, CaretRightOutlined   } from '@ant-design/icons';
+import {
+  MenuOutlined,
+  CloseOutlined,
+  CustomerServiceOutlined,
+  SearchOutlined,
+  CaretRightOutlined,
+} from "@ant-design/icons";
 import ProfileImage from "../../profile/ProfileImage";
-
-
 
 function Navbar() {
   const { isLoggedIn, user } = useContext(AuthContext);
   const [actionPerformed, setActionPerformed] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-
- 
-
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -55,8 +55,6 @@ function Navbar() {
     }
   }, [welcomeText]);
 
-
-
   return (
     <div className="mobile-none">
       {isLoggedIn ? (
@@ -73,76 +71,88 @@ function Navbar() {
         >
           {isLoggedIn && (
             <>
-             
-                <div className="prof-Img-custm  ">
+              <div className="prof-Img-custm  ">
                 <a href="#">
-                    <img className="w-cust " alt="logo" src={logoImage} />
-                  </a>
-                </div>
-             
+                  <img className="w-cust " alt="logo" src={logoImage} />
+                </a>
+              </div>
             </>
           )}
 
-<div className="alert alert-dark cust-alert bg-black " role="alert">
-<div className="flex">
-  <div>
-  <span className="text-white " style={{ marginInlineEnd: "6rem", fontSize: "16px"}}>
-  <CustomerServiceOutlined style={{fontSize: "18px"}}/>
-  </span>
+          <div className="alert alert-dark cust-alert bg-black " role="alert">
+            <div className="flex">
+              <div>
+                <span
+                  className="text-white "
+                  style={{ marginInlineEnd: "6rem", fontSize: "16px" }}
+                >
+                  <CustomerServiceOutlined style={{ fontSize: "18px" }} />
+                </span>
 
-  <span style={{marginInlineEnd: "6rem", fontSize: "16px"}} className="font-medium text-white"> uPlay</span>
-  </div>
+                <span
+                  style={{ marginInlineEnd: "6rem", fontSize: "16px" }}
+                  className="font-medium text-white"
+                >
+                  {" "}
+                  uPlay
+                </span>
+              </div>
 
- 
-  <span> 
-  <CaretRightOutlined style={{fontSize: "22px",  borderRadius: "1rem"}} className="text-white bg-pink-600"/> 
-  </span>
-
-</div>
-</div>
-
-
-
+              <span>
+                <CaretRightOutlined
+                  style={{ fontSize: "22px", borderRadius: "1rem" }}
+                  className="text-white bg-pink-600"
+                />
+              </span>
+            </div>
+          </div>
 
           <div className="pt-custm-prfl  ">
-          <div className="app-container">
-      <div className={`main-content ${isSidebarOpen ? 'shift-content' : ''}`}>
+            <div className="app-container">
+              <div
+                className={`main-content ${
+                  isSidebarOpen ? "shift-content" : ""
+                }`}
+              >
+                <button className="toggle-button" onClick={toggleSidebar}>
+                  {isSidebarOpen ? (
+                    <span className="text-lg">
+                      <CloseOutlined />
+                    </span>
+                  ) : (
+                    <span className="text-lg">
+                      {" "}
+                      <MenuOutlined />
+                    </span>
+                  )}
+                </button>
+              </div>
 
-        <button className="toggle-button" onClick={toggleSidebar}>
-          {isSidebarOpen ? (
-            <span className="text-lg"><CloseOutlined/></span>
-          ) : (
-            <span className="text-lg"> <MenuOutlined /></span>
-          )}
-        </button>
-      </div>
-
-     
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-<div className="custm-ul-hm capitalize">
-<ul>
-  <a href="/profile">
-  <li className="ml-3"><ProfileImage/></li>
-  <li><strong>
-    <Link to="/account">
-    Account
-    </Link>
-    </strong></li>
-  </a>
-          <li>_</li>
-          <li>Premium</li>
-          <li>contact</li>
-          <li>Help</li>
-          <li>_</li>
-          <li>Download</li>
-          <li>Privacy</li>
-          <li>Terms</li>
-
-        </ul>
-</div>
-
-      </div>
-    </div>
+              <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+                <div className="custm-ul-hm capitalize">
+                  <ul>
+                    <a href="/profile">
+                      <li className="ml-3">
+                        <ProfileImage />
+                      </li>
+                      <li>
+                        <strong>
+                          <Link to="/account">Account</Link>
+                        </strong>
+                      </li>
+                    </a>
+                    <li>_</li>
+                    <li>Premium</li>
+                    <li>contact</li>
+                    <li>Help</li>
+                    <li>_</li>
+                    <li>Download</li>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </nav>
       ) : (
@@ -150,11 +160,8 @@ function Navbar() {
           <Login />
         </div>
       )}
-</div>
+    </div>
   );
 }
 
 export default Navbar;
-
-
-

@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
@@ -178,58 +176,54 @@ function TrackList() {
               <Navbartrack artistName={artistName} showMode={showMode} />
             )} */}
 
-<Navbartrack artistName={artistName} showMode={showMode} />
+            <Navbartrack artistName={artistName} showMode={showMode} />
           </div>
-       
-          <div className="overlay">
-            <div >
-            {album && (
-              <div className="bg-fixed  albm-wrapper-trk">
-                <div className="album-detail-continer-track">
-                  <div className="album-cover-track  opacity-80">
-                    <img
-                      src={album.image}
-                      alt={album.name}
-                      className="album-image  "
-                    />
-                 
-                  </div>
 
-                  <ul className="album-info">
-                    <li id="li-styl-h-trk">{album.title}</li>
-                    <li id="li-styl-art-trk">{artistName}</li>
-                    <li className="li-style-dte-gnr-trk">
-                      <span id="spn-gnr">{album.genre}</span>·{" "}
-                      <span id="span-rel-dte"> {album.release_date}</span>
-                    </li>
-                  </ul>
+          <div className="overlay">
+            <div>
+              {album && (
+                <div className="bg-fixed  albm-wrapper-trk">
+                  <div className="album-detail-continer-track">
+                    <div className="album-cover-track  opacity-80">
+                      <img
+                        src={album.image}
+                        alt={album.name}
+                        className="album-image  "
+                      />
+                    </div>
+
+                    <ul className="album-info">
+                      <li id="li-styl-h-trk">{album.title}</li>
+                      <li id="li-styl-art-trk">{artistName}</li>
+                      <li className="li-style-dte-gnr-trk">
+                        <span id="spn-gnr">{album.genre}</span>·{" "}
+                        <span id="span-rel-dte"> {album.release_date}</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              <div className="btn-wrapper">
+                <div>
+                  <button
+                    onClick={handlePlayButtonClick}
+                    className="rounded-xl bg-stone-200 shadow-xl shadow-neutral-300/20  hover:bg-stone-200 hover:shadow-xl transition-all duration-300 ease-in-out"
+                  >
+                    <PlayCircleOutlined className="alm-ply-icn" />
+                    <span className="ply-icn ">Play</span>
+                  </button>
+                </div>
+                <div className="">
+                  <button
+                    onClick={handleShuffleButtonClick}
+                    className="rounded-xl  bg-stone-200 shadow-xl shadow-neutral-300/20  hover:bg-stone-200 hover:shadow-lg transition-all duration-300 ease-in-out"
+                  >
+                    <span className=" ply-icn ">Shuffle</span>
+                  </button>
                 </div>
               </div>
-            )}
-
-<div className="btn-wrapper">
-              <div>
-                <button
-                  onClick={handlePlayButtonClick}
-                  className="rounded-xl bg-stone-200 shadow-xl shadow-neutral-300/20  hover:bg-stone-200 hover:shadow-xl transition-all duration-300 ease-in-out"
-                >
-                  <PlayCircleOutlined className="alm-ply-icn" />
-                  <span className="ply-icn ">Play</span>
-                </button>
-              </div>
-              <div className="">
-                <button
-                  onClick={handleShuffleButtonClick}
-                  className="rounded-xl  bg-stone-200 shadow-xl shadow-neutral-300/20  hover:bg-stone-200 hover:shadow-lg transition-all duration-300 ease-in-out"
-                >
-                  <span className=" ply-icn ">Shuffle</span>
-                </button>
-              </div>
             </div>
-            </div>
-        
-
-          
 
             <div className="track-list mt-0 cursor-pointer hover:text-stone-300">
               {tracks.map((track, index) => (
@@ -292,7 +286,7 @@ function TrackList() {
               />
             )}
 
-            <Footer/>
+            <Footer />
           </div>
         </>
       ) : (

@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -20,10 +18,12 @@ const ArtistAlbums = ({ artistId }) => {
         const response = await axios.get(`/api/artist/${artistId}/albums`);
         setAlbums(response.data.albums);
         setLoading(false);
-        console.log("artise album route", response)
+        console.log("artise album route", response);
       } catch (error) {
         console.error("Error fetching albums:", error);
-        setError("An error occurred while fetching albums. Please try again later.");
+        setError(
+          "An error occurred while fetching albums. Please try again later."
+        );
         setLoading(false);
       }
     };
@@ -31,7 +31,7 @@ const ArtistAlbums = ({ artistId }) => {
     fetchAlbums();
   }, [artistId]);
 
-  console.log("Artist ID:", artistId); 
+  console.log("Artist ID:", artistId);
 
   if (loading) {
     return <p>Loading albums...</p>;
@@ -54,7 +54,6 @@ const ArtistAlbums = ({ artistId }) => {
             <p>Genre: {album.genre.join(", ")}</p>
             <p>Popularity: {album.popularity}</p>
             <p>Album Type: {album.album_type}</p>
-            
           </li>
         ))}
       </ul>

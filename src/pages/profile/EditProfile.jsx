@@ -1,28 +1,28 @@
-import React, { useState, useContext, useEffect } from 'react';
-import axios from 'axios';
-import { Input, Button } from 'antd';
-import { useParams } from 'react-router-dom';
-import { AuthContext } from '../../context/auth.context';
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
+import { Input, Button } from "antd";
+import { useParams } from "react-router-dom";
+import { AuthContext } from "../../context/auth.context";
 
 const EditProfile = () => {
   const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    state: '',
-    country: '',
+    username: "",
+    email: "",
+    password: "",
+    state: "",
+    country: "",
   });
 
   const { user, isLoggedIn } = useContext(AuthContext);
-  const storedToken = localStorage.getItem('authToken');
-  const { userId } = useParams(); 
+  const storedToken = localStorage.getItem("authToken");
+  const { userId } = useParams();
   console.log("userId", userId);
 
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     headers: {
       Authorization: `Bearer ${storedToken}`,
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
 
@@ -34,35 +34,31 @@ const EditProfile = () => {
     e.preventDefault();
 
     try {
-
       const response = await api.put(`/auth/edit/profile/${userId}`, formData);
       console.log("response", response);
 
       if (response.status === 200) {
         const updatedUser = response.data.user;
-        console.log('Profile updated successfully:', updatedUser);
+        console.log("Profile updated successfully:", updatedUser);
       } else {
-        console.error('Failed to update profile');
+        console.error("Failed to update profile");
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
-  
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-      
         const response = await api.get(`/auth/profile/${userId}`);
-        const userProfile = response.data.user; 
+        const userProfile = response.data.user;
         setFormData(userProfile);
       } catch (error) {
-        console.error('Error fetching user profile:', error);
+        console.error("Error fetching user profile:", error);
       }
     };
 
-    
     fetchUserProfile();
   }, [api, userId]);
 

@@ -1,6 +1,3 @@
-
-
-
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Input, Select, Button } from "antd";
@@ -26,11 +23,12 @@ const enumValues = {
     "Blue",
   ],
 };
-const API_URL = process.env.REACT_APP_API_URL || "https://uplay-server.onrender.com";
+const API_URL =
+  process.env.REACT_APP_API_URL || "https://uplay-server.onrender.com";
 
 function Album() {
-
-  const [formData, setFormData] = useState({total_tracks: 0,
+  const [formData, setFormData] = useState({
+    total_tracks: 0,
     image: null,
     title: "",
     release_date: "",
@@ -38,7 +36,8 @@ function Album() {
     popularity: 0,
     artist: "",
     album_type: "",
-    trackId: "",});
+    trackId: "",
+  });
   const [tracks, setTracks] = useState([]);
   const [artists, setArtists] = useState([]);
   const navigate = useNavigate();

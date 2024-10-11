@@ -11,19 +11,16 @@ import AlbumSearch from "./search/AlbumSearch";
 import Login from "../login/Login";
 import Footer from "../footer/Footer";
 
-
 function AlbumList() {
   const [albums, setAlbums] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { storedToken, isLoggedIn } = useContext(AuthContext);
   const [isNavBarVisible, setIsNavBarVisible] = useState(true);
 
-  
   const api = axios.create({
     baseURL: process.env.REACT_APP_API_URL,
     withCredentials: true,
   });
-
 
   const getAlbums = async () => {
     try {
@@ -37,7 +34,6 @@ function AlbumList() {
     }
   };
 
-  
   const refreshAlbumList = () => {
     console.log("Refreshing all album list...");
     getAlbums();
@@ -64,7 +60,6 @@ function AlbumList() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [findAlbumInput, setFindAlbumInput] = useState("");
 
-  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos =
@@ -79,10 +74,6 @@ function AlbumList() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-
-  
-  
 
   const fetchData = async () => {
     try {
@@ -149,7 +140,7 @@ function AlbumList() {
               <AlbumNavbar isScrollingUp={isScrollingUp} />
 
               <div>
-              {isScrollingUp && (
+                {isScrollingUp && (
                   <nav
                     style={{
                       position: "fixed",
@@ -158,7 +149,6 @@ function AlbumList() {
                       right: 0,
                       zIndex: 50,
                       backgroundColor: "rgba(17, 17, 17, 0.9)",
-                     
                     }}
                     className=" flex cursor-pointer justify-between"
                   >
@@ -218,7 +208,7 @@ function AlbumList() {
           </div>
         )}
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

@@ -44,7 +44,7 @@ function IconSearchBar() {
         throw new Error(`Request failed with status: ${response.status}`);
       }
       const data = response.data;
-      
+
       console.log("API response:", data);
       setAlbums(data.data.albums);
       setTracks(data.data.tracks);

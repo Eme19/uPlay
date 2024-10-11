@@ -1,469 +1,426 @@
 @media (max-width: 768px) {
   body {
-    margin: 0; 
-    padding:0; 
+    margin: 0;
+    padding: 0;
     background-color: #111111;
   }
 
-  #logo-img-login-sigup{
+  #logo-img-login-sigup {
     width: 140px;
-    height: auto; 
+    height: auto;
   }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color:  #111111 !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  z-index: 1000; /* Ensure it's above other content */
-}
-
-.navbar.hidden {
-  transform: translateY(-100%);
-}
-
-
-.signup-conatiner-signup{
-  padding-top: 2rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-bottom: 2rem;
-  }
-
-.signup-conatiner{
-  padding-top: 1rem;
-}
-.signup-container {
-
-  text-align: center;
-}
-
-.signup-form {
-  text-align: center;
-}
-
-.inputstyle {
-  display: flex;
-  flex-direction: column;
-  margin-top: 4px;
-  color: white;
-}
-
-.inputstyle .ant-select-selector {
-  padding: 10px !important ;
-  font-size: 16px !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-color: #111111 !important;
-  color: white;
-
-  border: 1px solid #847f7f!important;
-}
-
-.inputstyle .ant-select-selector:focus {
-  outline: none;
-  border: 2px solid rgb(255, 255, 255); 
-  color: white;
-}
-
-.inputstyle .ant-select-dropdown {
-  font-size: 16px;
-  background-color: #111111 !important;
-  color: white;
-}
-
-
-
-.input-formstyle {
-  width: 100%;
-  padding: 13px 130px 15px 20px;
-  border: none;
-  border-radius: 5px;
-  transition: border 0.3s ease;
-  background-color: #111111;
- border: 1px solid #847f7f;
-}
-
-.custm-title-flex-desktop{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 6.5rem;
-}
-
-
-
-.custm-title-flex-sigup{
-  display: flex;
-  flex-direction: column;
-  padding-left: 0.5rem;
-}
-
-.log-container-signup {
-  padding-bottom: 70px;
-}
-
-.div-wrapper-sigup-dsktp{
-  width: 72%;
-  text-align: center;
-  padding-top: 1.4rem;
-}
-
-.div-wrapper-sigup-page{
-  width: 96%;
-  align-items: center;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-}
-
-
-.Divider-cutm-signup{
-  background-color: rgb(67, 66, 66)!important;
-
-  
-}
-
-
-.sgnup-act-signp{
-  padding-top: 1.5rem;
-  color:rgb(186, 181, 181);
-  }
-  
-
-.Divider-cutm-dktp{
-  background-color: rgb(67, 66, 66)!important;
-  margin-right: 29rem;
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-}
-
-
-
-.div-wrapper-sigup-bottom{
-  width: 72%;
-  text-align: center;
-  padding-left: 4rem;
-  padding-top: 1.4rem;
-}
-
-.input-formstyle:hover{
-  border: 2px solid rgb(255, 255, 255); 
-}
-
-.input-formstyle:focus {
-  outline: none;
-  border: 2px solid rgb(255, 255, 255); 
-}
-
-
-.input-formstyle-passw  .ant-input-password {
-  width: 100% !important;
-  padding: 0.9rem !important;
-  border-radius: 5px !important;
-  transition: border 0.3s ease !important;
-  background-color: #111111 !important;
-  color: #f4eeee !important;
-  border: 1px solid #847f7f !important;
-}
-
-
-.ant-input-password input {
-  background-color: #111111 !important;
-  color: #f4eeee !important;
-}
-
-
-
-.input-formstyle-passw .ant-input-password-icon svg {
-  fill: #a5a1a1!important; 
-  float: right;
-
-}
-
-
-.input-formstyle-passw:hover{
-  border: 2px solid rgb(255, 255, 255)!important; 
-}
-
-.input-formstyle-passw:focus {
-  outline: none;
-  border: 2px solid rgb(255, 255, 255); 
-}
-
-
-.password-error-title {
-  color: red !important;
-  font-size: 20px !important;
-  font-weight: bold !important;
-}
-
-
-.err-modal-container{
-margin-top: 5.3rem;
-width: 80%!important;
-}
-
-
-.success-title {
-  color: green !important;
-  font-size: 20px !important;
-  font-weight: bold !important;
-}
-
-
-
-.ant-modal-content {
-  background-color:black!important; 
-  color: #864646 !important;
-}
-
-.ant-modal {
-  color: #928b8b !important;
-  border-top: 1px solid #615f5f !important ;
-  border-left: 1px solid #615f5f!important ;
-  border-right: 1px solid  #615f5f!important ;
-  border-bottom: 1px solid  #615f5f !important ;
-  background-color:black !important;
-}
-
-
-
-
-.login-modal{
-width: 80%!important;
-height: 60%!important;
-margin-top: 5.3rem;
-}
-
-
-.ant-modal-header {
-  background-color:rgb(39, 37, 37) !important;
-  color: #951212 !important;
-}
-
-.btn-form {
-  width: 100%!important;
-  padding: 15px!important;
-border: none!important;
-  
-  cursor: pointer!important;
-  font-weight: bold!important;
-  border-radius: 100px!important;
-}
-
-.clos-modal {
-  color: rgb(175, 79, 79) !important;
-  border-top: 1px solid #696666 !important ;
-  border-left: 1px solid #696666 !important ;
-  border-right: 1px solid #696666 !important ;
-  border-bottom: 1px solid #696666 !important ;
-  border-radius: 10px !important;
-  background-color: black !important;
-  color: #928b8b;
-}
-
-.success-modl-container {
-  margin-top: 170px;
-}
-
-.clos-modal:hover {
-  border-color: rgb(206, 185, 185) !important;
-  box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1) !important;
-  color: red !important;
-}
-
-.success-text {
-  color: rgb(210, 209, 209) !important;
-  font-size: 16px !important;
-}
-
-.modal-btn-cancl {
-  padding: 8px 16px;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.modal-btn-cancl:hover {
-  border-color: rgb(206, 185, 185);
-  box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1);
-}
-
-.modal-btn {
-  padding: 8px 16px;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.modal-btn:hover {
-  border-color: rgb(206, 185, 185);
-  box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1);
-}
-
-.ok-btn {
-  color: #928b8b;
-  border-top:1px solid #696666;
-  border-left: 1px solid #696666;
-  border-right: 1px solid #696666;
-  border-bottom: 1px solid #696666;
-  margin-left: 10px;
-  border-radius: 10px;
-}
-
-.custom-select .ant-select-selector {
-  color: #928b8b;
-}
-
-.cancel-btn {
-  color: #928b8b;
-  border-top:1px solid #696666;
-  border-left: 1px solid #696666;
-  border-right: 1px solid #696666;
-  border-bottom: 1px solid #696666;
-
-  border-radius: 10px;
-}
-
-.lab-sigup {
-  text-align: start;
-  font-weight: bold;
-  padding-bottom: 6px;
-}
-
-.option-style {
- background-color:  #111111;
- color: #db2777!important;
- border: none!important;
-}
-
-
-.lab-sigup:hover{
-  color: white;
-}
-
-.inputstyle .ant-input-password-icon {
-  font-size: 20px;
-}
-
-.inputstyle .ant-select-selector .ant-select-arrow {
-  font-size: 30px !important;
-}
-
-
-.chek-bx .ant-checkbox {
-  background-color: rgb(43, 114, 114) !important;
-  border: none;
-}
-
-
-.chek-bx .ant-checkbox-checked .ant-checkbox-inner {
-  background-color: black !important;
-  border-top: 1px solid #696666;
-  border-left: 1px solid #696666;
-  border-right: 1px solid #696666;
-  border-bottom: 1px solid #696666 !important ;
-}
-
-.inputstyle-chk .ant-checkbox-wrapper:hover .ant-checkbox-checked {
-  background-color: black !important;
-  border-top: 1px solid #b7b6b6;
-  border-left: 1px solid #b7b6b6;
-  border-right: 1px solid #b7b6b6;
-  border-bottom: 1px solid #b7b6b6 !important;
-}
-
-
-
-@keyframes breathe {
-  0% {
-    transform: scale(1);
+    background-color: #111111 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 1000;
   }
-  50% {
-    transform: scale(1.1);
+
+  .navbar.hidden {
+    transform: translateY(-100%);
   }
-  100% {
-    transform: scale(1);
+
+  .signup-conatiner-signup {
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
   }
-}
 
-.breathing-effect {
-  margin-bottom: 25px;
-  animation: breathe 4s infinite alternate;
+  .signup-conatiner {
+    padding-top: 1rem;
+  }
+  .signup-container {
+    text-align: center;
+  }
 
-}
+  .signup-form {
+    text-align: center;
+  }
 
-.lnk-btn-lgn {
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 25px;
-  color: rgb(159, 47, 159);
-}
+  .inputstyle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4px;
+    color: white;
+  }
 
-.chek-bx {
-  margin-top: 10px;
-  color: #928b8b;
-  font-size: 16px;
-  font-weight: bold;
-}
+  .inputstyle .ant-select-selector {
+    padding: 10px !important ;
+    font-size: 16px !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #111111 !important;
+    color: white;
 
+    border: 1px solid #847f7f !important;
+  }
 
+  .inputstyle .ant-select-selector:focus {
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+  }
 
+  .inputstyle .ant-select-dropdown {
+    font-size: 16px;
+    background-color: #111111 !important;
+    color: white;
+  }
 
-.btn-div {
-  padding-top: 40px;
-}
+  .input-formstyle {
+    width: 100%;
+    padding: 13px 130px 15px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+    background-color: #111111;
+    border: 1px solid #847f7f;
+  }
 
-.custom-select .ant-select-dropdown-menu-item {
-  background-color: black !important;
-}
+  .custm-title-flex-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 6.5rem;
+  }
 
+  .custm-title-flex-sigup {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0.5rem;
+  }
 
-.custom-select .ant-select-item-option-selected {
-  background-color: black !important;
-}
+  .log-container-signup {
+    padding-bottom: 70px;
+  }
 
-.modal-error {
-  font-size: 16px !important;
-}
+  .div-wrapper-sigup-dsktp {
+    width: 72%;
+    text-align: center;
+    padding-top: 1.4rem;
+  }
 
-.modal-error:hover {
-  color: rgb(230, 126, 126);
-}
+  .div-wrapper-sigup-page {
+    width: 96%;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+  }
 
+  .Divider-cutm-signup {
+    background-color: rgb(67, 66, 66) !important;
+  }
 
+  .sgnup-act-signp {
+    padding-top: 1.5rem;
+    color: rgb(186, 181, 181);
+  }
 
-.custom-switch-sigup {
-  background-color: rgb(66, 60, 60)!important;
-}
+  .Divider-cutm-dktp {
+    background-color: rgb(67, 66, 66) !important;
+    margin-right: 29rem;
+    width: 100%;
+  }
 
-.custom-switch-sigup-checked {
-  background-color:#db2777!important;
-}
+  .div-wrapper-sigup-bottom {
+    width: 72%;
+    text-align: center;
+    padding-left: 4rem;
+    padding-top: 1.4rem;
+  }
 
-.custom-switch-sigup:hover{
-  box-shadow: 0 0 0 2px white;
-}
+  .input-formstyle:hover {
+    border: 2px solid rgb(255, 255, 255);
+  }
 
-.custom-switch-sigup-checked:hover {
-  box-shadow: 0 0 0 2px white;
-}
+  .input-formstyle:focus {
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+  }
 
-.custom-switch-sigup-checked:focus {
-  box-shadow: 0 0 0 2px white;
-}
+  .input-formstyle-passw .ant-input-password {
+    width: 100% !important;
+    padding: 0.9rem !important;
+    border-radius: 5px !important;
+    transition: border 0.3s ease !important;
+    background-color: #111111 !important;
+    color: #f4eeee !important;
+    border: 1px solid #847f7f !important;
+  }
 
-.custom-switch-sigup:focus {
-  box-shadow: 0 0 0 2px white;
-}
+  .ant-input-password input {
+    background-color: #111111 !important;
+    color: #f4eeee !important;
+  }
 
+  .input-formstyle-passw .ant-input-password-icon svg {
+    fill: #a5a1a1 !important;
+    float: right;
+  }
 
-.swtch-wrapper{
- 
-}
+  .input-formstyle-passw:hover {
+    border: 2px solid rgb(255, 255, 255) !important;
+  }
 
-.error-message{
-  color: #ce8989;
-}
+  .input-formstyle-passw:focus {
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+  }
 
+  .password-error-title {
+    color: red !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
+
+  .err-modal-container {
+    margin-top: 5.3rem;
+    width: 80% !important;
+  }
+
+  .success-title {
+    color: green !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+  }
+
+  .ant-modal-content {
+    background-color: black !important;
+    color: #864646 !important;
+  }
+
+  .ant-modal {
+    color: #928b8b !important;
+    border-top: 1px solid #615f5f !important ;
+    border-left: 1px solid #615f5f !important ;
+    border-right: 1px solid #615f5f !important ;
+    border-bottom: 1px solid #615f5f !important ;
+    background-color: black !important;
+  }
+
+  .login-modal {
+    width: 80% !important;
+    height: 60% !important;
+    margin-top: 5.3rem;
+  }
+
+  .ant-modal-header {
+    background-color: rgb(39, 37, 37) !important;
+    color: #951212 !important;
+  }
+
+  .btn-form {
+    width: 100% !important;
+    padding: 15px !important;
+    border: none !important;
+
+    cursor: pointer !important;
+    font-weight: bold !important;
+    border-radius: 100px !important;
+  }
+
+  .clos-modal {
+    color: rgb(175, 79, 79) !important;
+    border-top: 1px solid #696666 !important ;
+    border-left: 1px solid #696666 !important ;
+    border-right: 1px solid #696666 !important ;
+    border-bottom: 1px solid #696666 !important ;
+    border-radius: 10px !important;
+    background-color: black !important;
+    color: #928b8b;
+  }
+
+  .success-modl-container {
+    margin-top: 170px;
+  }
+
+  .clos-modal:hover {
+    border-color: rgb(206, 185, 185) !important;
+    box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1) !important;
+    color: red !important;
+  }
+
+  .success-text {
+    color: rgb(210, 209, 209) !important;
+    font-size: 16px !important;
+  }
+
+  .modal-btn-cancl {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .modal-btn-cancl:hover {
+    border-color: rgb(206, 185, 185);
+    box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1);
+  }
+
+  .modal-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+
+  .modal-btn:hover {
+    border-color: rgb(206, 185, 185);
+    box-shadow: 0 4px 26px rgba(200, 67, 67, 0.1);
+  }
+
+  .ok-btn {
+    color: #928b8b;
+    border-top: 1px solid #696666;
+    border-left: 1px solid #696666;
+    border-right: 1px solid #696666;
+    border-bottom: 1px solid #696666;
+    margin-left: 10px;
+    border-radius: 10px;
+  }
+
+  .custom-select .ant-select-selector {
+    color: #928b8b;
+  }
+
+  .cancel-btn {
+    color: #928b8b;
+    border-top: 1px solid #696666;
+    border-left: 1px solid #696666;
+    border-right: 1px solid #696666;
+    border-bottom: 1px solid #696666;
+
+    border-radius: 10px;
+  }
+
+  .lab-sigup {
+    text-align: start;
+    font-weight: bold;
+    padding-bottom: 6px;
+  }
+
+  .option-style {
+    background-color: #111111;
+    color: #db2777 !important;
+    border: none !important;
+  }
+
+  .lab-sigup:hover {
+    color: white;
+  }
+
+  .inputstyle .ant-input-password-icon {
+    font-size: 20px;
+  }
+
+  .inputstyle .ant-select-selector .ant-select-arrow {
+    font-size: 30px !important;
+  }
+
+  .chek-bx .ant-checkbox {
+    background-color: rgb(43, 114, 114) !important;
+    border: none;
+  }
+
+  .chek-bx .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: black !important;
+    border-top: 1px solid #696666;
+    border-left: 1px solid #696666;
+    border-right: 1px solid #696666;
+    border-bottom: 1px solid #696666 !important ;
+  }
+
+  .inputstyle-chk .ant-checkbox-wrapper:hover .ant-checkbox-checked {
+    background-color: black !important;
+    border-top: 1px solid #b7b6b6;
+    border-left: 1px solid #b7b6b6;
+    border-right: 1px solid #b7b6b6;
+    border-bottom: 1px solid #b7b6b6 !important;
+  }
+
+  @keyframes breathe {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .breathing-effect {
+    margin-bottom: 25px;
+    animation: breathe 4s infinite alternate;
+  }
+
+  .lnk-btn-lgn {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    color: rgb(159, 47, 159);
+  }
+
+  .chek-bx {
+    margin-top: 10px;
+    color: #928b8b;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .btn-div {
+    padding-top: 40px;
+  }
+
+  .custom-select .ant-select-dropdown-menu-item {
+    background-color: black !important;
+  }
+
+  .custom-select .ant-select-item-option-selected {
+    background-color: black !important;
+  }
+
+  .modal-error {
+    font-size: 16px !important;
+  }
+
+  .modal-error:hover {
+    color: rgb(230, 126, 126);
+  }
+
+  .custom-switch-sigup {
+    background-color: rgb(66, 60, 60) !important;
+  }
+
+  .custom-switch-sigup-checked {
+    background-color: #db2777 !important;
+  }
+
+  .custom-switch-sigup:hover {
+    box-shadow: 0 0 0 2px white;
+  }
+
+  .custom-switch-sigup-checked:hover {
+    box-shadow: 0 0 0 2px white;
+  }
+
+  .custom-switch-sigup-checked:focus {
+    box-shadow: 0 0 0 2px white;
+  }
+
+  .custom-switch-sigup:focus {
+    box-shadow: 0 0 0 2px white;
+  }
+
+  .swtch-wrapper {
+  }
+
+  .error-message {
+    color: #ce8989;
+  }
 }

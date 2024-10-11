@@ -57,100 +57,103 @@ function Login() {
   };
 
   if (isLoading) {
-    return <div><Loading/></div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   return (
-    <div >
-      
+    <div>
       <div className="log-container">
         <Link to="/">
           <img id="logo-img-login" alt="logo" src={logoImage} />
         </Link>
       </div>
       <div className="login-body-container">
+        <div className="text-3xl custm-title-lgn  font-bold">
+          Sign in to uPlay{" "}
+        </div>
 
-        
-<div className="text-3xl custm-title-lgn  font-bold">Sign in to uPlay </div>
+        <div className="div-wrapper">
+          <Divider className="Divider-cutm " />
+        </div>
 
-<div className="div-wrapper">
-<Divider  
-                       className="Divider-cutm "/>
-</div>
+        <form onSubmit={handleLoginSubmit}>
+          <div className="input-container">
+            <div>
+              <label className="text-color-lgn font-medium text-sm">
+                Email or Username
+              </label>
+              <input
+                className={`input-lg text-white${error ? "error" : ""}`}
+                type="text"
+                name="identifier"
+                value={identifier}
+                onChange={handleIdentifier}
+                required
+              />
+            </div>
 
+            <div>
+              <label className="text-color-lgn text-sm mt-3 font-medium">
+                Password
+              </label>
+              <input
+                className={`input-lg text-white${error ? "error" : ""}`}
+                type="password"
+                name="password"
+                value={password}
+                onChange={handlePassword}
+                required
+              />
+            </div>
+            {error && <div style={{ color: "red" }}>{error}</div>}
 
-<form onSubmit={handleLoginSubmit}>
-  <div className="input-container">
-    <div>
-      <label className="text-color-lgn font-medium text-sm">Email or Username</label>
-      <input
-        className={`input-lg text-white${error ? "error" : ""}`}
-        type="text"
-        name="identifier"
-        value={identifier}
-        onChange={handleIdentifier}
-        required
-      />
-    </div>
+            <div className="mt-3">
+              <Switch
+                checked={rememberMe}
+                onChange={(checked) => setRememberMe(checked)}
+                className={rememberMe ? "style" : "custom-switch"}
+              />
+              <span style={{ marginLeft: 8 }}>Remember Me</span>
+            </div>
 
-    <div>
-      <label className="text-color-lgn text-sm mt-3 font-medium">Password</label>
-      <input
-        className={`input-lg text-white${error ? "error" : ""}`}
-        type="password"
-        name="password"
-        value={password}
-        onChange={handlePassword}
-        required
-      />
-    </div>
-    {error && <div style={{ color: "red" }}>{error}</div>}
-    
-    <div className="mt-3">
-      <Switch
-        checked={rememberMe}
-        onChange={checked => setRememberMe(checked)}
-        className={rememberMe ?
-           'style' : 'custom-switch'}
-      />
-      <span style={{ marginLeft: 8 ,}} >Remember Me</span>
-    </div>
+            <div className="btn-container ">
+              <button
+                type="submit"
+                className="button-lg-mobil bg-pink-600 text-black text-base transition-transform duration-150 ease-out hover:scale-105"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </form>
 
-    <div className="btn-container ">
-    <button type="submit" className="button-lg-mobil bg-pink-600 text-black text-base transition-transform duration-150 ease-out hover:scale-105">
-  Login 
-</button>
-
-    </div>
-
-  
-  </div>
-</form>
-
-
-      <div className="text-center pt-10  font-medium">
-        <a href="#" className="underline decoration-solid">
-        Forgot your password?
+        <div className="text-center pt-10  font-medium">
+          <a href="#" className="underline decoration-solid">
+            Forgot your password?
           </a>
+        </div>
+
+        <div>
+          <div className="text-center sgnup-act font-medium">
+            <span>Don't have an account?</span>
           </div>
 
-      <div>
-        <div className="text-center sgnup-act font-medium">
-
-        <span>Don't have an account?</span>
+          <div className="text-center pt-4">
+            <Link to="/signup">
+              <button
+                type="submit"
+                className=" font-medium underline decoration-solid"
+              >
+                Sign up for Uplay
+              </button>
+            </Link>
+          </div>
         </div>
-       
-
-     
-      <div className="text-center pt-4">
-      <Link to="/signup">
-        <button type="submit" className=" font-medium underline decoration-solid">
-        Sign up for Uplay
-        </button>
-      </Link>
-    </div>
       </div>
-    </div>
     </div>
   );
 }

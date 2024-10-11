@@ -1,6 +1,4 @@
-/* DefaultHomePage.css */
-
-.main-container{
+.main-container {
   text-align: center;
   margin-top: 15rem;
 }
@@ -17,7 +15,6 @@
   position: relative;
 }
 
-.custm-qr-stylin{
-font-size: 25px;
-
+.custm-qr-stylin {
+  font-size: 25px;
 }

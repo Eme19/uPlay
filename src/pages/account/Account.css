@@ -1,71 +1,65 @@
-
 #logo-img-login-acct {
-    width: 80px;
-    height: 80px; 
-  }
-  
-  .logo-img-login-acct-prfl{
-    width: 75px;
-    height: 50px; 
-  }
-
-  .custm-color-acct{
-   color: #db2777 !important;
-  }
-
-  .bg-custm-acct{
-    background-color:  #db2777 !important;
-  }
-
-  .text-cus-cncel{
-    font-size: 20px;
-    padding-top: 0.6rem;
-    color:  #db2777 !important;
-  }
-
-  .bckgrnd-col{
-    background-color:  #db2777 !important;
-  }
-
-
-  .input-lg-acct {
-    width: 100%;
-    border-radius: 5px;
-    transition: border 0.3s ease;
-    background-color: #111111;
-   border: 1px solid #847f7f;
-  }
-  
-  .input-lg-acct:focus {
-    outline: none;
-    border: 2px solid rgb(255, 255, 255); 
-  }
-
-  .custm-top-pstn{
-    margin-top: 40px;
-  }
-
-  .mt-cutm-btn{
-    margin-top: 1.9rem;
-  }
-
-.top-custm-user-paym{
-  margin-top: 20px;
-
+  width: 80px;
+  height: 80px;
 }
 
+.logo-img-login-acct-prfl {
+  width: 75px;
+  height: 50px;
+}
 
+.custm-color-acct {
+  color: #db2777 !important;
+}
 
-  .custm-top-pstn-plan{
-    border-top: 1px solid #847f7f;
-   
-  }
+.bg-custm-acct {
+  background-color: #db2777 !important;
+}
 
-  .custm-top-pstn-delet{
-    margin-top: 40px;
-  }
+.text-cus-cncel {
+  font-size: 20px;
+  padding-top: 0.6rem;
+  color: #db2777 !important;
+}
 
-  .mobile-modal .modal-dialog {
-    max-width: calc(80% - 1rem);
-    margin: 0.5rem auto;
-  }
+.bckgrnd-col {
+  background-color: #db2777 !important;
+}
+
+.input-lg-acct {
+  width: 100%;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+  background-color: #111111;
+  border: 1px solid #847f7f;
+}
+
+.input-lg-acct:focus {
+  outline: none;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.custm-top-pstn {
+  margin-top: 40px;
+}
+
+.mt-cutm-btn {
+  margin-top: 1.9rem;
+}
+
+.top-custm-user-paym {
+  margin-top: 20px;
+}
+
+.custm-top-pstn-plan {
+  border-top: 1px solid #847f7f;
+}
+
+.custm-top-pstn-delet {
+  margin-top: 40px;
+}
+
+.mobile-modal .modal-dialog {
+  max-width: calc(80% - 1rem);
+  margin: 0.5rem auto;
+}

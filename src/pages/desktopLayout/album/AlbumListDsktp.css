@@ -1,21 +1,15 @@
+li {
+  list-style: none;
+}
 
-    li {
-      list-style: none;
-    }
-    
-    
-    .albumdetail-wrapper-list{
-      margin-top: -65px;
-     padding-left: ;
-    }
-    
-    .cust-serc-albdetl{
-      margin-top: -2rem;
+.albumdetail-wrapper-list {
+  margin-top: -65px;
+}
 
-    }
-    
-.gap-cusm-albmLis{
+.cust-serc-albdetl {
+  margin-top: -2rem;
+}
+
+.gap-cusm-albmLis {
   gap: 1rem;
-
-
 }

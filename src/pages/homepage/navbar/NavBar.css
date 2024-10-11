@@ -1,7 +1,6 @@
-.Nav-flex{
-    display: flex;
-    justify-content: space-between;
-
+.Nav-flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 .prof-Img-custm {
@@ -11,120 +10,100 @@
   margin-top: 0.4rem;
 }
 
-.w-cust{
+.w-cust {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.cust-alert{
-padding: 1px 15px 7px 15px;
-margin-top: 0.8rem;
-border: transparent;
+.cust-alert {
+  padding: 1px 15px 7px 15px;
+  margin-top: 0.8rem;
+  border: transparent;
 
-
-margin-right: 2rem;
+  margin-right: 2rem;
 }
 
-.py-cutm-hme{
+.py-cutm-hme {
   background-color: transparent;
   padding-left: 15px;
-padding-bottom: 1px;
-
+  padding-bottom: 1px;
 }
 
-  
-    .navbar a {
-      text-decoration: none;
-      font-size: 1.2rem;
-      color: rgb(160, 60, 150);
-    }
-  
-    .navbar :hover {
-      color: rgb(250, 70, 232);
-    }
-  
+.navbar a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: rgb(160, 60, 150);
+}
+
+.navbar :hover {
+  color: rgb(250, 70, 232);
+}
+
+app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f0f0f0;
+  transition: margin-right 0.5s ease;
+  overflow-x: hidden;
+}
 
 
 
+.sidebar {
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background-color: #090909;
 
+  overflow-x: hidden;
+  transition: width 0.5s ease;
+}
 
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
+.sidebar li {
+  padding: 10px;
+  color: white;
+}
 
+.sidebar.open {
+  width: 100%;
+  height: 100%;
+}
 
+.shift-content {
+  margin-right: 250px;
+}
 
+.toggle-button {
+  position: fixed;
+  top: 8px;
+  right: 15px;
+  z-index: 999;
+}
 
+.toggle-button-cancel {
+  padding-top: 10px;
+  padding-right: 20px;
+}
 
+.custm-ul-hm ul li {
+  font-size: 16px;
+  text-align: left;
+}
 
-
-
-
-    
-    app-container {
-      display: flex;
-      height: 100vh;
-    }
-    
-    .main-content {
-      flex: 1;
-      background-color: #f0f0f0;
-      transition: margin-right 0.5s ease;
-      overflow-x: hidden;
-    }
-    
-    .sidebar {
-      width: 0;
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      background-color: #090909;
-
-      overflow-x: hidden;
-      transition: width 0.5s ease;
-    }
-    
-    .sidebar ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-
-    }
-    
-    .sidebar li {
-      padding: 10px;
-      color: white;
-    }
-    
-    .sidebar.open {
-      width: 100%;
-      height: 100%;
-    }
-    
-    .shift-content {
-      margin-right: 250px; 
-    }
-    
-    .toggle-button {
-      position: fixed;
-      top: 8px;
-      right: 15px;
-      z-index: 999;
-    }
-    
-    .toggle-button-cancel{
-
-      padding-top: 10px;
-      padding-right: 20px;
-     
-    }
-
-    .custm-ul-hm ul li{
-      font-size: 16px;
-      text-align: left;
-    }
-
-    .custm-ul-hm{
-    padding-top: 50px;
-    padding-left: 20px;
-    }
+.custm-ul-hm {
+  padding-top: 50px;
+  padding-left: 20px;
+}

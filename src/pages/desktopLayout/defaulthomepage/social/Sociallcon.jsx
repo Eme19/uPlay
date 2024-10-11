@@ -15,13 +15,25 @@ const SocialIcon = () => (
         <a href="link-to-twitter" aria-label="Twitter">
           <XIcon />
         </a>
-        <a href="link-to-facebook" className="facebk-style" aria-label="Facebook">
+        <a
+          href="link-to-facebook"
+          className="facebk-style"
+          aria-label="Facebook"
+        >
           <FacebookOutlined />
         </a>
-        <a href="https://www.linkedin.com/in/emeka-ngwu-83b940291/" className="link-styl-cl" aria-label="LinkedIn">
+        <a
+          href="https://www.linkedin.com/in/emeka-ngwu-83b940291/"
+          className="link-styl-cl"
+          aria-label="LinkedIn"
+        >
           <LinkedinOutlined />
         </a>
-        <a href="link-to-instagram" className="instgram-styl" aria-label="Instagram">
+        <a
+          href="link-to-instagram"
+          className="instgram-styl"
+          aria-label="Instagram"
+        >
           <InstagramOutlined />
         </a>
         <a
@@ -32,7 +44,10 @@ const SocialIcon = () => (
           <YoutubeOutlined />
         </a>
       </div>
-      <div className="social-footer">  &copy; {new Date().getFullYear()} | uPlay</div>
+      <div className="social-footer">
+        {" "}
+        &copy; {new Date().getFullYear()} | uPlay
+      </div>
     </div>
   </div>
 );
