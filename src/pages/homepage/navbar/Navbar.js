@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { ThemeContext } from "../../../context/theme.context";
 import { AuthContext } from "../../../context/auth.context";
 import logoImage from "../../../assets/logo1.png";
@@ -15,9 +15,11 @@ import {
 import ProfileImage from "../../profile/ProfileImage";
 
 function Navbar() {
-  const { isLoggedIn, user } = useContext(AuthContext);
+  const { isLoggedIn,  logOutUser } = useContext(AuthContext);
   const [actionPerformed, setActionPerformed] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate = useNavigate(); 
+
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -54,6 +56,15 @@ function Navbar() {
       }
     }
   }, [welcomeText]);
+
+
+
+  const handleLogout = () => {
+    logOutUser(); // Call logout function
+    navigate("/login"); // Navigate to login page after logout
+  };
+
+
 
   return (
     <div className="mobile-none">
@@ -148,6 +159,7 @@ function Navbar() {
                     <li>Download</li>
                     <li>Privacy</li>
                     <li>Terms</li>
+                  <li onClick={handleLogout} style={{ cursor: 'pointer' }}>Sign/out</li>
                   </ul>
                 </div>
               </div>
